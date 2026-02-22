@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deborah Heinlen Photography | Cincinnati and Northern Kentucky Headshots</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #f5f0e8;
+      --linen: #ede8dc;
+      --warm-tan: #c8b89a;
+      --text-dark: #2e2419;
+      --text-mid: #6b5c4a;
+      --text-light: #9e8e7a;
+      --black: #000000;
+      --text-white: #ffffff;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    html, body { background-color: var(--black); }
+    body {
+      color: var(--text-white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── MAIN HEADER ───────────────────────────────────────────────── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(242, 237, 232, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1.5px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .header-logo {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .header-title {
+      font-family: "lindsey-signature", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 3rem;
+      letter-spacing: 0em;
+      color: var(--text-dark);
+      text-decoration: none;
+      text-transform: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .header-contact {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      border: 1px solid var(--warm-tan);
+      padding: 0.55rem 1.5rem;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .header-contact:hover {
+      background: var(--warm-tan);
+      color: var(--cream);
+    }
+
+    /* ── COLLECTIONS STRIP ─────────────────────────────────────────── */
+    .collections-strip {
+      position: fixed;
+      top: 80px;
+      left: 0; right: 0;
+      z-index: 199;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(237, 232, 220, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
+    }
+
+    .strip-link {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 1.25rem 1.6rem;
+      border-right: 1px solid rgba(200, 184, 154, 0.3);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .strip-link:first-child {
+      border-left: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .strip-link:hover {
+      background: rgba(200, 184, 154, 0.2);
+      color: var(--text-dark);
+    }
+
+    .strip-link.active {
+      color: var(--text-dark);
+      background: rgba(200, 184, 154, 0.15);
+    }
+
+    /* ================================================================
+       STORY SECTION
+       ================================================================
+       LAYER 1 -- FIXED BACKGROUND (#story-bg):
+       Fixed to viewport for the full story scroll height.
+       Holds all full-bleed images.  JS hard-cuts between them
+       based on scroll position.
+
+       LAYER 2 -- SARAN WRAP (#story-scroll):
+       Normal scrolling content flowing over the fixed background.
+       Contains text blocks and card sections.
+       ================================================================ */
+
+    #story-section {
+      position: relative;
+    }
+
+    /* ── LAYER 1: FIXED BACKGROUND ────────────────────────────────── */
+    #story-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100vh;
+      z-index: 1;
+      padding: 0 8vw;
+      background-color: var(--black);
+    }
+    #story-bg.hidden {
+      visibility: hidden;
+    }
+
+    /* Black background panel -- index 6, shown under Wayne card */
+    .bg-black {
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+      opacity: 0;
+    }
+    .bg-black.active { opacity: 1; }
+
+    /* Individual background images -- only .active is visible */
+    .bg-image {
+      position: absolute;
+      top: 100px;
+      left: 8vw;
+      right: 8vw;
+      height: 100%;
+      width: calc(100% - 16vw);
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(0.9) brightness(0.88);
+      opacity: 0;
+      /* Hard cut -- no transition */
+    }
+    .bg-image.active {
+      opacity: 1;
+    }
+
+    /* ── LAYER 2: SCROLLING CONTENT (SARAN WRAP) ──────────────────── */
+    #story-scroll {
+      position: relative;
+      z-index: 2;
+      background: transparent;
+    }
+
+    /* Opening spacer -- lets first image breathe before text arrives. */
+    .story-spacer {
+      height: 60vh;
+      background: transparent;
+    }
+
+    /* ── FULL-BLEED TEXT BLOCKS ───────────────────────────────────── */
+    .story-text-block {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 4vh 12vw;
+    }
+
+    .text-kambua  { justify-content: flex-start; }
+    .text-paula   { justify-content: flex-end; }
+    .text-ashley  { justify-content: flex-end; }
+    .text-sam     { justify-content: flex-start; }
+    .text-ben     { justify-content: flex-end; }
+    .text-cortney { justify-content: flex-start; }
+
+    .story-text-block p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.2;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 24px rgba(10,6,2,0.8), 0 0 60px rgba(10,6,2,0.5);
+      max-width: 400px;
+      text-align: center;
+    }
+
+    /* ── CARD SECTIONS (on the Saran Wrap) ───────────────────────── */
+    .story-card {
+      display: flex;
+      align-items: stretch;
+      min-height: 120vh;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+      margin: 8vh 0;
+    }
+
+    /* Soft top edge fade */
+    .story-card::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; top: 0;
+      height: 18%;
+      pointer-events: none;
+      z-index: 10;
+      background: linear-gradient(to bottom, var(--black) 0%, rgba(245,240,232,0) 100%);
+    }
+
+    /* Soft bottom edge fade */
+    .story-card::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 18%;
+      pointer-events: none;
+      z-index: 10;
+      background: linear-gradient(to top, var(--black) 0%, rgba(245,240,232,0) 100%);
+    }
+
+    /* Card image side */
+    .card-image-side {
+      flex: 0 0 50%;
+      overflow: hidden;
+      position: relative;
+      padding: 2rem 2rem 2rem 6.5rem;
+      background: var(--black);
+    }
+
+    .card-image-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      filter: saturate(0.88);
+      display: block;
+    }
+
+    /* Soft gradient on card image edges */
+    .card-image-side::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(to right,  var(--black) 0%, rgba(245,240,232,0) 12%),
+        linear-gradient(to left,   var(--black) 0%, rgba(245,240,232,0) 12%),
+        linear-gradient(to bottom, var(--black) 0%, rgba(245,240,232,0) 10%),
+        linear-gradient(to top,    var(--black) 0%, rgba(245,240,232,0) 10%);
+    }
+
+    /* Card text side */
+    .card-text-side {
+      flex: 0 0 48%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem 10vw;
+      background: var(--black);
+      text-align: center;
+    }
+
+    /* Thin decorative rule above card text */
+    .card-text-side::before {
+      content: '';
+      display: block;
+      width: 300px;
+      height: 2px;
+      background: var(--white);
+      margin: 2rem auto 1.75rem auto;
+    }
+
+    /* Thin decorative rule below card text */
+    .card-text-side::after {
+      content: '';
+      display: block;
+      width: 300px;
+      height: 2px;
+      background: var(--white);
+      margin: 2rem auto 3rem auto;
+    }
+
+    .card-text-side p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.2vw, 3.6rem);
+      line-height: 1.25;
+      color: var(--text-white);
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    /* Spacer between card and next text block */
+    .card-spacer {
+      height: 40vh;
+      background: transparent;
+    }
+
+    /* ── FINAL STATEMENT (on the Saran Wrap) ─────────────────────── */
+    .story-final {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--black);
+      margin-top: 8vh;
+    }
+    .story-final-text {
+      text-align: center;
+      max-width: 800px;
+      padding: 2rem 3rem;
+    }
+    .story-final-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      line-height: 1.2;
+      color: var(--text-white);
+      letter-spacing: 0.04em;
+    }
+    .story-final-text p em {
+      font-style: italic;
+      color: var(--text-white);
+    }
+
+    /* ── ABOUT SECTION ────────────────────────────────────────────── */
+    .about-section {
+      position: relative;
+      z-index: 2;
+      padding: 2rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: var(--black);
+    }
+    .about-section h2 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(2.6rem, 3vw, 2.4rem); color: var(--text-white);
+      letter-spacing: 0.04em; margin-bottom: 1.8rem;
+    }
+    .about-section p {
+      font-family: 'Jost', sans-serif; font-weight: 300;
+      font-size: clamp(1.4rem, 1.4vw, 1.05rem);
+      line-height: 1.9; color: var(--text-white); letter-spacing: 0.03em;
+    }
+
+    /* ── COLLECTIONS ──────────────────────────────────────────────── */
+    .collections {
+      position: relative; z-index: 2;
+      padding: 6rem 3rem 8rem; background: var(--black);
+    }
+    .collections-label {
+      font-family: 'Jost', sans-serif; font-weight: 200; font-size: 1.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--text-white); text-align: center; margin-bottom: 2.5rem;
+    }
+    .collections-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+      grid-template-rows: auto auto; gap: 1.2rem; max-width: 1200px; margin: 0 auto;
+    }
+    .collection-card {
+      position: relative; overflow: hidden;
+      cursor: pointer; text-decoration: none; display: block; background: var(--linen);
+    }
+    .collection-card:first-child { grid-row: 1 / 3; grid-column: 1 / 2; }
+    .collection-card img {
+      width: 100%; height: 100%; object-fit: cover; min-height: 260px; display: block;
+      filter: saturate(0.85); transition: transform 0.8s ease, filter 0.8s ease;
+    }
+    .collection-card:hover img { transform: scale(1.05); filter: saturate(1); }
+    .collection-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(46,36,25,0.65) 0%, transparent 55%);
+    }
+    .collection-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.8rem 1.5rem; z-index: 2;
+      transform: translateY(4px); transition: transform 0.4s ease;
+    }
+    .collection-card:hover .collection-info { transform: translateY(0); }
+    .collection-name {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: 1.7rem; color: var(--text-white); letter-spacing: 0.04em;
+      display: block; margin-bottom: 0.3rem;
+    }
+    .collection-count {
+      font-family: 'Jost', sans-serif; font-weight: 200; font-size: 1.0rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.65);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────────── */
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid rgba(200,184,154,0.3); padding: 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--black);
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: 1rem; letter-spacing: 0.1em; color: var(--text-white); text-transform: uppercase;
+    }
+    .footer-note {
+      font-family: 'Jost', sans-serif; font-weight: 200;
+      font-size: 0.65rem; letter-spacing: 0.15em; color: var(--text-white);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .site-header { padding: 1rem 1.5rem; }
+
+      #story-bg { padding: 0; }
+      .bg-image { left: 0; right: 0; width: 100%; }
+
+      .story-card { flex-direction: column; margin: 5vh 0; }
+      .card-image-side { flex: none; width: 100%; height: 55vw; padding: 1rem; }
+      .card-text-side { flex: none; width: 100%; padding: 2.5rem 1.5rem; }
+      .card-text-side p { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+
+      .story-text-block { min-height: 40vh; padding: 3vh 1.5rem; }
+      .story-text-block p { font-size: clamp(1.6rem, 5vw, 2.8rem); max-width: 90vw; }
+
+      .story-final-text p { font-size: clamp(2rem, 8vw, 3.5rem); }
+
+      .collections { padding: 4rem 1.5rem 5rem; }
+      .collections-grid { grid-template-columns: 1fr 1fr; }
+      .collection-card:first-child { grid-row: auto; grid-column: auto; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────────────── -->
+  <header class="site-header" id="main-nav">
+    <img src="file:///Macintosh HD/Users/deborahheinlen/Downloads/images/logo.png" alt="Deborah Heinlen Photography" class="header-logo" />
+    <a href="#" class="header-title">Deborah Heinlen Photography</a>
+    <a href="#contact" class="header-contact">Book a Session</a>
+  </header>
+
+  <!-- ============================================================
+       STORY SECTION
+       Layer 1: Fixed background images (swap on scroll)
+       Layer 2: Scrolling content -- text blocks and cards
+       ============================================================ -->
+  <div id="story-section">
+
+    <!-- LAYER 1: FIXED BACKGROUND IMAGES -->
+    <!-- Images: 0=Kambua, 1=Paula, 2=Ashley, 3=Sam, 4=Ben, 5=Cortney -->
+    <div id="story-bg">
+      <img class="bg-image active" data-index="0" src="images/Kambua.jpg"  alt="Kambua" />
+      <img class="bg-image"        data-index="1" src="images/Paula.jpg"   alt="Paula" />
+      <img class="bg-image"        data-index="2" src="images/Ashley.jpg"  alt="Ashley" />
+      <img class="bg-image"        data-index="3" src="images/Sam.jpg"     alt="Sam" />
+      <img class="bg-image"        data-index="4" src="images/Ben.jpg"     alt="Ben" />
+      <img class="bg-image"        data-index="5" src="images/Cortney.jpg" alt="Cortney" />
+      <div class="bg-black" data-index="6"></div>
+    </div>
+
+    <!-- LAYER 2: SCROLLING SARAN WRAP -->
+    <div id="story-scroll">
+
+      <!-- OPENING CARD: shown on page load, scrolls away to reveal Kambua -->
+      <div class="story-card" style="justify-content: center; align-items: center;">
+        <img src="images/logowhite.png" alt="Deborah Heinlen Photography" style="width: 25%; max-width: 300px; height: auto;" />
+      </div>
+
+      <!-- TEXT over Kambua (bg 0) -->
+      <div class="story-text-block text-kambua" data-bg="0">
+        <p>What story does your image tell?</p>
+      </div>
+
+      <!-- Spacer so Kambua still shows before Dave card arrives -->
+      <div class="card-spacer" data-bg="0"></div>
+
+      <!-- CARD: Dave -- bg swaps to Paula (1) when top hits viewport top -->
+      <div class="story-card" data-bg="1">
+        <div class="card-image-side">
+          <img src="images/Dave.jpg" alt="Dave" />
+        </div>
+        <div class="card-text-side">
+          <p>Your reputation didn't happen overnight.</p>
+        </div>
+      </div>
+
+      <!-- TEXT over Paula (bg 1) -->
+      <div class="story-text-block text-paula" data-bg="1">
+        <p>Shouldn't your image say the same?</p>
+      </div>
+
+      <!-- Spacer before Peter card -->
+      <div class="card-spacer" data-bg="1"></div>
+
+      <!-- CARD: Peter -- bg swaps to Ashley (2) -->
+      <div class="story-card" data-bg="2">
+        <div class="card-image-side">
+          <img src="images/Peter.jpg" alt="Peter" />
+        </div>
+        <div class="card-text-side">
+          <p>A headshot is more than a photograph.</p>
+        </div>
+      </div>
+
+      <!-- TEXT over Ashley (bg 2) -->
+      <div class="story-text-block text-ashley" data-bg="2">
+        <p>It's your credibility, on full display.</p>
+      </div>
+
+      <!-- Spacer before Tevon card -->
+      <div class="card-spacer" data-bg="2"></div>
+
+      <!-- CARD: Tevon -- bg swaps to Sam (3) -->
+      <div class="story-card" data-bg="3">
+        <div class="card-image-side">
+          <img src="images/Tevon.jpg" alt="Tevon" />
+        </div>
+        <div class="card-text-side">
+          <p>The details tell the story.</p>
+        </div>
+      </div>
+
+      <!-- TEXT over Sam (bg 3) -->
+      <div class="story-text-block text-sam" data-bg="3">
+        <p>Nothing gets overlooked.</p>
+      </div>
+
+      <!-- Spacer before Laura card -->
+      <div class="card-spacer" data-bg="3"></div>
+
+      <!-- CARD: Laura -- bg swaps to Ben (4) -->
+      <div class="story-card" data-bg="4">
+        <div class="card-image-side">
+          <img src="images/Laura.jpg" alt="Laura" />
+        </div>
+        <div class="card-text-side">
+          <p>For professionals who expect more.</p>
+        </div>
+      </div>
+
+      <!-- TEXT over Ben (bg 4) -->
+      <div class="story-text-block text-ben" data-bg="4">
+        <p>Experience you can see.</p>
+      </div>
+
+      <!-- Spacer before Alex card -->
+      <div class="card-spacer" data-bg="4"></div>
+
+      <!-- CARD: Alex -- bg swaps to Cortney (5) -->
+      <div class="story-card" data-bg="5">
+        <div class="card-image-side">
+          <img src="images/Alex.jpg" alt="Alex" />
+        </div>
+        <div class="card-text-side">
+          <p>Results you can trust.</p>
+        </div>
+      </div>
+
+      <!-- TEXT over Cortney (bg 5) -->
+      <div class="story-text-block text-cortney" data-bg="5">
+        <p>Deborah Heinlen Photography.</p>
+      </div>
+
+      <!-- Spacer before Wayne card -- triggers black background (6) -->
+      <div class="card-spacer"></div>
+
+      <!-- Wayne card on black background -->
+      <div class="story-card" data-bg="6">
+        <div class="card-image-side">
+          <img src="images/Wayne.jpg" alt="Wayne" />
+        </div>
+        <div class="card-text-side">
+          <p>Where powerful headshots happen.</p>
+        </div>
+      </div>
+
+      <div class="card-spacer"></div>
+
+      <div class="story-final">
+        <div class="story-final-text">
+          <p>Confident. <em>Professional.</em> Unforgettable.</p>
+        </div>
+      </div>
+
+    </div><!-- end #story-scroll -->
+  </div><!-- end #story-section -->
+
+  <!-- ABOUT SECTION -->
+  <div class="about-section">
+    <h2>Every Headshot Begins with a Conversation.</h2>
+    <p>I photograph business professionals, executives, attorneys, physicians, and corporate teams from my studio in Hebron, Kentucky.  Every session is designed to make you look as capable and confident as you are.  The result is a headshot that works as hard as you do.</p>
+  </div>
+
+  <!-- COLLECTIONS GRID -->
+  <section class="collections" id="collections">
+    <p class="collections-label">Services</p>
+    <div class="collections-grid">
+
+      <a href="#" class="collection-card">
+        <img src="images/Kambua.jpg" alt="Studio Headshots" />
+        <div class="collection-info">
+          <span class="collection-name">Studio Headshots</span>
+          <span class="collection-count">Starting at $190</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img src="images/Dave.jpg" alt="Corporate Teams" />
+        <div class="collection-info">
+          <span class="collection-name">Corporate Teams</span>
+          <span class="collection-count">Custom pricing</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img src="images/Ashley.jpg" alt="Events" />
+        <div class="collection-info">
+          <span class="collection-name">Event Photography</span>
+          <span class="collection-count">Starting at $1,500</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img src="images/Laura.jpg" alt="LinkedIn" />
+        <div class="collection-info">
+          <span class="collection-name">LinkedIn &amp; Social</span>
+          <span class="collection-count">Profile-ready images</span>
+        </div>
+      </a>
+
+      <a href="#" class="collection-card">
+        <img src="images/Ben.jpg" alt="Executive" />
+        <div class="collection-info">
+          <span class="collection-name">Executive Portraits</span>
+          <span class="collection-count">Premium experience</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Deborah Heinlen Photography</span>
+    <span class="footer-note">&copy; 2026 &nbsp;&middot;&nbsp; Hebron, Kentucky &nbsp;&middot;&nbsp; Serving Cincinnati &amp; Northern Kentucky</span>
+  </footer>
+
+  <script>
+    // ================================================================
+    // NAV SCROLL EFFECT
+    // ================================================================
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ================================================================
+    // BACKGROUND IMAGE SWAP
+    // ================================================================
+    // Each scrollable element has data-bg indicating which background
+    // image (0-5) should show when that element reaches the top of
+    // the viewport.  JS watches scroll and hard-cuts to correct image.
+    //
+    //   0 = Kambua.jpg
+    //   1 = Paula.jpg
+    //   2 = Ashley.jpg
+    //   3 = Sam.jpg
+    //   4 = Ben.jpg
+    //   5 = Cortney.jpg
+    // ================================================================
+
+    const storySection = document.getElementById('story-section');
+    const storyBg      = document.getElementById('story-bg');
+    const allBgEls     = Array.from(document.querySelectorAll('.bg-image, .bg-black'));
+    const scrollItems  = Array.from(document.querySelectorAll('[data-bg]'));
+
+    let currentBg = 0;
+
+    function setBackground(index) {
+      if (index === currentBg) return;
+      currentBg = index;
+      allBgEls.forEach(el => {
+        const i = parseInt(el.dataset.index);
+        el.classList.toggle('active', i === index);
+      });
+    }
+
+    function onScroll() {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+
+      // Hide fixed background once story section has fully scrolled past.
+      const storyBottom = storySection.offsetTop + storySection.offsetHeight;
+      if (scrollY + vh > storyBottom - 100) {
+        storyBg.classList.add('hidden');
+      } else {
+        storyBg.classList.remove('hidden');
+      }
+
+      // Determine which background to show.
+      // Trigger fires when element top reaches the top of the screen.
+      let activeBg = 0;
+      const triggerPoint = scrollY + vh * 0.0;
+
+      scrollItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top + scrollY;
+        if (itemTop <= triggerPoint) {
+          activeBg = parseInt(item.dataset.bg);
+        }
+      });
+
+      setBackground(activeBg);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+
+</body>
+
+</html>
