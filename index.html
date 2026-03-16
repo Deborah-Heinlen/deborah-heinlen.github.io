@@ -19,7 +19,7 @@
       --black: #000000;
       --text-white: #ffffff;
       --white: #ffffff;
-    }
+    a}
 
     html { scroll-behavior: smooth; }
     html, body { background-color: var(--black); }
@@ -202,10 +202,10 @@
       padding: 4vh 12vw;
     }
 
-    .text-kambua  { justify-content: flex-start; }
+    .text-christy  { justify-content: flex-end; }
     .text-paula   { justify-content: flex-end; }
     .text-ashley  { justify-content: flex-end; }
-    .text-sam     { justify-content: flex-start; }
+    .text-kambua     { justify-content: flex-start; }
     .text-ben     { justify-content: flex-end; }
     .text-cortney { justify-content: flex-start; }
 
@@ -253,6 +253,11 @@
       pointer-events: none;
       z-index: 10;
       background: linear-gradient(to top, var(--black) 0%, rgba(245,240,232,0) 100%);
+      }
+      
+    .card-hero::before,
+    .card-hero::after {
+       background: transparent;
     }
 
     /* Card image side */
@@ -332,6 +337,7 @@
       height: 40vh;
       background: transparent;
     }
+ 
 
     /* ── FINAL STATEMENT (on the Saran Wrap) ─────────────────────── */
     .story-final {
@@ -347,13 +353,15 @@
       max-width: 800px;
       padding: 2rem 3rem;
     }
-    .story-final-text p {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2.8rem, 6vw, 6rem);
-      line-height: 1.2;
-      color: var(--text-white);
-      letter-spacing: 0.04em;
+    .story-final-text h2 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(2.6rem, 3vw, 2.4rem); color: var(--text-white);
+      letter-spacing: 0.04em; margin-bottom: 1.8rem;
+    }
+      .story-final-text p {
+       font-family: 'Jost', sans-serif; font-weight: 300;
+      font-size: clamp(1.4rem, 1.4vw, 1.05rem);
+      line-height: 1.9; color: var(--text-white); letter-spacing: 0.03em;
     }
     .story-final-text p em {
       font-style: italic;
@@ -377,7 +385,7 @@
     }
     .about-section p {
       font-family: 'Jost', sans-serif; font-weight: 300;
-      font-size: clamp(1.4rem, 1.4vw, 1.05rem);
+      font-size: clamp(1.05rem, 1.4vw, 1.4rem);
       line-height: 1.9; color: var(--text-white); letter-spacing: 0.03em;
     }
 
@@ -484,12 +492,12 @@
   <div id="story-section">
 
     <!-- LAYER 1: FIXED BACKGROUND IMAGES -->
-    <!-- Images: 0=Kambua, 1=Paula, 2=Ashley, 3=Sam, 4=Ben, 5=Cortney -->
+    <!-- Images: 0=Kambua, 1=Paula, 2=Ashley, 3=Kambua, 4=Ben, 5=Cortney -->
     <div id="story-bg">
-      <img class="bg-image active" data-index="0" src="images/Kambua.jpg"  alt="Kambua" />
+      <img class="bg-image active" data-index="0" src="images/Christy.jpg"  alt="Christy" />
       <img class="bg-image"        data-index="1" src="images/Paula.jpg"   alt="Paula" />
       <img class="bg-image"        data-index="2" src="images/Ashley.jpg"  alt="Ashley" />
-      <img class="bg-image"        data-index="3" src="images/Sam.jpg"     alt="Sam" />
+      <img class="bg-image"        data-index="3" src="images/Kambua.jpg"     alt="Kambua" />
       <img class="bg-image"        data-index="4" src="images/Ben.jpg"     alt="Ben" />
       <img class="bg-image"        data-index="5" src="images/Cortney.jpg" alt="Cortney" />
       <div class="bg-black" data-index="6"></div>
@@ -498,17 +506,19 @@
     <!-- LAYER 2: SCROLLING SARAN WRAP -->
     <div id="story-scroll">
 
-      <!-- OPENING CARD: shown on page load, scrolls away to reveal Kambua -->
-      <div class="story-card" style="justify-content: center; align-items: center;">
+      <!-- OPENING CARD: shown on page load, scrolls away to reveal Christy -->
+ 
+     <div class="story-card card-hero" style="justify-content: flex-end; align-items: center; background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
+         
         <img src="images/logowhite.png" alt="Deborah Heinlen Photography" style="width: 25%; max-width: 300px; height: auto;" />
       </div>
 
-      <!-- TEXT over Kambua (bg 0) -->
-      <div class="story-text-block text-kambua" data-bg="0">
+      <!-- TEXT over Christy (bg 0) -->
+      <div class="story-text-block text-christy" data-bg="0">
         <p>What story does your image tell?</p>
       </div>
 
-      <!-- Spacer so Kambua still shows before Dave card arrives -->
+      <!-- Spacer so Christy still shows before Dave card arrives -->
       <div class="card-spacer" data-bg="0"></div>
 
       <!-- CARD: Dave -- bg swaps to Paula (1) when top hits viewport top -->
@@ -547,7 +557,7 @@
       <!-- Spacer before Tevon card -->
       <div class="card-spacer" data-bg="2"></div>
 
-      <!-- CARD: Tevon -- bg swaps to Sam (3) -->
+      <!-- CARD: Tevon -- bg swaps to Kambua (3) -->
       <div class="story-card" data-bg="3">
         <div class="card-image-side">
           <img src="images/Tevon.jpg" alt="Tevon" />
@@ -557,8 +567,8 @@
         </div>
       </div>
 
-      <!-- TEXT over Sam (bg 3) -->
-      <div class="story-text-block text-sam" data-bg="3">
+      <!-- TEXT over Kambua (bg 3) -->
+      <div class="story-text-block text-kambua" data-bg="3">
         <p>Nothing gets overlooked.</p>
       </div>
 
@@ -611,22 +621,15 @@
         </div>
       </div>
 
-      <div class="card-spacer"></div>
-
-      <div class="story-final">
-        <div class="story-final-text">
-          <p>Confident. <em>Professional.</em> Unforgettable.</p>
-        </div>
-      </div>
-
     </div><!-- end #story-scroll -->
   </div><!-- end #story-section -->
 
   <!-- ABOUT SECTION -->
   <div class="about-section">
-    <h2>Every Headshot Begins with a Conversation.</h2>
-    <p>I photograph business professionals, executives, attorneys, physicians, and corporate teams from my studio in Hebron, Kentucky.  Every session is designed to make you look as capable and confident as you are.  The result is a headshot that works as hard as you do.</p>
+    <h2>Confident.<br><em>Professional.</em><br>Undeniable.</h2>
+    <p style="margin-top: 2.0rem;"> <em>The right headshot changes everything.  Let's make yours unforgettable.</em></p>
   </div>
+    
 
   <!-- COLLECTIONS GRID -->
   <section class="collections" id="collections">
@@ -634,7 +637,7 @@
     <div class="collections-grid">
 
       <a href="#" class="collection-card">
-        <img src="images/Kambua.jpg" alt="Studio Headshots" />
+        <img src="images/Christy.jpg" alt="Studio Headshots" />
         <div class="collection-info">
           <span class="collection-name">Studio Headshots</span>
           <span class="collection-count">Starting at $190</span>
@@ -650,7 +653,7 @@
       </a>
 
       <a href="#" class="collection-card">
-        <img src="images/Ashley.jpg" alt="Events" />
+        <img src="images/Kambua.jpg" alt="Events" />
         <div class="collection-info">
           <span class="collection-name">Event Photography</span>
           <span class="collection-count">Starting at $1,500</span>
@@ -697,10 +700,10 @@
     // image (0-5) should show when that element reaches the top of
     // the viewport.  JS watches scroll and hard-cuts to correct image.
     //
-    //   0 = Kambua.jpg
+    //   0 = Christy.jpg
     //   1 = Paula.jpg
     //   2 = Ashley.jpg
-    //   3 = Sam.jpg
+    //   3 = Kambua.jpg
     //   4 = Ben.jpg
     //   5 = Cortney.jpg
     // ================================================================
