@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Deborah Heinlen | Headshot Photographer Cincinnati &amp; Northern Kentucky</title>
+  <meta name="description" content="Learn about Deborah Heinlen, professional headshot photographer in Hebron, KY. Member of Peter Hurley's Headshot Crew. Serving Cincinnati and Northern Kentucky with warmth, expertise, and genuine care." />
+  <link rel="canonical" href="https://www.deborahheinlenphotography.com/about-deborah-heinlen/" />
+
+  <meta property="og:title" content="About Deborah Heinlen | Headshot Photographer Cincinnati &amp; Northern Kentucky" />
+  <meta property="og:description" content="Learn about Deborah Heinlen, professional headshot photographer in Hebron, KY. Member of Peter Hurley's Headshot Crew." />
+  <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/me-with-camera.jpg" />
+  <meta property="og:url" content="https://www.deborahheinlenphotography.com/about-deborah-heinlen/" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:      #f5f0e8;
+      --linen:      #ede8dc;
+      --warm-tan:   #c8b89a;
+      --text-dark:  #2e2419;
+      --text-mid:   #6b5c4a;
+      --text-light: #9e8e7a;
+      --black:      #000000;
+      --white:      #ffffff;
+      --text-white: #ffffff;
+      --header-h:   72px;
+      --nav-h:      44px;
+      --total-nav:  116px;
+    }
+
+    html { scroll-behavior: smooth; }
+    html, body {
+      background-color: var(--black);
+      color: var(--text-white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      background: rgba(242, 237, 232, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .header-logo { height: 40px; width: auto; display: block; }
+
+    .header-title {
+      font-family: "lindsey-signature", sans-serif;
+      font-weight: 400;
+      font-size: 3rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .header-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      border: 1px solid var(--warm-tan);
+      padding: 0.55rem 1.5rem;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAV STRIP
+       ═══════════════════════════════════════════════════════════════ */
+    .site-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0;
+      z-index: 199;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(237, 232, 220, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+      border-left: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .nav-link {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0 1.4rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: rgba(200, 184, 154, 0.2);
+      color: var(--text-dark);
+    }
+
+    .nav-link.has-dropdown::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 4px solid var(--text-light);
+      margin-left: 0.45rem;
+      transition: transform 0.2s;
+    }
+    .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      min-width: 260px;
+      background: rgba(237, 232, 220, 0.99);
+      border: 1px solid rgba(200, 184, 154, 0.3);
+      border-top: none;
+      z-index: 300;
+      list-style: none;
+      padding: 0.4rem 0;
+    }
+    .nav-item:hover .dropdown { display: block; }
+    .dropdown li a {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0.75rem 1.4rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown li a:hover { background: rgba(200, 184, 154, 0.2); color: var(--text-dark); }
+
+    /* Mobile nav */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0; bottom: 0;
+      background: rgba(237, 232, 220, 0.99);
+      z-index: 198;
+      overflow-y: auto;
+      padding: 2rem 2rem 4rem;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
+      transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--text-dark); }
+    .mobile-section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 200;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      margin-top: 1.2rem;
+      padding: 0.5rem 0 0.3rem;
+      display: block;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PAGE CONTENT
+       ═══════════════════════════════════════════════════════════════ */
+    .page-content { padding-top: var(--total-nav); }
+
+    /* ── HERO ──────────────────────────────────────────────────────── */
+    .page-hero {
+      position: relative;
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .page-hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .page-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(0.8) brightness(0.55);
+      display: block;
+    }
+
+    .page-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.1) 55%);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 8vw;
+      max-width: 700px;
+    }
+
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      color: var(--white);
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+
+    .page-hero-content p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      letter-spacing: 0.03em;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* ── BUTTONS ───────────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      text-decoration: none;
+      border: 1px solid var(--warm-tan);
+      padding: 0.85rem 2rem;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--warm-tan); color: var(--black); }
+
+    .btn-secondary {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.85rem 2rem;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+    /* ── CLIENT WORDS STRIP ────────────────────────────────────────── */
+    .words-strip {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      padding: 3.5rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5vw;
+      flex-wrap: wrap;
+    }
+
+    .words-strip-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      flex-shrink: 0;
+    }
+
+    .words-divider {
+      width: 1px;
+      height: 30px;
+      background: rgba(200, 184, 154, 0.25);
+    }
+
+    .client-word {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── STORY SECTION ─────────────────────────────────────────────── */
+    .story-section {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      display: flex;
+      align-items: stretch;
+    }
+
+    .story-image {
+      flex: 0 0 45%;
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(0.85);
+      display: block;
+    }
+
+    .story-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 65%, var(--black) 100%);
+      pointer-events: none;
+    }
+
+    .story-content {
+      flex: 0 0 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 6vw 5rem 4vw;
+    }
+
+    .story-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+
+    .story-content p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      line-height: 1.95;
+      letter-spacing: 0.03em;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 1.2rem;
+    }
+
+    .story-content p a {
+      color: var(--warm-tan);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
+      transition: border-color 0.2s;
+    }
+    .story-content p a:hover { border-color: var(--warm-tan); }
+
+    /* ── VALUES SECTION ────────────────────────────────────────────── */
+    .values-section {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      padding: 6rem 8vw;
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .values-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-top: 1rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(200, 184, 154, 0.15);
+      border-left: 1px solid rgba(200, 184, 154, 0.15);
+    }
+
+    .value-card {
+      border-right: 1px solid rgba(200, 184, 154, 0.15);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.15);
+      padding: 3rem 2.5rem;
+    }
+
+    .value-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2.8rem;
+      color: rgba(200, 184, 154, 0.2);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .value-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+      color: var(--white);
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .value-card p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── DUAL IMAGE SECTION ────────────────────────────────────────── */
+    .dual-section {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      display: flex;
+      align-items: stretch;
+      flex-direction: row-reverse;
+    }
+
+    .dual-image {
+      flex: 0 0 50%;
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+    }
+
+    .dual-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(0.85);
+      display: block;
+    }
+
+    .dual-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to left, transparent 60%, var(--black) 100%);
+      pointer-events: none;
+    }
+
+    .dual-content {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 6vw;
+    }
+
+    .dual-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .dual-content p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      line-height: 1.95;
+      letter-spacing: 0.03em;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 1.2rem;
+    }
+
+    .dual-content p a {
+      color: var(--warm-tan);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
+      transition: border-color 0.2s;
+    }
+    .dual-content p a:hover { border-color: var(--warm-tan); }
+
+    /* ── CREDENTIALS STRIP ─────────────────────────────────────────── */
+    .credentials-strip {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      padding: 4rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6vw;
+      flex-wrap: wrap;
+    }
+
+    .credential-item {
+      text-align: center;
+    }
+
+    .credential-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2.2rem;
+      color: var(--warm-tan);
+      letter-spacing: 0.04em;
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .credential-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .credential-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(200, 184, 154, 0.2);
+    }
+
+    /* ── TESTIMONIAL ───────────────────────────────────────────────── */
+    .testimonial-section {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      padding: 6rem 8vw;
+      text-align: center;
+    }
+
+    .stars { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 2.5rem; }
+    .stars span { color: var(--warm-tan); font-size: 1rem; }
+
+    .testimonial-section blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      color: var(--white);
+      line-height: 1.55;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .testimonial-section cite {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      font-style: normal;
+    }
+
+    /* ── MISSION SECTION ───────────────────────────────────────────── */
+    .mission-section {
+      background: var(--black);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+      padding: 7rem 8vw;
+      text-align: center;
+    }
+
+    .mission-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .mission-section p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.92rem;
+      line-height: 2;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.55);
+      max-width: 680px;
+      margin: 0 auto 3rem;
+    }
+
+    /* ── CTA SECTION ───────────────────────────────────────────────── */
+    .cta-section {
+      background: var(--black);
+      padding: 7rem 8vw;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta-section p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.5);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+    }
+
+    .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ */
+    .site-footer {
+      background: var(--black);
+      border-top: 1px solid rgba(200, 184, 154, 0.2);
+      padding: 4rem 3rem 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
+    .footer-brand p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-col h4 {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--warm-tan); }
+
+    .footer-contact-item {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+    .footer-contact-item:hover { color: var(--warm-tan); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(200, 184, 154, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .site-nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .header-title { font-size: 2.2rem; }
+
+      .story-section,
+      .dual-section { flex-direction: column; }
+      .story-image,
+      .dual-image { flex: none; width: 100%; min-height: 320px; }
+      .story-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
+      .dual-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
+      .story-content,
+      .dual-content { flex: none; width: 100%; padding: 3rem 2rem; }
+
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .credentials-strip { gap: 2.5rem; }
+      .credential-divider { display: none; }
+      .words-strip { gap: 1.5rem; }
+
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 0 1.25rem; }
+      .header-title { font-size: 1.8rem; }
+      .page-hero { min-height: 60vh; }
+      .page-hero-content { padding: 3rem 1.5rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .words-strip { flex-direction: column; gap: 1rem; text-align: center; }
+      .words-divider { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <a href="/"><img src="../images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
+    <a href="/" class="header-title">Deborah Heinlen Photography</a>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAV STRIP
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+      <li class="nav-item">
+        <a href="#" class="nav-link has-dropdown">Services</a>
+        <ul class="dropdown">
+          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
+          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
+          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link has-dropdown">Portfolio</a>
+        <ul class="dropdown">
+          <li><a href="/portfolio/">Headshots Portfolio</a></li>
+          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="/about-deborah-heinlen/" class="nav-link active">About</a></li>
+      <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="/contact-deborah-heinlen/" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="/">Home</a>
+    <span class="mobile-section-label">Services</span>
+    <a href="/the-headshot-experience/">Studio Headshots</a>
+    <a href="/corporate-headshots/">Corporate Headshots</a>
+    <a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a>
+    <span class="mobile-section-label">Portfolio</span>
+    <a href="/portfolio/">Headshots Portfolio</a>
+    <a href="/corporate-event-portfolio/">Events Portfolio</a>
+    <a href="/about-deborah-heinlen/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact-deborah-heinlen/">Contact</a>
+  </nav>
+
+
+  <main class="page-content">
+
+    <!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+    <section class="page-hero">
+      <div class="page-hero-image">
+        <img src="/images/me-with-camera.jpg" alt="Deborah Heinlen, professional headshot photographer in Cincinnati and Northern Kentucky" />
+      </div>
+      <div class="page-hero-content">
+        <span class="section-label">About Deborah</span>
+        <h1>The photographer who makes you forget you're being photographed.</h1>
+        <p>"She made me feel comfortable and at ease."&nbsp; "It was like taking pictures with an old friend."&nbsp; "I was nervous at first, but Deborah made it fun."</p>
+      </div>
+    </section>
+
+    <!-- ── CLIENT WORDS ────────────────────────────────────────────── -->
+    <div class="words-strip">
+      <span class="words-strip-label">Clients Say</span>
+      <div class="words-divider"></div>
+      <span class="client-word">"Comfortable"</span>
+      <div class="words-divider"></div>
+      <span class="client-word">"Like an old friend"</span>
+      <div class="words-divider"></div>
+      <span class="client-word">"Made it fun"</span>
+      <div class="words-divider"></div>
+      <span class="client-word">"Outstanding"</span>
+      <div class="words-divider"></div>
+      <span class="client-word">"Above and beyond"</span>
+    </div>
+
+    <!-- ── STORY ───────────────────────────────────────────────────── -->
+    <section class="story-section">
+      <div class="story-image">
+        <img src="/images/me-taking-pic.jpg" alt="Deborah Heinlen photographing a client in her Hebron Kentucky studio" />
+      </div>
+      <div class="story-content">
+        <span class="section-label">My Story</span>
+        <h2>A lifelong connection to photography, and to people.</h2>
+        <p>I grew up with a camera in my hands.&nbsp; My father was a passionate hobbyist photographer for 65 years, and our house had a darkroom where I learned to develop black and white film as a kid.&nbsp; Photography has been part of my life for as long as I can remember.&nbsp; <a href="/blog/his-finger-on-the-shutter-button/">Read about my father's influence on my work.</a></p>
+        <p>A couple of years ago, I decided to go professional and specialize in headshots.&nbsp; Why headshots?&nbsp; Because I love the moment when someone sees themselves in a photograph with new confidence they've never had before.&nbsp; That transformation from "I hate having my picture taken" to "Wow, that's really me?" is what I'm here for.</p>
+        <p>As a member of Peter Hurley's Headshot Crew, I receive ongoing training and mentorship from one of the world's most respected headshot photographers.&nbsp; This means I'm constantly refining my technique and bringing the best practices to every session.</p>
+        <p>And here's what might surprise you: I'm also a nurse.&nbsp; Every day, I care for people during vulnerable and stressful moments.&nbsp; That same approach carries into my photography.&nbsp; Whether you're nervous about being in front of the camera or simply want to look your absolute best, I'm here to guide you with patience and encouragement.</p>
+      </div>
+    </section>
+
+    <!-- ── VALUES ─────────────────────────────────────────────────── -->
+    <section class="values-section">
+      <div class="values-header">
+        <span class="section-label">What Guides My Work</span>
+        <h2>The Heart Behind Every Session</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-number">01</span>
+          <h3>Comfort First</h3>
+          <p>A great photograph begins long before I press the shutter.&nbsp; It starts with helping you feel comfortable, supported, and confident.&nbsp; Most people arrive feeling unsure.&nbsp; By the end, they are relaxed, smiling, and surprised by how natural it all felt.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-number">02</span>
+          <h3>Genuine Connection</h3>
+          <p>Photography is more than a profession to me &mdash; it's a way to connect with people and help them see the best in themselves.&nbsp; I care deeply about every individual and business I work with, and I'm committed to images that make a meaningful impact.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-number">03</span>
+          <h3>Intentional Excellence</h3>
+          <p>As a member of Peter Hurley's Headshot Crew, I receive ongoing mentorship from one of the world's most respected headshot photographers.&nbsp; I'm constantly refining my technique so every session reflects current best practices in lighting, posing, and expression.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-number">04</span>
+          <h3>A Nurse's Patience</h3>
+          <p>Every day at work, I care for people in vulnerable moments with calm, patience, and genuine care.&nbsp; That same energy shows up in my studio.&nbsp; Your comfort is never an afterthought &mdash; it's the foundation of every session I deliver.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-number">05</span>
+          <h3>Your Purpose, Served</h3>
+          <p>Whether you need a polished headshot for your next career step or a full team session for your brand, my goal is always the same: to guide you with warmth, professionalism, and genuine dedication to your success.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-number">06</span>
+          <h3>Rooted in Craft</h3>
+          <p>I learned photography in my father's darkroom.&nbsp; That foundation &mdash; patience, attention to light, respect for the process &mdash; shapes every image I make.&nbsp; Photography isn't just what I do.&nbsp; It's who I am.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DUAL SECTION: BTS ───────────────────────────────────────── -->
+    <section class="dual-section">
+      <div class="dual-image">
+        <img src="/images/me-with-client.jpg" alt="Deborah Heinlen working with a client during a headshot session in Hebron Kentucky" />
+      </div>
+      <div class="dual-content">
+        <span class="section-label">A Welcoming Experience</span>
+        <h2>A photography experience built around you.</h2>
+        <p>I work with individuals and teams across Northern Kentucky and Cincinnati to create headshots that reflect confidence, approachability, and authenticity.&nbsp; Whether we are shooting in my home studio or on location, my focus is always on who you are and how you want to be seen.</p>
+        <p>My clients trust me because I take the time to guide them through each step.&nbsp; From expression coaching to gentle encouragement, I create a space where you can relax, breathe, and feel supported.&nbsp; Every session is a collaboration, and my hope is that you leave feeling proud of what we created together.</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+          <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book a Session</a>
+          <a href="/contact-deborah-heinlen/" class="btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CREDENTIALS ─────────────────────────────────────────────── -->
+    <div class="credentials-strip">
+      <div class="credential-item">
+        <span class="credential-value">5.0</span>
+        <span class="credential-label">Stars on Google</span>
+      </div>
+      <div class="credential-divider"></div>
+      <div class="credential-item">
+        <span class="credential-value">200+</span>
+        <span class="credential-label">Executives Photographed</span>
+      </div>
+      <div class="credential-divider"></div>
+      <div class="credential-item">
+        <span class="credential-value">PPA</span>
+        <span class="credential-label">Professional Photographers of America</span>
+      </div>
+      <div class="credential-divider"></div>
+      <div class="credential-item">
+        <span class="credential-value">HC</span>
+        <span class="credential-label">Peter Hurley's Headshot Crew</span>
+      </div>
+    </div>
+
+    <!-- ── TESTIMONIAL ─────────────────────────────────────────────── -->
+    <section class="testimonial-section">
+      <div class="stars">
+        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+      </div>
+      <blockquote>
+        "Deborah is outstanding!&nbsp; As a professional model I take lots of photos and I can say she knows her stuff!&nbsp; This session was so fun, comfortable and resulted in the exact type of shots I was needing to update my portfolio.&nbsp; Book with her asap!"
+      </blockquote>
+      <cite>&mdash; Laura</cite>
+    </section>
+
+    <!-- ── MISSION ─────────────────────────────────────────────────── -->
+    <section class="mission-section">
+      <span class="section-label">My Mission</span>
+      <h2>Authentic images that build trust and strengthen your brand.</h2>
+      <p>My mission is to help businesses and individuals in Cincinnati and Northern Kentucky present themselves with authentic, professional images that build trust and reinforce their brand identity.&nbsp; I strive to make every photography session comfortable, relaxed, and enjoyable, so that each client feels confident and at ease in front of the camera.&nbsp; Through clean, modern headshots that highlight approachability and professionalism, I empower clients to consistently make a strong, positive impression.</p>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────────────────────── -->
+    <section class="cta-section">
+      <h2>Ready to Feel Confident in Front of the Camera?</h2>
+      <p>If you're ready for a photography experience that puts you at ease and brings out your best, I'd love to work with you.&nbsp; Let's create images that reflect your true self and move you toward your next opportunity with confidence.</p>
+      <div class="cta-buttons">
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book a Session</a>
+        <a href="/contact-deborah-heinlen/" class="btn-secondary">Contact Deborah</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
+        <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
+        <img src="/images/ppa-logo.png" alt="Professional Photographers of America" class="footer-badge" />
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
+          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
+          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/portfolio/">Headshots Portfolio</a></li>
+          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
+          <li><a href="/about-deborah-heinlen/">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
+        <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
+        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
+        <br />
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deborah Heinlen Photography &nbsp;&middot;&nbsp; All images are protected by copyright owned by Deborah Heinlen.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/return-policy/">Returns Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>

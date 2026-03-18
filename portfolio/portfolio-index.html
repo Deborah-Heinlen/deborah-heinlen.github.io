@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Headshots Portfolio | Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography</title>
+  <meta name="description" content="Explore a curated portfolio of executive headshots, business portraits, and professional studio photography created for clients across Cincinnati and Northern Kentucky." />
+  <link rel="canonical" href="https://www.deborahheinlenphotography.com/portfolio/" />
+
+  <meta property="og:title" content="Professional Headshots Portfolio | Deborah Heinlen Photography" />
+  <meta property="og:description" content="Explore a curated portfolio of executive headshots, business portraits, and professional studio photography across Cincinnati and Northern Kentucky." />
+  <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/Ashley.jpg" />
+  <meta property="og:url" content="https://www.deborahheinlenphotography.com/portfolio/" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:      #f5f0e8;
+      --linen:      #ede8dc;
+      --warm-tan:   #c8b89a;
+      --text-dark:  #2e2419;
+      --text-mid:   #6b5c4a;
+      --text-light: #9e8e7a;
+      --black:      #000000;
+      --white:      #ffffff;
+      --text-white: #ffffff;
+      --header-h:   72px;
+      --nav-h:      44px;
+      --total-nav:  116px;
+    }
+
+    html { scroll-behavior: smooth; }
+    html, body {
+      background-color: var(--black);
+      color: var(--text-white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      background: rgba(242, 237, 232, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .header-logo { height: 40px; width: auto; display: block; }
+
+    .header-title {
+      font-family: "lindsey-signature", sans-serif;
+      font-weight: 400;
+      font-size: 3rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    .header-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      border: 1px solid var(--warm-tan);
+      padding: 0.55rem 1.5rem;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAV STRIP
+       ═══════════════════════════════════════════════════════════════ */
+    .site-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0;
+      z-index: 199;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(237, 232, 220, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+      border-left: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid rgba(200, 184, 154, 0.3);
+    }
+
+    .nav-link {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0 1.4rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: rgba(200, 184, 154, 0.2);
+      color: var(--text-dark);
+    }
+
+    .nav-link.has-dropdown::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 4px solid var(--text-light);
+      margin-left: 0.45rem;
+      transition: transform 0.2s;
+    }
+    .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      min-width: 260px;
+      background: rgba(237, 232, 220, 0.99);
+      border: 1px solid rgba(200, 184, 154, 0.3);
+      border-top: none;
+      z-index: 300;
+      list-style: none;
+      padding: 0.4rem 0;
+    }
+    .nav-item:hover .dropdown { display: block; }
+    .dropdown li a {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0.75rem 1.4rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown li a:hover { background: rgba(200, 184, 154, 0.2); color: var(--text-dark); }
+
+    /* Mobile nav */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0; bottom: 0;
+      background: rgba(237, 232, 220, 0.99);
+      z-index: 198;
+      overflow-y: auto;
+      padding: 2rem 2rem 4rem;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
+      transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--text-dark); }
+    .mobile-section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 200;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      margin-top: 1.2rem;
+      padding: 0.5rem 0 0.3rem;
+      display: block;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PAGE CONTENT
+       ═══════════════════════════════════════════════════════════════ */
+    .page-content { padding-top: var(--total-nav); }
+
+    /* ── PAGE HEADER ───────────────────────────────────────────────── */
+    .page-header {
+      padding: 5rem 8vw 4rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+    }
+
+    .page-header .section-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-header p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.5);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── PORTFOLIO SWITCH NAV ──────────────────────────────────────── */
+    .portfolio-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
+    }
+
+    .portfolio-nav a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      padding: 1.4rem 3rem;
+      border-right: 1px solid rgba(200, 184, 154, 0.12);
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .portfolio-nav a:first-child {
+      border-left: 1px solid rgba(200, 184, 154, 0.12);
+    }
+
+    .portfolio-nav a:hover { color: var(--white); }
+
+    .portfolio-nav a.active {
+      color: var(--warm-tan);
+      border-bottom: 2px solid var(--warm-tan);
+    }
+
+    /* ── MASONRY GRID ──────────────────────────────────────────────── */
+    .gallery-section {
+      padding: 4rem 4vw 6rem;
+    }
+
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(0.85);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .masonry-item:hover img {
+      transform: scale(1.04);
+      filter: saturate(1) brightness(0.95);
+    }
+
+    /* Subtle overlay on hover */
+    .masonry-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s;
+      pointer-events: none;
+    }
+    .masonry-item:hover::after {
+      background: rgba(0,0,0,0.08);
+    }
+
+    /* ── LIGHTBOX ──────────────────────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.95);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: var(--white); }
+
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.6);
+      font-size: 1.2rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .lightbox-prev:hover,
+    .lightbox-next:hover { border-color: var(--warm-tan); color: var(--warm-tan); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    /* ── CTA SECTION ───────────────────────────────────────────────── */
+    .cta-section {
+      background: var(--black);
+      border-top: 1px solid rgba(200, 184, 154, 0.12);
+      padding: 6rem 8vw;
+      text-align: center;
+    }
+
+    .cta-section .section-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta-section p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.5);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+    }
+
+    .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      text-decoration: none;
+      border: 1px solid var(--warm-tan);
+      padding: 0.85rem 2rem;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-primary:hover { background: var(--warm-tan); color: var(--black); }
+
+    .btn-secondary {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.85rem 2rem;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ */
+    .site-footer {
+      background: var(--black);
+      border-top: 1px solid rgba(200, 184, 154, 0.2);
+      padding: 4rem 3rem 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
+    .footer-brand p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-col h4 {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--warm-tan);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--warm-tan); }
+
+    .footer-contact-item {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+    .footer-contact-item:hover { color: var(--warm-tan); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(200, 184, 154, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.25);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .site-nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .header-title { font-size: 2.2rem; }
+      .masonry-grid { columns: 2; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 0 1.25rem; }
+      .header-title { font-size: 1.8rem; }
+      .page-header { padding: 3rem 1.5rem 2.5rem; }
+      .gallery-section { padding: 2rem 1rem 4rem; }
+      .masonry-grid { columns: 2; column-gap: 0.5rem; }
+      .masonry-item { margin-bottom: 0.5rem; }
+      .portfolio-nav a { padding: 1.2rem 1.5rem; }
+      .lightbox-prev { left: 0.5rem; }
+      .lightbox-next { right: 0.5rem; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <a href="/"><img src="/images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
+    <a href="/" class="header-title">Deborah Heinlen Photography</a>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAV STRIP
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+      <li class="nav-item">
+        <a href="#" class="nav-link has-dropdown">Services</a>
+        <ul class="dropdown">
+          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
+          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
+          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link has-dropdown active">Portfolio</a>
+        <ul class="dropdown">
+          <li><a href="/portfolio/">Headshots Portfolio</a></li>
+          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="/about-deborah-heinlen/" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="/contact-deborah-heinlen/" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="/">Home</a>
+    <span class="mobile-section-label">Services</span>
+    <a href="/the-headshot-experience/">Studio Headshots</a>
+    <a href="/corporate-headshots/">Corporate Headshots</a>
+    <a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a>
+    <span class="mobile-section-label">Portfolio</span>
+    <a href="/portfolio/">Headshots Portfolio</a>
+    <a href="/corporate-event-portfolio/">Events Portfolio</a>
+    <a href="/about-deborah-heinlen/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact-deborah-heinlen/">Contact</a>
+  </nav>
+
+
+  <main class="page-content">
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────── -->
+    <div class="page-header">
+      <span class="section-label">Portfolio</span>
+      <h1>Professional Headshots &amp; Corporate Portraits</h1>
+      <p>A curated selection of executive headshots and business portraits created for professionals across Cincinnati and Northern Kentucky.&nbsp; Each image reflects clean, modern lighting, natural expression, and a polished style that elevates your brand.</p>
+    </div>
+
+    <!-- ── PORTFOLIO SWITCH NAV ────────────────────────────────────── -->
+    <nav class="portfolio-nav" aria-label="Portfolio sections">
+      <a href="/portfolio/" class="active">Headshots</a>
+      <a href="/corporate-event-portfolio/">Corporate Events</a>
+    </nav>
+
+    <!-- ── MASONRY GALLERY ─────────────────────────────────────────── -->
+    <section class="gallery-section">
+      <div class="masonry-grid" id="gallery">
+
+        <div class="masonry-item" data-src="/images/Christy.jpg" data-alt="Professional headshot Cincinnati">
+          <img src="/images/Christy.jpg" alt="Professional headshot of a smiling business professional photographed by Deborah Heinlen in Cincinnati" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Tevon.jpg" data-alt="Corporate headshot Cincinnati">
+          <img src="/images/Tevon.jpg" alt="Modern corporate headshot of a young professional with clean studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Paula.jpg" data-alt="Professional portrait Cincinnati">
+          <img src="/images/Paula.jpg" alt="Professional headshot of a woman with a colorful outfit and soft studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Dave.jpg" data-alt="Executive headshot Cincinnati">
+          <img src="/images/Dave.jpg" alt="Executive headshot of a male professional in a suit, photographed with clean modern lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Kambua.jpg" data-alt="Business headshot Northern Kentucky">
+          <img src="/images/Kambua.jpg" alt="Professional headshot of a woman with natural expression and soft studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Peter.jpg" data-alt="Professional headshot Cincinnati">
+          <img src="/images/Peter.jpg" alt="Modern headshot of a male professional with relaxed expression and clean studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Ashley.jpg" data-alt="LinkedIn profile headshot Cincinnati">
+          <img src="/images/Ashley.jpg" alt="Professional business headshot with a confident smile and polished studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Greg.jpg" data-alt="Executive portrait Cincinnati">
+          <img src="/images/Greg.jpg" alt="Corporate headshot of a male professional in a suit jacket with clean lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Laura.jpg" data-alt="Professional headshot Northern Kentucky">
+          <img src="/images/Laura.jpg" alt="Professional headshot of a woman with shoulder-length hair, photographed for corporate branding" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Ben.jpg" data-alt="Business portrait Cincinnati">
+          <img src="/images/Ben.jpg" alt="Creative professional headshot photographed with dramatic studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Erica.jpg" data-alt="Headshot photographer Cincinnati">
+          <img src="/images/Erica.jpg" alt="Professional headshot of a male executive wearing glasses with modern lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Meaghan.jpg" data-alt="Corporate portrait Northern Kentucky">
+          <img src="/images/Meaghan.jpg" alt="Professional headshot of a woman with dark hair and red lipstick, soft studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Alex.jpg" data-alt="Professional headshot Cincinnati">
+          <img src="/images/Alex.jpg" alt="Modern headshot of a young professional smiling confidently with clean studio lighting" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Briana.jpg" data-alt="Business headshot Cincinnati">
+          <img src="/images/Briana.jpg" alt="Professional headshot of a woman with braided hair and a confident expression" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Daniel.jpg" data-alt="Executive headshot Northern Kentucky">
+          <img src="/images/Daniel.jpg" alt="Professional headshot by Deborah Heinlen Photography in Cincinnati and Northern Kentucky" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Mike.jpg" data-alt="Professional portrait Cincinnati">
+          <img src="/images/Mike.jpg" alt="Professional headshot by Deborah Heinlen Photography in Cincinnati and Northern Kentucky" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Rebecca.jpg" data-alt="Corporate headshot Cincinnati">
+          <img src="/images/Rebecca.jpg" alt="Professional headshot by Deborah Heinlen Photography in Cincinnati and Northern Kentucky" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Sam.jpg" data-alt="Business portrait Northern Kentucky">
+          <img src="/images/Sam.jpg" alt="Professional headshot by Deborah Heinlen Photography in Cincinnati and Northern Kentucky" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Wayne.jpg" data-alt="Executive portrait Cincinnati">
+          <img src="/images/Wayne.jpg" alt="Professional headshot by Deborah Heinlen Photography in Cincinnati and Northern Kentucky" loading="lazy" />
+        </div>
+
+        <div class="masonry-item" data-src="/images/Cortney.jpg" data-alt="Professional headshot Cincinnati">
+          <img src="/images/Cortney.jpg" alt="Professional headshot by Deborah Heinlen Photography in Cincinnati and Northern Kentucky" loading="lazy" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────────────────────── -->
+    <section class="cta-section">
+      <span class="section-label">Ready to Get Started?</span>
+      <h2>Your Turn in Front of the Camera</h2>
+      <p>Every professional deserves a headshot that reflects their best self.&nbsp; Let's create yours &mdash; a polished, confident image you're proud to put in front of clients, colleagues, and opportunities.</p>
+      <div class="cta-buttons">
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book Your Session</a>
+        <a href="/the-headshot-experience/" class="btn-secondary">View Session Options</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── LIGHTBOX ────────────────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightbox-close">Close &times;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+    <img src="" alt="" id="lightbox-img" />
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
+        <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
+        <img src="/images/ppa-logo.png" alt="Professional Photographers of America" class="footer-badge" />
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
+          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
+          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/portfolio/">Headshots Portfolio</a></li>
+          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
+          <li><a href="/about-deborah-heinlen/">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
+        <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
+        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
+        <br />
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deborah Heinlen Photography &nbsp;&middot;&nbsp; All images are protected by copyright owned by Deborah Heinlen.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/return-policy/">Returns Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // ── MOBILE MENU ────────────────────────────────────────────────
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ── LIGHTBOX ───────────────────────────────────────────────────
+    const items    = Array.from(document.querySelectorAll('.masonry-item'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightbox-img');
+    let current    = 0;
+
+    function openLightbox(index) {
+      current = index;
+      const item = items[index];
+      lbImg.src = item.dataset.src;
+      lbImg.alt = item.dataset.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    function prevImage() {
+      current = (current - 1 + items.length) % items.length;
+      openLightbox(current);
+    }
+
+    function nextImage() {
+      current = (current + 1) % items.length;
+      openLightbox(current);
+    }
+
+    items.forEach((item, i) => {
+      item.addEventListener('click', () => openLightbox(i));
+    });
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', prevImage);
+    document.getElementById('lightbox-next').addEventListener('click', nextImage);
+
+    // Close on backdrop click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   prevImage();
+      if (e.key === 'ArrowRight')  nextImage();
+    });
+  </script>
+
+</body>
+</html>
