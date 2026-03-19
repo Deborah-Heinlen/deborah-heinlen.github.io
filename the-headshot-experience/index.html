@@ -55,54 +55,39 @@
     .page-content { padding-top: var(--total-nav); }
     .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1.2rem; }
 
-   /* CAROUSEL */
-    .hero-carousel {
-      width: 100%;
-      overflow: hidden;
-      background: var(--black);
-      border-bottom: 1px solid rgba(200,184,154,0.12);
-    }
+  /* CAROUSEL */
+.hero-carousel {
+  background: var(--black);
+  border-top: 1px solid rgba(200,184,154,0.25);
+  border-bottom: 1px solid rgba(200,184,154,0.12);
+  padding: 2rem 0;
+  overflow: hidden;
+}
 
-    .carousel-track {
-      display: flex;
-      width: max-content;
-      animation: conveyor 40s linear infinite;
-    }
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  padding: 0 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
 
-    .carousel-track:hover {
-      animation-play-state: paused;
-    }
+.carousel-slide {
+  flex: 0 0 280px;
+  height: 360px;
+  overflow: hidden;
+}
 
-    .carousel-slide {
-      flex-shrink: 0;
-      width: 33.333vw;
-    }
-
-    .carousel-slide + .carousel-slide {
-      border-left: 4px solid var(--black);
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      height: 45vh;
-      object-fit: cover;
-      object-position: center 20%;
-      filter: saturate(0.88) brightness(0.85);
-      display: block;
-    }
-
-    @keyframes conveyor {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    @media (max-width: 900px) {
-      .carousel-slide { width: 50vw; }
-    }
-
-    @media (max-width: 600px) {
-      .carousel-slide { width: 100vw; }
-      .carousel-slide img { height: 70vw; object-position: center 30%; }    }
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.88) brightness(0.85);
+  display: block;
+}
 
     /* PAGE INTRO */
     .page-intro { background: var(--black); padding: 5rem 8vw 4rem; text-align: center; border-bottom: 1px solid rgba(200,184,154,0.12); }
