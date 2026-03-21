@@ -9,7 +9,7 @@
 
   <meta property="og:title" content="Corporate Event Photography Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography" />
   <meta property="og:description" content="Professional corporate event photography for conferences, fundraisers, meetings, and business gatherings across Cincinnati and Northern Kentucky." />
-  <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/me-taking-pic.jpg" />
+  <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/corporate-event-portfolio-16.jpg" />
   <meta property="og:url" content="https://www.deborahheinlenphotography.com/corporate-event-photography-in-cincinnati-northern-kentucky/" />
   <meta property="og:type" content="website" />
 
@@ -234,19 +234,18 @@
        ═══════════════════════════════════════════════════════════════ */
     .page-content { padding-top: var(--total-nav); }
 
-    /* ── PAGE HERO ─────────────────────────────────────────────────── */
+    /* ── HERO ──────────────────────────────────────────────────────── */
     .page-hero {
-      position: relative;
-      min-height: 72vh;
       display: flex;
-      align-items: flex-end;
-      overflow: hidden;
+      align-items: stretch;
+      min-height: 80vh;
+      border-bottom: 1px solid rgba(200, 184, 154, 0.12);
     }
 
     .page-hero-image {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+      flex: 0 0 55%;
+      position: relative;
+      overflow: hidden;
     }
 
     .page-hero-image img {
@@ -254,7 +253,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center center;
-      filter: saturate(0.85) brightness(0.5);
+      filter: saturate(0.85) brightness(0.9);
       display: block;
     }
 
@@ -262,14 +261,18 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 55%);
+      background: linear-gradient(to right, transparent 65%, var(--black) 100%);
+      pointer-events: none;
     }
 
     .page-hero-content {
+      flex: 0 0 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 6vw;
       position: relative;
       z-index: 1;
-      padding: 5rem 8vw;
-      max-width: 780px;
     }
 
     .section-label {
@@ -286,7 +289,7 @@
     .page-hero-content h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-size: clamp(2.2rem, 3.5vw, 3.6rem);
       color: var(--white);
       letter-spacing: 0.03em;
       line-height: 1.1;
@@ -296,11 +299,10 @@
     .page-hero-content p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-size: clamp(0.82rem, 1.1vw, 0.95rem);
       letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.65);
       line-height: 1.8;
-      max-width: 580px;
       margin-bottom: 2.2rem;
     }
 
@@ -784,9 +786,14 @@
        RESPONSIVE
        ═══════════════════════════════════════════════════════════════ */
     @media (max-width: 900px) {
-    .site-nav { display: none; }
-    .mobile-menu-btn { display: flex; }
-    .header-title { display: none; }
+      .site-nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .header-title { display: none; }
+
+      .page-hero { flex-direction: column; }
+      .page-hero-image { flex: none; width: 100%; min-height: 350px; }
+      .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
+      .page-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
 
       .event-types-inner { grid-template-columns: 1fr; gap: 2rem; }
       .event-types-grid { grid-template-columns: 1fr; }
@@ -807,7 +814,6 @@
 
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
-      .page-hero { min-height: 55vh; }
       .page-hero-content { padding: 3rem 1.5rem; }
       .coverage-grid { grid-template-columns: 1fr; }
       .faq-item { padding: 1.8rem 1.5rem; }
@@ -880,7 +886,7 @@
     <!-- ── PAGE HERO ──────────────────────────────────────────────── -->
     <section class="page-hero">
       <div class="page-hero-image">
-        <img src="/images/looking-at-laptop.jpg" alt="Corporate event photography Cincinnati and Northern Kentucky" />
+        <img src="/images/corporate-event-portfolio-16.jpg" alt="Corporate event photography Cincinnati and Northern Kentucky" />
       </div>
       <div class="page-hero-content">
         <span class="section-label">Events &amp; Conferences</span>
@@ -921,7 +927,7 @@
       <!-- Experienced & Trusted -->
       <div class="value-row">
         <div class="value-image">
-          <img src="/images/me-with-camera.jpg" alt="Deborah Heinlen photographing a corporate event in Cincinnati" />
+          <img src="/images/corporate-event-portfolio-25.jpg" alt="Panel discussion at corporate conference in Cincinnati" />
         </div>
         <div class="value-content">
           <span class="section-label">Experienced &amp; Trusted</span>
@@ -934,7 +940,7 @@
       <!-- Visual Storytelling -->
       <div class="value-row reverse">
         <div class="value-image">
-          <img src="/images/me-at-laptop.jpg" alt="Corporate event photography visual storytelling Cincinnati" />
+          <img src="/images/corporate-event-portfolio-01.jpg" alt="Live entertainment photography at corporate event Cincinnati" />
         </div>
         <div class="value-content">
           <span class="section-label">Visual Storytelling</span>
@@ -947,7 +953,7 @@
       <!-- Effortless Coordination -->
       <div class="value-row">
         <div class="value-image">
-          <img src="/images/me-at-laptop-2.jpg" alt="Effortless event photography coordination Cincinnati" />
+          <img src="/images/corporate-event-portfolio-21.jpg" alt="Candid networking moment at corporate event in Northern Kentucky" />
         </div>
         <div class="value-content">
           <span class="section-label">Effortless Coordination</span>
