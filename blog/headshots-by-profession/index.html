@@ -52,16 +52,58 @@
     .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
     .mobile-nav a:hover { color: var(--text-dark); }
     .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
+
+    /* ── PAGE ── */
     .page-content { padding-top: var(--total-nav); }
-    .post-hero { position: relative; height: 65vh; overflow: hidden; }
-    .post-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: saturate(0.85) brightness(0.55); display: block; }
-    .post-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #000000d9 0%, #0000001a 60%); }
-    .post-header { max-width: 780px; margin: 0 auto; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid var(--border-faint); }
+
+    /* ── POST HERO: side-by-side matching blog index featured post ── */
+    .post-hero {
+      display: flex;
+      align-items: stretch;
+      min-height: 70vh;
+      border-bottom: 1px solid var(--border-faint);
+      text-decoration: none;
+    }
+
+    .post-hero-image {
+      flex: 0 0 50%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      filter: saturate(0.85) brightness(0.8);
+      display: block;
+    }
+
+    .post-hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 65%, var(--black) 100%);
+      pointer-events: none;
+    }
+
+    .post-hero-content {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 6vw;
+    }
+
+    /* ── POST HEADER (below hero) ── */
     .post-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
     .post-date { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: #555555; }
     .post-tag { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-tan); border: 1px solid var(--border-mid); padding: 0.2rem 0.6rem; }
-    .post-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 4.5vw, 3.6rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.15; margin-bottom: 1.5rem; }
-    .post-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.1rem, 1.8vw, 1.4rem); color: var(--body-muted); line-height: 1.6; letter-spacing: 0.02em; }
+    .post-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3.2rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.15; margin-bottom: 1.5rem; }
+    .post-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1rem, 1.6vw, 1.3rem); color: var(--body-muted); line-height: 1.6; letter-spacing: 0.02em; }
+
+    /* ── POST BODY ── */
     .post-body { max-width: 780px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
     .post-body p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.92rem, 1.3vw, 1rem); line-height: 2; letter-spacing: 0.03em; color: var(--body-text); margin-bottom: 1.8rem; }
     .post-body h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin: 3rem 0 1.2rem; }
@@ -73,29 +115,37 @@
     .post-body blockquote { border-left: 2px solid var(--warm-tan); padding: 0.5rem 0 0.5rem 2rem; margin: 2.5rem 0; }
     .post-body blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.2vw, 1.7rem); color: var(--body-muted); line-height: 1.5; letter-spacing: 0.02em; margin-bottom: 0; }
     .post-image { width: 100%; margin: 3rem 0; }
-    .post-image img { width: 100%; height: auto; max-height: 560px; object-fit: cover; object-position: center top; filter: saturate(0.88); display: block; }
+    .post-image img { width: 100%; height: auto; max-height: 560px; object-fit: cover; object-position: center 20%; filter: saturate(0.88); display: block; }
     .post-image figcaption { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #444444; text-align: center; margin-top: 0.8rem; }
     .post-rule { width: 60px; height: 1px; background: var(--border-mid); margin: 3rem auto; }
     .post-body a { color: var(--warm-tan); text-decoration: none; border-bottom: 1px solid var(--border-mid); transition: border-color 0.2s; }
     .post-body a:hover { border-color: var(--warm-tan); }
+
+    /* ── AUTHOR ── */
     .post-author { max-width: 780px; margin: 0 auto 2rem; padding: 2.5rem 2rem; border-top: 1px solid var(--border-faint); border-bottom: 1px solid var(--border-faint); display: flex; align-items: center; gap: 1.5rem; }
     .author-image { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
     .author-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; }
     .author-info h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm-tan); margin-bottom: 0.4rem; }
     .author-info p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.05em; color: var(--body-faint); line-height: 1.6; }
+
+    /* ── BACK LINK ── */
     .back-to-blog { max-width: 780px; margin: 0 auto; padding: 2rem 2rem 0; }
     .back-link { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--body-faint); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
     .back-link:hover { color: var(--warm-tan); }
+
+    /* ── RELATED POSTS ── */
     .related-section { border-top: 1px solid var(--border-faint); padding: 5rem 8vw 6rem; }
     .related-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 3rem; }
     .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .related-card { display: block; text-decoration: none; border-bottom: 1px solid var(--border-faint); padding-bottom: 2rem; transition: border-color 0.3s; }
     .related-card:hover { border-color: var(--border-hover); }
-    .related-card-image { width: 100%; height: 180px; overflow: hidden; margin-bottom: 1.2rem; }
-    .related-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85) brightness(0.8); display: block; transition: transform 0.6s ease; }
+    .related-card-image { width: 100%; height: 320px; overflow: hidden; margin-bottom: 1.2rem; }
+    .related-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: saturate(0.85) brightness(0.8); display: block; transition: transform 0.6s ease; }
     .related-card:hover .related-card-image img { transform: scale(1.05); }
     .related-card .post-meta { margin-bottom: 0.6rem; }
     .related-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.25; }
+
+    /* ── CTA ── */
     .cta-section { background: var(--black); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
     .cta-section .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1rem; }
     .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
@@ -105,6 +155,8 @@
     .btn-primary:hover { background: var(--warm-tan); color: var(--black); }
     .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid #555555; padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
     .btn-secondary:hover { border-color: #999999; color: var(--white); }
+
+    /* ── FOOTER ── */
     .site-footer { background: var(--black); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
     .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
@@ -122,16 +174,22 @@
     .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
     .footer-bottom-links a:hover { color: var(--warm-tan); }
     .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .site-nav { display: none; } .mobile-menu-btn { display: flex; } .header-title { display: none; }
+      .post-hero { flex-direction: column; }
+      .post-hero-image { flex: none; width: 100%; min-height: 350px; }
+      .post-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
+      .post-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
       .related-grid { grid-template-columns: 1fr 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
-      .post-hero { height: 45vh; }
-      .post-header, .post-body, .post-author, .back-to-blog { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .post-body, .post-author, .back-to-blog { padding-left: 1.5rem; padding-right: 1.5rem; }
       .related-grid { grid-template-columns: 1fr; }
+      .related-card-image { height: 260px; }
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
       .cta-buttons { flex-direction: column; align-items: center; }
@@ -182,12 +240,16 @@
   </nav>
 
   <main class="page-content">
-    <div class="post-hero"><img src="/images/Dave.jpg" alt="Professional Headshot Styles by Industry: What Works for Your Profession" /></div>
-    <header class="post-header">
-      <div class="post-meta"><span class="post-date">October 1, 2025</span><span class="post-tag">Industry Guide</span></div>
-      <h1>Professional Headshot Styles by Industry: What Works for Your Profession</h1>
-      <p class="post-intro">Your headshot should do more than just look professional.&nbsp; It should speak directly to your industry and the clients you serve.&nbsp; The most effective headshots are carefully tailored to fit your specific profession.</p>
-    </header>
+    <div class="post-hero">
+      <div class="post-hero-image">
+        <img src="/images/Dave.jpg" alt="Professional Headshot Styles by Industry: What Works for Your Profession" />
+      </div>
+      <div class="post-hero-content">
+        <div class="post-meta"><span class="post-date">October 1, 2025</span><span class="post-tag">Industry Guide</span></div>
+        <h1>Professional Headshot Styles by Industry: What Works for Your Profession</h1>
+        <p class="post-intro">Your headshot should do more than just look professional.&nbsp; It should speak directly to your industry and the clients you serve.&nbsp; The most effective headshots are carefully tailored to fit your specific profession.</p>
+      </div>
+    </div>
     <article class="post-body">
       <p>Different industries have different expectations.&nbsp; What works for a tech startup founder won't work for a corporate attorney.&nbsp; What projects confidence in healthcare looks different than in real estate.&nbsp; Below, I'll walk you through the most effective headshot styles for different professions.</p>
       <h2>Corporate and Finance Professionals</h2>
@@ -268,7 +330,7 @@
         <h4>Contact</h4>
         <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
-        <a href="/cdn-cgi/l/email-protection#377352555845565f7f525e595b5259675f584358504556475f4e77505a565e5b1954585a" class="footer-contact-item"><span class="__cf_email__" data-cfemail="7a3e1f1815081b12321f1314161f142a12150e151d081b0a12033a1d171b131654191517">[email&#160;protected]</span></a>
+        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
         <br /><a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;display:inline-block;">Book a Session</a>
       </div>
     </div>
@@ -283,10 +345,18 @@
   </footer>
 
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
     mobileBtn.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-    
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => { mobileNav.classList.remove('open'); document.body.style.overflow = ''; });
+    });
+  </script>
+
+</body>
+</html>
