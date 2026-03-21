@@ -1215,7 +1215,7 @@
       <div class="footer-brand">
         <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="/images/ppa-logo.png" alt="Professional Photographers of America" class="footer-badge" />
+        <img src="/images/PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -1259,4 +1259,8 @@
     mobileBtn.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-      document.body.style.o
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+</script>
+</body>
+</html>

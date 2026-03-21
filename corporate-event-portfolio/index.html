@@ -282,7 +282,7 @@
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lightbox-close" id="lightbox-close">Close &times;</button>
     <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
-    <img src="" alt="" id="lightbox-img" />
+    <img src="lightbox-img" alt="" id="lightbox-img" />
     <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
   </div>
 
@@ -291,7 +291,7 @@
       <div class="footer-brand">
         <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="/images/ppa-logo.png" alt="Professional Photographers of America" class="footer-badge" />
+        <img src="/images/PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="/the-headshot-experience/">Studio Headshots</a></li><li><a href="/corporate-headshots/">Corporate Headshots</a></li><li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li></ul></div>
       <div class="footer-col"><h4>Explore</h4><ul><li><a href="/portfolio/">Headshots Portfolio</a></li><li><a href="/corporate-event-portfolio/">Events Portfolio</a></li><li><a href="/about-deborah-heinlen/">About</a></li><li><a href="/blog/">Blog</a></li></ul></div>
@@ -364,4 +364,20 @@
     document.getElementById('lightbox-prev').addEventListener('click', prevImage);
     document.getElementById('lightbox-next').addEventListener('click', nextImage);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.
+document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+    });
+</script>
+<script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        mobileBtn.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+</script>
+</body>
+</html>

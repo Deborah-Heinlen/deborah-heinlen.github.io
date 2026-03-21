@@ -324,7 +324,18 @@
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
-    mobileBtn.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      mobileBtn.setAttribute('aria-expanded', isOpen);
-      document.body.style.
+   mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    mobileBtn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+    
+
+    </script>
+    </body>
+</html>
+    
+    
+    
+    
+    
