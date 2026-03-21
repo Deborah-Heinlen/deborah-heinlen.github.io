@@ -285,9 +285,10 @@
       height: calc(100% - var(--total-nav));
       width: calc(100% - 16vw);
       object-fit: cover;
-      object-position: center center;
-      filter: saturate(0.9) brightness(0.88);
-      opacity: 0;
+      object-position: center top;
+      min-height: 600px;   /* add this line */
+      ...
+    }
     }
     .bg-image.active { opacity: 1; }
 
