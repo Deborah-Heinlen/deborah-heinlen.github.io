@@ -21,7 +21,7 @@
       --black: #000000; --white: #ffffff; --text-white: #ffffff;
       --header-h: 72px; --nav-h: 44px; --total-nav: 116px;
       --body-text: #a6a6a6; --body-muted: #999999; --body-faint: #808080;
-      --footer-text: #888888; --footer-faint: #606060;
+      --footer-text: #888888; --footer-faint: #aaaaaa;
       --border-bright: #474338; --border-mid: #333028; --border-subtle: #2a2820;
       --border-faint: #222018; --border-hover: #5c5745;
       --nav-bg: #ede8dc; --nav-border: #ddd4c4; --nav-hover-bg: #e8e1d6;
@@ -55,7 +55,7 @@
     .page-content { padding-top: var(--total-nav); }
     .page-hero { display: flex; align-items: stretch; min-height: 80vh; border-bottom: 1px solid var(--border-faint); }
     .page-hero-image { flex: 0 0 50%; position: relative; overflow: hidden; }
-    .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85) brightness(0.9); display: block; }
+    .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85) brightness(1); display: block; }
     .page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 65%, var(--black) 100%); pointer-events: none; }
     .page-hero-content { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; position: relative; z-index: 1; }
     .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1.2rem; }
@@ -158,7 +158,7 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="/"><img src="file:///Macintosh HD/Users/deborahheinlen/images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
+    <a href="/"><img src="../images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
     <a href="/" class="header-title">Deborah Heinlen Photography</a>
     <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
     <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
@@ -298,7 +298,7 @@
       <div class="footer-brand">
         <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="file:///Macintosh HD/Users/deborahheinlen/images/PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
+        <img src="../images/PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="/the-headshot-experience/">Studio Headshots</a></li><li><a href="/corporate-headshots/">Corporate Headshots</a></li><li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li></ul></div>
       <div class="footer-col"><h4>Explore</h4><ul><li><a href="/portfolio/">Headshots Portfolio</a></li><li><a href="/corporate-event-portfolio/">Events Portfolio</a></li><li><a href="/about-deborah-heinlen/">About</a></li><li><a href="/blog/">Blog</a></li></ul></div>
@@ -306,7 +306,7 @@
         <h4>Contact</h4>
         <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
-        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#80c4e5e2eff2e1e8c8e5e9eeece5eed0e8eff4efe7f2e1f0e8f9c0e7ede1e9ecaee3efed" class="footer-contact-item"><span class="__cf_email__" data-cfemail="652100070a17040d2d000c0b09000b350d0a110a021704150d1c250208040c094b060a08">[email&#160;protected]</span></a>
         <br />
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
       </div>
@@ -320,20 +320,10 @@
       </div>
     </div>
   </footer>
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
     mobileBtn.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  </script>
-</body>
-</html>
+      document.body.style.

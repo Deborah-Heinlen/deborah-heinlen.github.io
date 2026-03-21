@@ -22,7 +22,7 @@
     :root {
       --cream:      #f5f0e8;
       --linen:      #ede8dc;
-      --warm-tan:   #c8b89a;
+      --warm-tan:   #d4c4aa;
       --text-dark:  #2e2419;
       --text-mid:   #6b5c4a;
       --text-light: #9e8e7a;
@@ -34,11 +34,11 @@
       --total-nav:  116px;
 
       /* ── Text grays for dark background ── */
-      --body-text:    #a6a6a6;   /* main body copy          */
-      --body-muted:   #999999;   /* secondary body copy     */
-      --body-faint:   #808080;   /* tertiary / CTA sub-text */
-      --footer-text:  #888888;   /* footer body             */
-      --footer-faint: #606060;   /* footer bottom bar       */
+      --body-text:    #cccccc;   /* main body copy          */
+      --body-muted:   #c2c2c2;   /* secondary body copy     */
+      --body-faint:   #b8b8b8;   /* tertiary / CTA sub-text */
+      --footer-text:  #bbbbbb;   /* footer body             */
+      --footer-faint: #aaaaaa;   /* footer bottom bar       */
 
       /* ── Border tones on black ── */
       --border-bright:  #474338;   /* visible tan border      */
@@ -274,7 +274,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: saturate(0.85) brightness(0.9);
+      filter: saturate(0.85) brightness(1);
       display: block;
     }
 
@@ -440,7 +440,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: saturate(0.85) brightness(0.85);
+      filter: saturate(0.85) brightness(1);
       display: block;
     }
 
@@ -1237,7 +1237,7 @@
         <h4>Contact</h4>
         <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
-        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#7a3e1f1815081b12321f1314161f142a12150e151d081b0a12033a1d171b131654191517" class="footer-contact-item"><span class="__cf_email__" data-cfemail="5a1e3f3835283b32123f3334363f340a32352e353d283b2a32231a3d373b333674393537">[email&#160;protected]</span></a>
         <br />
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
       </div>
@@ -1252,21 +1252,10 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
     mobileBtn.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  </script>
-
-</body>
-</html>
+      document.body.style.o

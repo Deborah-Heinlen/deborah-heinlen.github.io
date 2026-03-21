@@ -22,7 +22,7 @@
     :root {
       --cream:      #f5f0e8;
       --linen:      #ede8dc;
-      --warm-tan:   #c8b89a;
+      --warm-tan:   #d4c4aa;
       --text-dark:  #2e2419;
       --text-mid:   #6b5c4a;
       --text-light: #9e8e7a;
@@ -34,11 +34,11 @@
       --total-nav:  116px;
 
       /* ── Text grays for dark background ── */
-      --body-text:    #a6a6a6;
-      --body-muted:   #999999;
-      --body-faint:   #808080;
-      --footer-text:  #888888;
-      --footer-faint: #606060;
+      --body-text:    #cccccc;
+      --body-muted:   #c2c2c2;
+      --body-faint:   #b8b8b8;
+      --footer-text:  #bbbbbb;
+      --footer-faint: #aaaaaa;
 
       /* ── Border tones on black ── */
       --border-bright:  #474338;
@@ -302,7 +302,7 @@
         <h4>Contact</h4>
         <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
-        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#e3a786818c91828bab868a8d8f868db38b8c978c849182938b9aa3848e828a8fcd808c8e" class="footer-contact-item"><span class="__cf_email__" data-cfemail="034766616c71626b4b666a6d6f666d536b6c776c647162736b7a43646e626a6f2d606c6e">[email&#160;protected]</span></a>
         <br />
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
       </div>
@@ -317,7 +317,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
     mobileBtn.addEventListener('click', () => {
@@ -367,13 +367,4 @@
     document.getElementById('lightbox-prev').addEventListener('click', prevImage);
     document.getElementById('lightbox-next').addEventListener('click', nextImage);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape')     closeLightbox();
-      if (e.key === 'ArrowLeft')  prevImage();
-      if (e.key === 'ArrowRight') nextImage();
-    });
-  </script>
-
-</body>
-</html>
+    document.
