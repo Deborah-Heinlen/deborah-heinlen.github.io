@@ -1556,4 +1556,18 @@
       const triggerPoint = scrollY + (vh * 0.5);
 
       scrollItems.forEach(item => {
-        const itemTop = item.getBoundingClientRect()
+        const itemTop = item.getBoundingClientRect().top + scrollY;
+        if (itemTop <= triggerPoint) {
+          activeBg = parseInt(item.dataset.bg);
+        }
+      });
+
+      setBackground(activeBg);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+
+</body>
+</html>
