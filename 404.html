@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Deborah Heinlen Photography</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #f5f0e8; --linen: #ede8dc; --warm-tan: #d4c4aa;
+      --text-dark: #2e2419; --text-mid: #6b5c4a; --text-light: #9e8e7a;
+      --black: #000000; --white: #ffffff;
+      --header-h: 72px; --nav-h: 44px; --total-nav: 116px;
+      --nav-bg: #ede8dc; --nav-border: #ddd4c4; --nav-hover-bg: #e8e1d6;
+      --header-bg: #f2ede8; --header-border: #ddd4c4;
+      --border-bright: #474338; --border-mid: #333028; --border-faint: #222018;
+      --body-text: #cccccc; --body-faint: #b8b8b8;
+      --footer-text: #bbbbbb; --footer-faint: #aaaaaa;
+    }
+    html { scroll-behavior: smooth; }
+    html, body { background-color: var(--black); color: var(--white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; min-height: 100vh; }
+
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
+    .header-logo { height: 40px; width: auto; display: block; }
+    .header-title { font-family: "lindsey-signature", sans-serif; font-weight: 400; font-size: 3rem; color: var(--text-dark); text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--warm-tan); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
+
+    .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 199; height: var(--nav-h); display: flex; align-items: center; justify-content: center; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--nav-border); }
+    .nav-list { list-style: none; display: flex; align-items: stretch; height: 100%; border-left: 1px solid var(--nav-border); }
+    .nav-item { position: relative; display: flex; align-items: center; border-right: 1px solid var(--nav-border); }
+    .nav-link { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0 1.4rem; height: 100%; display: flex; align-items: center; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    .nav-link:hover { background: var(--nav-hover-bg); color: var(--text-dark); }
+    .nav-link.has-dropdown::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid var(--text-light); margin-left: 0.45rem; transition: transform 0.2s; }
+    .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--nav-bg); border: 1px solid var(--nav-border); border-top: none; z-index: 300; list-style: none; padding: 0.4rem 0; }
+    .nav-item:hover .dropdown { display: block; }
+    .dropdown li a { display: block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.75rem 1.4rem; transition: background 0.15s, color 0.15s; }
+    .dropdown li a:hover { background: var(--nav-hover-bg); color: var(--text-dark); }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
+    .mobile-nav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--nav-bg); z-index: 198; overflow-y: auto; padding: 2rem 2rem 4rem; }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
+    .mobile-nav a:hover { color: var(--text-dark); }
+    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
+
+    /* ── 404 CONTENT ── */
+    .page-content { padding-top: var(--total-nav); min-height: calc(100vh - var(--total-nav)); display: flex; align-items: center; justify-content: center; }
+
+    .error-wrap {
+      text-align: center;
+      padding: 6rem 2rem;
+      max-width: 600px;
+    }
+
+    .error-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(6rem, 15vw, 10rem);
+      color: var(--warm-tan);
+      letter-spacing: 0.1em;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.5rem;
+      opacity: 0.4;
+    }
+
+    .error-wrap h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .error-wrap p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      letter-spacing: 0.03em;
+      color: var(--body-faint);
+      margin-bottom: 3rem;
+    }
+
+    .error-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--warm-tan);
+      margin: 2rem auto;
+      opacity: 0.4;
+    }
+
+    .error-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-tan); text-decoration: none; border: 1px solid var(--warm-tan); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; }
+    .btn-primary:hover { background: var(--warm-tan); color: var(--black); }
+    .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-faint); text-decoration: none; border: 1px solid #555555; padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
+    .btn-secondary:hover { border-color: #999999; color: var(--white); }
+
+    .error-nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 2rem;
+    }
+
+    .error-nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--body-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .error-nav-links a:hover { color: var(--warm-tan); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--black); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
+    .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
+    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm-tan); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--footer-text); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--warm-tan); }
+    .footer-contact-item { display: block; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--footer-text); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-contact-item:hover { color: var(--warm-tan); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
+
+    @media (max-width: 900px) {
+      .site-nav { display: none; } .mobile-menu-btn { display: flex; } .header-title { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .site-header { padding: 0 1.25rem; }
+      .error-links { flex-direction: column; align-items: center; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/"><img src="/images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
+    <a href="/" class="header-title">Deborah Heinlen Photography</a>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link has-dropdown">Services</a>
+        <ul class="dropdown">
+          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
+          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
+          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="#" class="nav-link has-dropdown">Portfolio</a>
+        <ul class="dropdown">
+          <li><a href="/portfolio/">Headshots Portfolio</a></li>
+          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="/about-deborah-heinlen/" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="/contact-deborah-heinlen/" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="/">Home</a>
+    <span class="mobile-section-label">Services</span>
+    <a href="/the-headshot-experience/">Studio Headshots</a>
+    <a href="/corporate-headshots/">Corporate Headshots</a>
+    <a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a>
+    <span class="mobile-section-label">Portfolio</span>
+    <a href="/portfolio/">Headshots Portfolio</a>
+    <a href="/corporate-event-portfolio/">Events Portfolio</a>
+    <a href="/about-deborah-heinlen/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact-deborah-heinlen/">Contact</a>
+  </nav>
+
+  <main class="page-content">
+    <div class="error-wrap">
+      <span class="error-number">404</span>
+      <h1>This page doesn't exist.</h1>
+      <p>The page you're looking for may have moved, been renamed, or no longer exists.  Let's get you back on track.</p>
+      <div class="error-divider"></div>
+      <div class="error-links">
+        <a href="/" class="btn-primary">Back to Home</a>
+        <a href="/contact-deborah-heinlen/" class="btn-secondary">Contact Deborah</a>
+      </div>
+      <div class="error-nav-links">
+        <a href="/the-headshot-experience/">Studio Headshots</a>
+        <a href="/corporate-headshots/">Corporate Headshots</a>
+        <a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/blog/">Blog</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
+        <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
+        <img src="/images/ppa-logo.png" alt="Professional Photographers of America" class="footer-badge" />
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="/the-headshot-experience/">Studio Headshots</a></li><li><a href="/corporate-headshots/">Corporate Headshots</a></li><li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li></ul></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="/portfolio/">Headshots Portfolio</a></li><li><a href="/corporate-event-portfolio/">Events Portfolio</a></li><li><a href="/about-deborah-heinlen/">About</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
+        <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
+        <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
+        <br />
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;display:inline-block;">Book a Session</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Deborah Heinlen Photography &nbsp;&middot;&nbsp; All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/return-policy/">Returns Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
