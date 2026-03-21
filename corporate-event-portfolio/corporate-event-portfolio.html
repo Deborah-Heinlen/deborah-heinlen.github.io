@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Headshot Tips &amp; Pricing Advice | Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography</title>
-  <meta name="description" content="Headshot tips, pricing guides, and professional photography advice for Cincinnati and Northern Kentucky professionals. Expert insights from Deborah Heinlen Photography." />
-  <link rel="canonical" href="https://www.deborahheinlenphotography.com/blog/" />
+  <title>Corporate Event Photography Portfolio | Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography</title>
+  <meta name="description" content="Explore a curated portfolio of corporate event photography including conferences, fundraisers, and business gatherings across Cincinnati and Northern Kentucky." />
+  <link rel="canonical" href="https://www.deborahheinlenphotography.com/corporate-event-portfolio/" />
 
-  <meta property="og:title" content="Blog | Headshot Tips &amp; Advice | Deborah Heinlen Photography" />
-  <meta property="og:description" content="Headshot tips, pricing guides, and professional photography advice for Cincinnati and Northern Kentucky professionals." />
-  <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/Ashley.jpg" />
-  <meta property="og:url" content="https://www.deborahheinlenphotography.com/blog/" />
+  <meta property="og:title" content="Corporate Event Photography Portfolio | Deborah Heinlen Photography" />
+  <meta property="og:description" content="Explore a curated portfolio of corporate event photography including conferences, fundraisers, and business gatherings across Cincinnati and Northern Kentucky." />
+  <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/me-taking-pic.jpg" />
+  <meta property="og:url" content="https://www.deborahheinlenphotography.com/corporate-event-portfolio/" />
   <meta property="og:type" content="website" />
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
@@ -56,13 +56,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    html, body {
-      background-color: var(--black);
-      color: var(--text-white);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
+    html, body { background-color: var(--black); color: var(--text-white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
 
     /* ── HEADER ── */
     .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
@@ -95,46 +89,41 @@
     .page-content { padding-top: var(--total-nav); }
 
     .page-header { padding: 5rem 8vw 4rem; text-align: center; border-bottom: 1px solid var(--border-faint); }
-    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1.2rem; }
+    .page-header .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1.2rem; }
     .page-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.4rem, 5vw, 4rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.15; margin-bottom: 1.2rem; }
-    .page-header p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.88rem, 1.2vw, 1rem); letter-spacing: 0.08em; color: var(--body-faint); max-width: 580px; margin: 0 auto; line-height: 1.8; }
+    .page-header p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.88rem, 1.2vw, 1rem); letter-spacing: 0.08em; color: var(--body-faint); max-width: 620px; margin: 0 auto; line-height: 1.8; }
 
-    /* ── FEATURED POST ── */
-    .featured-post { display: flex; align-items: stretch; border-bottom: 1px solid var(--border-faint); text-decoration: none; transition: background 0.3s; }
-    .featured-post:hover { background: #0a0804; }
-    .featured-image { flex: 0 0 50%; position: relative; overflow: hidden; min-height: 480px; }
-    .featured-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85) brightness(0.8); display: block; transition: transform 0.7s ease, filter 0.7s ease; }
-    .featured-post:hover .featured-image img { transform: scale(1.03); filter: saturate(0.95) brightness(0.85); }
-    .featured-content { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; }
+    /* ── PORTFOLIO SWITCH NAV ── */
+    .portfolio-nav { display: flex; justify-content: center; border-bottom: 1px solid var(--border-faint); }
+    .portfolio-nav a { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-faint); text-decoration: none; padding: 1.4rem 3rem; border-right: 1px solid var(--border-faint); transition: color 0.2s, background 0.2s; }
+    .portfolio-nav a:first-child { border-left: 1px solid var(--border-faint); }
+    .portfolio-nav a:hover { color: var(--white); }
+    .portfolio-nav a.active { color: var(--warm-tan); border-bottom: 2px solid var(--warm-tan); }
 
-    .post-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
-    .post-date { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: #555555; }
-    .post-tag { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-tan); border: 1px solid var(--border-mid); padding: 0.2rem 0.6rem; }
+    /* ── MASONRY GRID ── */
+    .gallery-section { padding: 4rem 4vw 6rem; }
+    .masonry-grid { columns: 3; column-gap: 1rem; max-width: 1300px; margin: 0 auto; }
+    .masonry-item { break-inside: avoid; margin-bottom: 1rem; overflow: hidden; position: relative; cursor: pointer; }
+    .masonry-item img { width: 100%; height: auto; display: block; filter: saturate(0.85); transition: transform 0.6s ease, filter 0.6s ease; }
+    .masonry-item:hover img { transform: scale(1.04); filter: saturate(1) brightness(0.95); }
+    .masonry-item::after { content: ''; position: absolute; inset: 0; background: #00000000; transition: background 0.3s; pointer-events: none; }
+    .masonry-item:hover::after { background: #00000014; }
 
-    .featured-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.2; margin-bottom: 1.2rem; }
-    .featured-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.04em; line-height: 1.85; color: var(--body-muted); margin-bottom: 2rem; }
-
-    .read-more { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-tan); display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
-    .featured-post:hover .read-more { gap: 0.8rem; }
-
-    /* ── BLOG GRID ── */
-    .blog-section { padding: 5rem 8vw 7rem; }
-    .blog-section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 3rem; }
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; }
-
-    .blog-card { display: block; text-decoration: none; border-bottom: 1px solid var(--border-faint); padding-bottom: 2.5rem; transition: border-color 0.3s; }
-    .blog-card:hover { border-color: var(--border-hover); }
-    .blog-card-image { width: 100%; height: 220px; overflow: hidden; margin-bottom: 1.5rem; }
-    .blog-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85) brightness(0.8); display: block; transition: transform 0.6s ease, filter 0.6s ease; }
-    .blog-card:hover .blog-card-image img { transform: scale(1.05); filter: saturate(0.95) brightness(0.85); }
-    .blog-card .post-meta { margin-bottom: 0.8rem; }
-    .blog-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.25; margin-bottom: 0.8rem; }
-    .blog-card p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.04em; line-height: 1.8; color: var(--body-faint); margin-bottom: 1.2rem; }
-    .blog-card .read-more { font-size: 0.72rem; }
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: #000000f2; align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; display: block; }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--body-faint); font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
+    .lightbox-close:hover { color: var(--white); }
+    .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: 1px solid #555555; color: var(--body-faint); font-size: 1.2rem; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+    .lightbox-prev:hover, .lightbox-next:hover { border-color: var(--warm-tan); color: var(--warm-tan); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
 
     /* ── CTA ── */
     .cta-section { background: var(--black); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
-    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; margin-top: 1rem; }
+    .cta-section .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1rem; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
     .cta-section p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.04em; color: var(--body-faint); max-width: 520px; margin: 0 auto 3rem; }
     .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
 
@@ -167,18 +156,19 @@
       .site-nav { display: none; }
       .mobile-menu-btn { display: flex; }
       .header-title { display: none; }
-      .featured-post { flex-direction: column; }
-      .featured-image { flex: none; width: 100%; min-height: 300px; }
-      .featured-content { flex: none; width: 100%; padding: 3rem 2rem; }
-      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .masonry-grid { columns: 2; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
       .page-header { padding: 3rem 1.5rem 2.5rem; }
-      .blog-section { padding: 3rem 1.5rem 5rem; }
-      .blog-grid { grid-template-columns: 1fr; }
+      .gallery-section { padding: 2rem 1rem 4rem; }
+      .masonry-grid { columns: 2; column-gap: 0.5rem; }
+      .masonry-item { margin-bottom: 0.5rem; }
+      .portfolio-nav a { padding: 1.2rem 1.5rem; }
+      .lightbox-prev { left: 0.5rem; }
+      .lightbox-next { right: 0.5rem; }
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
       .cta-buttons { flex-direction: column; align-items: center; }
@@ -209,14 +199,14 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link has-dropdown">Portfolio</a>
+        <a href="#" class="nav-link has-dropdown active">Portfolio</a>
         <ul class="dropdown">
           <li><a href="/portfolio/">Headshots Portfolio</a></li>
           <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
         </ul>
       </li>
       <li class="nav-item"><a href="/about-deborah-heinlen/" class="nav-link">About</a></li>
-      <li class="nav-item"><a href="/blog/" class="nav-link active">Blog</a></li>
+      <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
       <li class="nav-item"><a href="/contact-deborah-heinlen/" class="nav-link">Contact</a></li>
     </ul>
   </nav>
@@ -238,124 +228,62 @@
   <main class="page-content">
 
     <div class="page-header">
-      <span class="section-label">Insights &amp; Advice</span>
-      <h1>Headshot Tips &amp; Photography Advice</h1>
-      <p>Practical guidance for professionals in Cincinnati and Northern Kentucky on headshots, personal branding, pricing, and what to expect from your photography session.</p>
+      <span class="section-label">Portfolio</span>
+      <h1>Corporate Event Photography Portfolio</h1>
+      <p>A curated selection of corporate event photography created for businesses across Cincinnati and Northern Kentucky.&nbsp; Conferences, fundraisers, award ceremonies, and business gatherings documented with clarity and professionalism.</p>
     </div>
 
-    <a href="/blog/his-finger-on-the-shutter-button/" class="featured-post">
-      <div class="featured-image">
-        <img src="/images/blog-01-image.jpg" alt="His Finger on the Shutter Button - Deborah Heinlen Photography blog" />
-      </div>
-      <div class="featured-content">
-        <div class="post-meta">
-          <span class="post-date">February 1, 2026</span>
-          <span class="post-tag">Personal</span>
-        </div>
-        <h2>His Finger on the Shutter Button</h2>
-        <p>A camera gifted to my father at 18 shaped the way he lived, learned, and loved photography for the next 65 years.&nbsp; This is the story of what he passed down to me, and why I still feel his steady presence every time I press the shutter.</p>
-        <span class="read-more">Read Article &rarr;</span>
-      </div>
-    </a>
+    <nav class="portfolio-nav" aria-label="Portfolio sections">
+      <a href="/portfolio/">Headshots</a>
+      <a href="/corporate-event-portfolio/" class="active">Corporate Events</a>
+    </nav>
 
-    <section class="blog-section">
-      <span class="blog-section-label">All Articles</span>
-      <div class="blog-grid">
-
-        <a href="/blog/how-much-do-headshots-cost/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Ashley.jpg" alt="How Much Do Professional Headshots Cost in Cincinnati?" /></div>
-          <div class="post-meta"><span class="post-date">January 2, 2026</span><span class="post-tag">Pricing</span></div>
-          <h3>How Much Do Professional Headshots Cost in Cincinnati?</h3>
-          <p>2026 headshot pricing guide for Cincinnati and Northern Kentucky.&nbsp; See typical price ranges, what's included, corporate team pricing, and why a professional headshot is worth the investment.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/guide-to-corporate-team-headshot-sessions/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/cartridge-brewing.jpg" alt="Guide to Corporate Team Headshot Sessions" /></div>
-          <div class="post-meta"><span class="post-date">December 17, 2025</span><span class="post-tag">Corporate Teams</span></div>
-          <h3>Elevate Your Team's Image: A Guide to Corporate Team Headshot Sessions</h3>
-          <p>Everything you need to know about planning, scheduling, wardrobe, on-site setup, and how to use headshots across your website and LinkedIn.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/what-to-look-for-in-a-professional-headshot-photographer/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Laura.jpg" alt="What to Look For in a Professional Headshot Photographer" /></div>
-          <div class="post-meta"><span class="post-date">November 26, 2025</span><span class="post-tag">Tips</span></div>
-          <h3>What to Look For in a Professional Headshot Photographer</h3>
-          <p>Choosing a headshot photographer can feel overwhelming.&nbsp; This checklist explains exactly what to look for, including lighting, coaching, reviews, and transparent pricing.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/preparing-for-your-headshots-men/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Sam.jpg" alt="How to Prepare for Your Headshots: For Men" /></div>
-          <div class="post-meta"><span class="post-date">November 5, 2025</span><span class="post-tag">Prep Guide</span></div>
-          <h3>How to Prepare for Your Headshots: For Men</h3>
-          <p>What to wear, how to prep hair and grooming, and simple tips that help you look confident and professional.&nbsp; Serving Cincinnati and Northern Kentucky.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/preparing-for-your-headshots-women/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Paula.jpg" alt="How to Prepare for Your Headshots: Women" /></div>
-          <div class="post-meta"><span class="post-date">October 22, 2025</span><span class="post-tag">Prep Guide</span></div>
-          <h3>How to Prepare for Your Headshots: Women</h3>
-          <p>A practical headshot prep guide including what to wear, makeup tips that photograph well, and hair prep advice so you look polished and professional.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/headshot-styles-by-profession/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Dave.jpg" alt="Professional Headshot Styles by Industry" /></div>
-          <div class="post-meta"><span class="post-date">October 1, 2025</span><span class="post-tag">Industry Guide</span></div>
-          <h3>Professional Headshot Styles by Industry: What Works for Your Profession</h3>
-          <p>Different industries have different expectations.&nbsp; This guide explains the best headshot styles by profession, including what to wear and what impression to create.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/growing-through-mentorship-a-day-in-cleveland/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/me-with-DeMayne.jpg" alt="Growing Through Mentorship: A Day in Cleveland" /></div>
-          <div class="post-meta"><span class="post-date">September 9, 2025</span><span class="post-tag">Behind the Lens</span></div>
-          <h3>Growing Through Mentorship: A Day in Cleveland</h3>
-          <p>A day of mentorship, practice, and honest feedback with my friend and mentor DeMayne from Peter Hurley's Headshot Crew.&nbsp; The lessons that sharpened my craft.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/consistency-matters/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Greg.jpg" alt="Why Consistent Headshots Matter for Your Business" /></div>
-          <div class="post-meta"><span class="post-date">August 27, 2025</span><span class="post-tag">Business Branding</span></div>
-          <h3>Why Consistent Headshots Matter for Your Business</h3>
-          <p>Consistent team headshots help your business look polished, unified, and trustworthy across your website, LinkedIn, and marketing materials.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/choosing-the-right-background-color/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/Kambua.jpg" alt="Choosing the Right Background Color for Your Headshot" /></div>
-          <div class="post-meta"><span class="post-date">August 13, 2025</span><span class="post-tag">Tips</span></div>
-          <h3>Choosing the Right Background Color for Your Headshot</h3>
-          <p>The background color in your headshot affects how professional, approachable, bold, or modern you appear.&nbsp; This guide breaks down the most common options and which fit best by profession.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
-        <a href="/blog/behind-the-scenes/" class="blog-card">
-          <div class="blog-card-image"><img src="/images/me-taking-pic.jpg" alt="Behind the Scenes of a Headshot Session" /></div>
-          <div class="post-meta"><span class="post-date">July 30, 2025</span><span class="post-tag">Behind the Lens</span></div>
-          <h3>Behind the Scenes of a Headshot Session at Deborah Heinlen Photography</h3>
-          <p>Take a behind the scenes look at what happens during a headshot session &mdash; from studio setup and lighting to tethered shooting, image selection, and retouching.</p>
-          <span class="read-more">Read Article &rarr;</span>
-        </a>
-
+    <section class="gallery-section">
+      <div class="masonry-grid" id="gallery">
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-01.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-01.jpg" alt="Corporate event photography Cincinnati and Northern Kentucky by Deborah Heinlen" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-03.jpg" data-alt="Conference photography Cincinnati"><img src="/images/corporate-event-portfolio-03.jpg" alt="Conference photography by Deborah Heinlen Photography in Cincinnati" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-07.jpg" data-alt="Corporate event coverage Northern Kentucky"><img src="/images/corporate-event-portfolio-07.jpg" alt="Corporate event coverage Northern Kentucky by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-02.jpg" data-alt="Business event photography Cincinnati"><img src="/images/corporate-event-portfolio-02.jpg" alt="Business event photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-04.jpg" data-alt="Fundraiser photography Northern Kentucky"><img src="/images/corporate-event-portfolio-04.jpg" alt="Fundraiser photography Northern Kentucky by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-06.jpg" data-alt="Corporate gathering photography Cincinnati"><img src="/images/corporate-event-portfolio-06.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-08.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-08.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-09.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-09.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-10.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-10.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-11.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-11.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-12.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-12.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-13.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-13.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-14.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-14.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-15.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-15.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-16.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-16.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-17.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-17.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-18.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-18.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-19.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-19.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-20.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-20.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-21.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-21.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-22.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-22.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
+        <div class="masonry-item" data-src="/images/corporate-event-portfolio-23.jpg" data-alt="Corporate event photography Cincinnati"><img src="/images/corporate-event-portfolio-23.jpg" alt="Corporate gathering photography Cincinnati by Deborah Heinlen Photography" loading="lazy" /></div>
       </div>
     </section>
 
     <section class="cta-section">
-      <span class="section-label">Ready When You Are</span>
-      <h2>Put the Advice Into Action</h2>
-      <p>Now that you know what makes a great headshot, let's create yours.&nbsp; Studio sessions available in Hebron, KY with on-site options throughout Cincinnati and Northern Kentucky.</p>
+      <span class="section-label">Plan Your Event Photography</span>
+      <h2>Document Your Next Corporate Event</h2>
+      <p>Professional event photography ensures the moments you've worked hard to create are captured with care and style.&nbsp; Let's start with a quick phone consultation to review your event details.</p>
       <div class="cta-buttons">
-        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book Your Session</a>
-        <a href="/the-headshot-experience/" class="btn-secondary">View Session Options</a>
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Phone Consult</a>
+        <a href="/corporate-event-photography-in-cincinnati-northern-kentucky/" class="btn-secondary">Learn About Event Coverage</a>
       </div>
     </section>
 
   </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightbox-close">Close &times;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+    <img src="" alt="" id="lightbox-img" />
+    <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -398,6 +326,48 @@
         mobileNav.classList.remove('open');
         document.body.style.overflow = '';
       });
+    });
+
+    const items    = Array.from(document.querySelectorAll('.masonry-item'));
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightbox-img');
+    let current    = 0;
+
+    function openLightbox(index) {
+      current = index;
+      const item = items[index];
+      lbImg.src = item.dataset.src;
+      lbImg.alt = item.dataset.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    function prevImage() {
+      current = (current - 1 + items.length) % items.length;
+      openLightbox(current);
+    }
+
+    function nextImage() {
+      current = (current + 1) % items.length;
+      openLightbox(current);
+    }
+
+    items.forEach((item, i) => { item.addEventListener('click', () => openLightbox(i)); });
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', prevImage);
+    document.getElementById('lightbox-next').addEventListener('click', nextImage);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  prevImage();
+      if (e.key === 'ArrowRight') nextImage();
     });
   </script>
 
