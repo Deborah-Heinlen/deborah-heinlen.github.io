@@ -561,7 +561,7 @@
     @media (max-width: 900px) {
       .site-nav { display: none; }
       .mobile-menu-btn { display: flex; }
-      .header-title { font-size: 2.2rem; }
+      .header-title { display: none; }
 
       .contact-layout { flex-direction: column; }
       .contact-info { flex: none; width: 100%; border-right: none; border-bottom: 1px solid rgba(200, 184, 154, 0.3); padding: 3rem 2rem; }
@@ -573,7 +573,6 @@
 
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
-      .header-title { font-size: 1.8rem; }
       .page-header { padding: 3rem 1.5rem 2.5rem; }
       .services-quick-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
@@ -767,3 +766,13 @@
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── MOBILE MENU ────────────────────────────────────────────────
     const mobileBtn = document.getEleme
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        mobileBtn.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+</script>
+</body>
+</html>
