@@ -21,6 +21,7 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
+      --slate-blue: #252330;
       --cream:      #f5f0e8;
       --linen:      #ede8dc;
       --warm-tan:   #d4c4aa;
@@ -41,7 +42,7 @@
       --footer-text:  #bbbbbb;   /* footer body             */
       --footer-faint: #aaaaaa;   /* footer bottom bar       */
 
-      /* ── Border tones on black ── */
+      /* ── Border tones on slate-blue ── */
       --border-bright:  #474338;   /* visible tan border      */
       --border-mid:     #333028;   /* mid-weight tan border   */
       --border-subtle:  #2a2820;   /* subtle tan border       */
@@ -58,7 +59,7 @@
 
     html { scroll-behavior: smooth; }
     html, body {
-      background-color: var(--black);
+      background-color: var(--slate-blue);
       color: var(--text-white);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -287,17 +288,17 @@
       top: 0; left: 0;
       width: 100%; height: 100vh;
       z-index: 1;
-      background-color: var(--black);
+      background-color: var(--slate-blue);
     }
     #story-bg.hidden { visibility: hidden; }
 
-    .bg-black {
+    .bg-slate-blue {
       position: absolute;
       inset: 0;
-      background: var(--black);
+      background: var(--slate-blue);
       opacity: 0;
     }
-    .bg-black.active { opacity: 1; }
+    .bg-slate-blue.active { opacity: 1; }
 
     .bg-image {
       position: absolute;
@@ -358,7 +359,7 @@
       display: flex;
       align-items: stretch;
       min-height: 120vh;
-      background: var(--black);
+      background: var(--slate-blue);
       position: relative;
       overflow: hidden;
       margin: 8vh 0;
@@ -371,7 +372,7 @@
       height: 18%;
       pointer-events: none;
       z-index: 10;
-      background: linear-gradient(to bottom, var(--black) 0%, transparent 100%);
+      background: linear-gradient(to bottom, var(--slate-blue) 0%, transparent 100%);
     }
 
     .story-card::after {
@@ -381,7 +382,7 @@
       height: 18%;
       pointer-events: none;
       z-index: 10;
-      background: linear-gradient(to top, var(--black) 0%, transparent 100%);
+      background: linear-gradient(to top, var(--slate-blue) 0%, transparent 100%);
     }
 
     .card-hero::before,
@@ -392,7 +393,7 @@
       overflow: hidden;
       position: relative;
       padding: 2rem 2rem 2rem 6.5rem;
-      background: var(--black);
+      background: var(--slate-blue);
     }
 
     .card-image-side img {
@@ -410,10 +411,10 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(to right,  var(--black) 0%, transparent 12%),
-        linear-gradient(to left,   var(--black) 0%, transparent 12%),
-        linear-gradient(to bottom, var(--black) 0%, transparent 10%),
-        linear-gradient(to top,    var(--black) 0%, transparent 10%);
+        linear-gradient(to right,  var(--slate-blue) 0%, transparent 12%),
+        linear-gradient(to left,   var(--slate-blue) 0%, transparent 12%),
+        linear-gradient(to bottom, var(--slate-blue) 0%, transparent 10%),
+        linear-gradient(to top,    var(--slate-blue) 0%, transparent 10%);
     }
 
     .card-text-side {
@@ -422,7 +423,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 1rem 10vw;
-      background: var(--black);
+      background: var(--slate-blue);
       text-align: center;
     }
 
@@ -465,7 +466,7 @@
     .trust-bar {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-bright);
       border-bottom: 1px solid var(--border-bright);
       padding: 2.5rem 3rem;
@@ -511,7 +512,7 @@
     .statement-section {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       padding: 7rem 8vw;
       text-align: center;
     }
@@ -547,7 +548,7 @@
     .services-section {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       padding: 0 0 8rem;
     }
 
@@ -674,7 +675,7 @@
     }
     .btn-primary:hover {
       background: var(--warm-tan);
-      color: var(--black);
+      color: var(--slate-blue);
     }
 
     .btn-text {
@@ -696,7 +697,7 @@
     .about-section {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-faint);
       display: flex;
       align-items: stretch;
@@ -722,7 +723,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--black) 100%);
+      background: linear-gradient(to right, transparent 60%, var(--slate-blue) 100%);
       pointer-events: none;
     }
 
@@ -790,7 +791,7 @@
     .testimonial-section {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-faint);
       padding: 7rem 8vw;
       text-align: center;
@@ -836,7 +837,7 @@
     .reviews-section {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-faint);
       padding: 5rem 8vw 6rem;
     }
@@ -859,7 +860,7 @@
     .cta-section {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-faint);
       padding: 7rem 8vw;
       text-align: center;
@@ -917,7 +918,7 @@
     .site-footer {
       position: relative;
       z-index: 2;
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-bright);
       padding: 4rem 3rem 3rem;
     }
@@ -1052,7 +1053,7 @@
       .about-content { flex: none; width: 100%; padding: 3rem 2rem; }
 
       .about-image::after {
-        background: linear-gradient(to bottom, transparent 60%, var(--black) 100%);
+        background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%);
       }
 
       .trust-bar { gap: 2rem; flex-wrap: wrap; }
@@ -1169,7 +1170,7 @@
       <img class="bg-image"        data-index="3" src="/images/Ben.jpg"   alt="" />
       <img class="bg-image"        data-index="4" src="/images/Paula.jpg"      alt="" />
       <img class="bg-image"        data-index="5" src="/images/Dave.jpg"  alt="" />
-      <div class="bg-black"        data-index="6"></div>
+      <div class="bg-slate-blue"        data-index="6"></div>
     </div>
 
     <!-- LAYER 2: SCROLLING CONTENT -->
@@ -1272,7 +1273,7 @@
 
       <div class="card-spacer"></div>
 
-      <!-- CARD: Wayne on black bg -->
+      <!-- CARD: Wayne on slate-blue bg -->
       <div class="story-card" data-bg="6">
         <div class="card-image-side">
           <img src="/images/Wayne.jpg" alt="Wayne" />
@@ -1532,7 +1533,7 @@
     // ── BACKGROUND IMAGE SWAP ──────────────────────────────────────
     const storySection = document.getElementById('story-section');
     const storyBg      = document.getElementById('story-bg');
-    const allBgEls     = Array.from(document.querySelectorAll('.bg-image, .bg-black'));
+    const allBgEls     = Array.from(document.querySelectorAll('.bg-image, .bg-slate-blue'));
     const scrollItems  = Array.from(document.querySelectorAll('[data-bg]'));
 
     let currentBg = 0;

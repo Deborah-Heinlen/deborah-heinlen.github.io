@@ -21,6 +21,7 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
+      --slate-blue: #252330;
       --cream:      #f5f0e8;
       --linen:      #ede8dc;
       --warm-tan:   #d4c4aa;
@@ -41,7 +42,7 @@
       --footer-text:  #bbbbbb;   /* footer body             */
       --footer-faint: #aaaaaa;   /* footer bottom bar       */
 
-      /* ── Border tones on black ── */
+      /* ── Border tones on slate-blue ── */
       --border-bright:  #474338;   /* visible tan border      */
       --border-mid:     #333028;   /* mid-weight tan border   */
       --border-subtle:  #2a2820;   /* subtle tan border       */
@@ -58,7 +59,7 @@
 
     html { scroll-behavior: smooth; }
     html, body {
-      background-color: var(--black);
+      background-color: var(--slate-blue);
       color: var(--text-white);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -283,7 +284,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, transparent 65%, var(--black) 100%);
+      background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%);
       pointer-events: none;
     }
 
@@ -345,7 +346,7 @@
       transition: background 0.25s, color 0.25s;
       white-space: nowrap;
     }
-    .btn-primary:hover { background: var(--warm-tan); color: var(--black); }
+    .btn-primary:hover { background: var(--warm-tan); color: var(--slate-blue); }
 
     .btn-secondary {
       display: inline-block;
@@ -364,7 +365,7 @@
 
     /* ── WHO I SERVE ───────────────────────────────────────────────── */
     .who-section {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       padding: 5rem 8vw;
     }
@@ -423,7 +424,7 @@
 
     /* ── WHY CONSISTENT ────────────────────────────────────────────── */
     .consistent-section {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       display: flex;
       align-items: stretch;
@@ -449,7 +450,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--black) 100%);
+      background: linear-gradient(to right, transparent 60%, var(--slate-blue) 100%);
       pointer-events: none;
     }
 
@@ -514,7 +515,7 @@
 
     /* ── WHAT'S INCLUDED ───────────────────────────────────────────── */
     .included-section {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       padding: 6rem 8vw;
     }
@@ -581,7 +582,7 @@
 
     /* ── PORTFOLIO STRIP ───────────────────────────────────────────── */
     .portfolio-strip {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       padding: 5rem 0;
       overflow: hidden;
@@ -628,7 +629,7 @@
 
     /* ── MY APPROACH ───────────────────────────────────────────────── */
     .approach-section {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       display: flex;
       align-items: stretch;
@@ -655,7 +656,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to left, transparent 60%, var(--black) 100%);
+      background: linear-gradient(to left, transparent 60%, var(--slate-blue) 100%);
       pointer-events: none;
     }
 
@@ -690,7 +691,7 @@
 
     /* ── FAQ ───────────────────────────────────────────────────────── */
     .faq-section {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       padding: 6rem 8vw;
     }
@@ -746,7 +747,7 @@
 
     /* ── TESTIMONIAL ───────────────────────────────────────────────── */
     .testimonial-section {
-      background: var(--black);
+      background: var(--slate-blue);
       border-bottom: 1px solid var(--border-faint);
       padding: 6rem 8vw;
       text-align: center;
@@ -779,7 +780,7 @@
 
     /* ── FINAL CTA ─────────────────────────────────────────────────── */
     .cta-section {
-      background: var(--black);
+      background: var(--slate-blue);
       padding: 7rem 8vw;
       text-align: center;
     }
@@ -811,7 +812,7 @@
        FOOTER
        ═══════════════════════════════════════════════════════════════ */
     .site-footer {
-      background: var(--black);
+      background: var(--slate-blue);
       border-top: 1px solid var(--border-bright);
       padding: 4rem 3rem 3rem;
     }
@@ -911,7 +912,7 @@
 
       .page-hero { flex-direction: column; }
       .page-hero-image { flex: none; width: 100%; min-height: 350px; }
-      .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
+      .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
       .page-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
 
       .who-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -921,8 +922,8 @@
       .approach-section { flex-direction: column; }
       .consistent-image,
       .approach-image { flex: none; width: 100%; min-height: 300px; }
-      .consistent-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
-      .approach-image::after { background: linear-gradient(to bottom, transparent 60%, var(--black) 100%); }
+      .consistent-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
+      .approach-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
       .consistent-content,
       .approach-content { flex: none; width: 100%; padding: 3rem 2rem; }
 

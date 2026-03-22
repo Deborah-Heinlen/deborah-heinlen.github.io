@@ -21,6 +21,7 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
+      --slate-blue: #252330;
       --cream:      #f5f0e8;
       --linen:      #ede8dc;
       --warm-tan:   #d4c4aa;
@@ -41,7 +42,7 @@
       --footer-text:  #bbbbbb;
       --footer-faint: #aaaaaa;
 
-      /* ── Border tones on black ── */
+      /* ── Border tones on slate-blue ── */
       --border-bright:  #474338;
       --border-mid:     #333028;
       --border-subtle:  #2a2820;
@@ -57,7 +58,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    html, body { background-color: var(--black); color: var(--text-white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
+    html, body { background-color: var(--slate-blue); color: var(--text-white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
 
     /* ── HEADER ── */
     .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
@@ -122,19 +123,19 @@
     .lightbox-next { right: 1.5rem; }
 
     /* ── CTA ── */
-    .cta-section { background: var(--black); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
+    .cta-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
     .cta-section .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1rem; }
     .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
     .cta-section p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.04em; color: var(--body-faint); max-width: 520px; margin: 0 auto 3rem; }
     .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
 
     .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-tan); text-decoration: none; border: 1px solid var(--warm-tan); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; }
-    .btn-primary:hover { background: var(--warm-tan); color: var(--black); }
+    .btn-primary:hover { background: var(--warm-tan); color: var(--slate-blue); }
     .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid #555555; padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
     .btn-secondary:hover { border-color: #999999; color: var(--white); }
 
     /* ── FOOTER ── */
-    .site-footer { background: var(--black); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
+    .site-footer { background: var(--slate-blue); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
     .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
     .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
     .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
