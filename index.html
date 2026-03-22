@@ -22,6 +22,7 @@
 
     :root {
       --slate-blue: #252330;
+      --silver:     #B8BCC4;
       --cream:      #f5f0e8;
       --linen:      #ede8dc;
       --warm-tan:   #d4c4aa;
@@ -36,26 +37,26 @@
       --total-nav:  116px;
 
       /* ── Text grays for dark background ── */
-      --body-text:    #cccccc;   /* main body copy          */
-      --body-muted:   #c2c2c2;   /* secondary body copy     */
-      --body-faint:   #b8b8b8;   /* tertiary / CTA sub-text */
-      --footer-text:  #bbbbbb;   /* footer body             */
-      --footer-faint: #aaaaaa;   /* footer bottom bar       */
+      --body-text:    #B8BCC4;   /* main body copy          */
+      --body-muted:   #A8ACB4;   /* secondary body copy     */
+      --body-faint:   #9095A0;   /* tertiary / CTA sub-text */
+      --footer-text:  #9095A0;   /* footer body             */
+      --footer-faint: #B8BCC4;   /* footer bottom bar       */
 
       /* ── Border tones on slate-blue ── */
-      --border-bright:  #474338;   /* visible tan border      */
-      --border-mid:     #333028;   /* mid-weight tan border   */
-      --border-subtle:  #2a2820;   /* subtle tan border       */
-      --border-faint:   #222018;   /* barely-there separator  */
-      --border-hover:   #5c5745;   /* hover state border      */
+     --border-bright:  #4a4858;
+     --border-mid:     #353344;
+     --border-subtle:  #2c2a38;
+     --border-faint:   #232130;
+     --border-hover:   #5a5870;
 
       /* ── Nav / header (cream backgrounds) ── */
-      --nav-bg:         #ede8dc;
-      --nav-border:     #ddd4c4;
-      --nav-hover-bg:   #e8e1d6;
-      --header-bg:      #f2ede8;
-      --header-border:  #ddd4c4;
-    }
+     --nav-bg:        #ECEDF0;
+     --nav-border:    #D8D9DE;
+     --nav-hover-bg:  #E4E5EA;
+     --header-bg:     #F0F0F3;
+     --header-border: #D8D9DE;
+     }
 
     html { scroll-behavior: smooth; }
     html, body {
@@ -94,7 +95,7 @@
       font-weight: 400;
       font-style: normal;
       font-size: 3rem;
-      color: var(--text-dark);
+      color: var(--slate-blue);
       text-decoration: none;
       position: absolute;
       left: 50%;
@@ -108,15 +109,15 @@
       font-weight: 300;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-mid);
+      color: var(--slate-blue);
       text-decoration: none;
-      border: 1px solid var(--warm-tan);
+      border: 1px solid var(--slate-blue);
       padding: 0.55rem 1.5rem;
       transition: background 0.25s, color 0.25s;
       white-space: nowrap;
     }
     .header-cta:hover {
-      background: var(--warm-tan);
+      background: var(--silver);
       color: var(--cream);
     }
 
@@ -270,7 +271,7 @@
       font-weight: 200;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       margin-top: 1.2rem;
       padding: 0.5rem 0 0.3rem;
       display: block;
@@ -484,7 +485,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-size: 2.4rem;
-      color: var(--warm-tan);
+      color: var(--silver);
       letter-spacing: 0.04em;
       display: block;
       line-height: 1;
@@ -558,7 +559,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       text-align: center;
       display: block;
       margin-bottom: 4rem;
@@ -609,7 +610,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       display: block;
       margin-bottom: 1.2rem;
     }
@@ -648,7 +649,7 @@
     }
 
     .service-meta strong {
-      color: var(--warm-tan);
+      color: var(--silver);
       font-weight: 300;
     }
 
@@ -666,15 +667,15 @@
       font-weight: 300;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       text-decoration: none;
-      border: 1px solid var(--warm-tan);
+      border: 1px solid var(--silver);
       padding: 0.85rem 2rem;
       transition: background 0.25s, color 0.25s;
       white-space: nowrap;
     }
     .btn-primary:hover {
-      background: var(--warm-tan);
+      background: var(--silver);
       color: var(--slate-blue);
     }
 
@@ -741,7 +742,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       display: block;
       margin-bottom: 1.2rem;
     }
@@ -771,7 +772,7 @@
       flex-direction: column;
       gap: 0.5rem;
       margin: 1.5rem 0 2rem;
-      border-left: 1px solid var(--warm-tan);
+      border-left: 1px solid var(--silver);
       padding-left: 1.5rem;
     }
 
@@ -815,7 +816,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       font-style: normal;
     }
 
@@ -827,7 +828,7 @@
     }
 
     .stars span {
-      color: var(--warm-tan);
+      color: var(--silver);
       font-size: 1rem;
     }
 
@@ -848,7 +849,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       text-align: center;
       display: block;
       margin-bottom: 3rem;
@@ -954,7 +955,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--warm-tan);
+      color: var(--silver);
       margin-bottom: 1.2rem;
     }
 
@@ -975,7 +976,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-col ul li a:hover { color: var(--warm-tan); }
+    .footer-col ul li a:hover { color: var(--silver); }
 
     .footer-contact-item {
       display: block;
@@ -988,7 +989,7 @@
       margin-bottom: 0.6rem;
       transition: color 0.2s;
     }
-    .footer-contact-item:hover { color: var(--warm-tan); }
+    .footer-contact-item:hover { color: var(--silver); }
 
     .footer-bottom {
       max-width: 1200px;
@@ -1022,7 +1023,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-bottom-links a:hover { color: var(--silver); }
 
     .footer-badge {
       height: 38px;
