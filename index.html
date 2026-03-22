@@ -1559,7 +1559,7 @@
       storyBg.classList.toggle('hidden', scrollY + vh > storyBottom - 100);
 
       let activeBg = 0;
-      const triggerPoint = scrollY + (vh * 1.0);
+      const triggerPoint = scrollY + (vh * .25);
 
       scrollItems.forEach(item => {
         const itemTop = item.getBoundingClientRect().top + scrollY;
