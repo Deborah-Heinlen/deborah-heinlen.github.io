@@ -18,33 +18,41 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --cream: #f5f0e8; --linen: #ede8dc; --warm-tan: #c8b89a; --slate-blue: #252330;
-      --text-dark: #2e2419; --text-mid: #6b5c4a; --text-light: #9e8e7a;
-      --black: #000000; --white: #ffffff; --text-white: #ffffff;
-      --header-h: 72px; --nav-h: 44px; --total-nav: 116px;
+      --slate-blue: #252330;
+      --silver:     #B8BCC4;
+      --mid-gray:   #9095A0;
+      --cream:      #f5f0e8;
+      --text-dark:  #2e2419;
+      --text-mid:   #6b5c4a;
+      --text-light: #9e8e7a;
+      --black:      #000000;
+      --white:      #ffffff;
+      --text-white: #ffffff;
+      --header-h:   90px;
+      --nav-h:      44px;
+      --total-nav:  116px;
 
       /* ── Text grays for dark background ── */
-      --body-text:    #cccccc;
-      --body-muted:   #c2c2c2;
-      --body-faint:   #b8b8b8;
-      --footer-text:  #bbbbbb;
-      --footer-faint: #aaaaaa;
+      --body-text:    #B8BCC4;   /* main body copy          */
+      --body-muted:   #A8ACB4;   /* secondary body copy     */
+      --body-faint:   #9095A0;   /* tertiary / CTA sub-text */
+      --footer-text:  #9095A0;   /* footer body             */
+      --footer-faint: #B8BCC4;   /* footer bottom bar       */
 
       /* ── Border tones on slate-blue ── */
-      --border-bright:  #474338;
-      --border-mid:     #333028;
-      --border-subtle:  #2a2820;
-      --border-faint:   #222018;
-      --border-hover:   #5c5745;
+     --border-bright:  #4a4858;
+     --border-mid:     #353344;
+     --border-subtle:  #2c2a38;
+     --border-faint:   #232130;
+     --border-hover:   #5a5870;
 
       /* ── Nav / header (cream backgrounds) ── */
-      --nav-bg:        #ede8dc;
-      --nav-border:    #ddd4c4;
-      --nav-hover-bg:  #e8e1d6;
-      --header-bg:     #f2ede8;
-      --header-border: #ddd4c4;
-    }
-
+     --nav-bg:        #ECEDF0;
+     --nav-border:    #D8D9DE;
+     --nav-hover-bg:  #E4E5EA;
+     --header-bg:     #F0F0F3;
+     --header-border: #D8D9DE;
+     }
     html { scroll-behavior: smooth; }
     html, body { background-color: var(--slate-blue); color: var(--text-white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
 
@@ -52,8 +60,8 @@
     .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
     .header-logo { height: 40px; width: auto; display: block; }
     .header-title { font-family: "lindsey-signature", sans-serif; font-weight: 400; font-size: 3rem; color: var(--text-dark); text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--warm-tan); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
-    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
+    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--silver); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .header-cta:hover { background: var(--silver); color: var(--mid-gray); }
 
     /* ── NAV ── */
     .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 199; height: var(--nav-h); display: flex; align-items: center; justify-content: center; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--nav-border); }
@@ -73,11 +81,11 @@
     .mobile-nav.open { display: block; }
     .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
     .mobile-nav a:hover { color: var(--text-dark); }
-    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
+    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
 
     /* ── PAGE ── */
     .page-content { padding-top: var(--total-nav); }
-    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 1.2rem; }
+    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 1.2rem; }
 
     /* ── CAROUSEL ── */
     .hero-carousel { background: var(--slate-blue); border-top: 1px solid var(--border-bright); border-bottom: 1px solid var(--border-faint); padding: 2rem 0; overflow: hidden; }
@@ -101,11 +109,11 @@
     .works-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.04em; line-height: 1.85; color: var(--body-faint); margin-bottom: 1.8rem; }
     .works-list { list-style: none; margin-bottom: 2.5rem; }
     .works-list li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.08em; color: var(--body-muted); padding: 0.55rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: center; gap: 0.8rem; }
-    .works-list li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--warm-tan); flex-shrink: 0; }
+    .works-list li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--silver); flex-shrink: 0; }
 
     /* ── BUTTONS ── */
-    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-tan); text-decoration: none; border: 1px solid var(--warm-tan); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
-    .btn-primary:hover { background: var(--warm-tan); color: var(--slate-blue); }
+    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); text-decoration: none; border: 1px solid var(--silver); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--silver); color: var(--slate-blue); }
     .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid #555555; padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
     .btn-secondary:hover { border-color: #999999; color: var(--white); }
 
@@ -118,7 +126,7 @@
     .experience-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 2rem; margin-top: 1rem; }
     .experience-points { list-style: none; margin-bottom: 2.5rem; }
     .experience-points li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--body-text); line-height: 1.7; padding: 0.6rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: baseline; gap: 0.8rem; }
-    .experience-points li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--warm-tan); flex-shrink: 0; position: relative; top: -3px; }
+    .experience-points li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--silver); flex-shrink: 0; position: relative; top: -3px; }
     .experience-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.04em; color: var(--body-faint); line-height: 1.8; margin-bottom: 2rem; }
 
     /* ── PACKAGES ── */
@@ -128,15 +136,15 @@
     .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3rem; }
     .package-card { border: 1px solid var(--border-subtle); padding: 3rem 2.5rem; position: relative; transition: border-color 0.3s; }
     .package-card:hover { border-color: var(--border-hover); }
-    .package-card.featured { border-color: var(--warm-tan); }
-    .package-card.featured::before { content: 'Most Popular'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); font-family: 'Jost', sans-serif; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--slate-blue); background: var(--warm-tan); padding: 0.3rem 1.2rem; white-space: nowrap; }
+    .package-card.featured { border-color: var(--silver); }
+    .package-card.featured::before { content: 'Most Popular'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); font-family: 'Jost', sans-serif; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--slate-blue); background: var(--silver); padding: 0.3rem 1.2rem; white-space: nowrap; }
     .package-image { width: 100%; height: 220px; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; margin-bottom: 2rem; }
-    .package-name { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--warm-tan); display: block; margin-bottom: 0.5rem; }
+    .package-name { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 0.5rem; }
     .package-price { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.8rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.3rem; }
     .package-duration { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--body-faint); display: block; margin-bottom: 1.8rem; }
     .package-includes { list-style: none; margin-bottom: 2rem; }
     .package-includes li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--body-muted); line-height: 1.6; padding: 0.45rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: baseline; gap: 0.7rem; }
-    .package-includes li::before { content: ''; display: inline-block; width: 14px; height: 1px; background: var(--warm-tan); flex-shrink: 0; position: relative; top: -3px; }
+    .package-includes li::before { content: ''; display: inline-block; width: 14px; height: 1px; background: var(--silver); flex-shrink: 0; position: relative; top: -3px; }
     .package-ideal { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1rem; color: var(--body-faint); line-height: 1.5; margin-bottom: 2rem; }
     .packages-cta { text-align: center; }
 
@@ -152,9 +160,9 @@
     /* ── TESTIMONIAL ── */
     .testimonial-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
     .stars { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 2.5rem; }
-    .stars span { color: var(--warm-tan); font-size: 1rem; }
+    .stars span { color: var(--silver); font-size: 1rem; }
     .testimonial-section blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--white); line-height: 1.55; max-width: 760px; margin: 0 auto 1.5rem; letter-spacing: 0.02em; }
-    .testimonial-section cite { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm-tan); font-style: normal; }
+    .testimonial-section cite { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); font-style: normal; }
 
     /* ── CTA ── */
     .cta-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 7rem 8vw; text-align: center; }
@@ -167,18 +175,18 @@
     .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
     .footer-brand img { height: 120px; width: auto; display: block; margin-bottom: 1.2rem; }
     .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
-    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--warm-tan); margin-bottom: 1.2rem; }
+    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.6rem; }
     .footer-col ul li a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--footer-text); text-decoration: none; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--warm-tan); }
+    .footer-col ul li a:hover { color: var(--silver); }
     .footer-contact-item { display: block; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--footer-text); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
-    .footer-contact-item:hover { color: var(--warm-tan); }
+    .footer-contact-item:hover { color: var(--silver); }
     .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; }
     .footer-bottom p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); }
     .footer-bottom-links { display: flex; gap: 1.5rem; }
     .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
-    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-bottom-links a:hover { color: var(--silver); }
     .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
 
     /* ── RESPONSIVE ── */
