@@ -7,834 +7,347 @@
   <title>Corporate Event Photography Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography</title>
   <meta name="description" content="Professional corporate event photography for conferences, fundraisers, meetings, and business gatherings across Cincinnati and Northern Kentucky. Polished images delivered within 48 hours. Commercial usage rights included." />
   <link rel="canonical" href="https://www.deborahheinlenphotography.com/corporate-event-photography-in-cincinnati-northern-kentucky/" />
-
   <meta property="og:title" content="Corporate Event Photography Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography" />
   <meta property="og:description" content="Professional corporate event photography for conferences, fundraisers, meetings, and business gatherings across Cincinnati and Northern Kentucky." />
   <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/banner_2026.jpg" />
   <meta property="og:url" content="https://www.deborahheinlenphotography.com/corporate-event-photography-in-cincinnati-northern-kentucky/" />
   <meta property="og:type" content="website" />
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
-
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       QUICK REFERENCE -- WHERE TO FIND COMMON CHANGES
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ALL COLORS ........................ find :root below
+       Event grid image sizes ............ search: EVENT GRID CELLS
+       Event grid/text split (65/35) ..... search: EVENT GRID SPLIT
+       Font sizes ........................ each has a note above font-size
+       Section padding/spacing ........... each has a note above padding
+       Left/right layout flip ............ each section has a note
+       Text alignment .................... each section has a note
+       Vertical content position ......... each section has a note
+       Hero image size ................... search: HERO IMAGE SIZE
+       Value row image sizes ............. search: VALUE IMAGE SIZE
+       Adding/removing event grid images . search: EVENT IMAGES ARRAY
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       COLOR SYSTEM -- ALL COLORS LIVE HERE
+       Change any color in this block and it updates everywhere.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     :root {
-      --slate-blue: #252330;
-      --cream:      #f5f0e8;
-      --linen:      #ede8dc;
-      --warm-tan:   #d4c4aa;
-      --text-dark:  #2e2419;
-      --text-mid:   #6b5c4a;
-      --text-light: #9e8e7a;
-      --black:      #000000;
-      --white:      #ffffff;
-      --text-white: #ffffff;
-      --header-h:   72px;
+      --slate-blue:  #252330;   /* main background throughout */
+      --silver:      #B8BCC4;   /* borders, icons, labels, hover fills */
+      --mid-gray:    #9095A0;   /* secondary accents */
+      --cream:       #f5f0e8;
+      --text-dark:   #2e2419;   /* dark text on light header */
+      --text-mid:    #6b5c4a;   /* medium text on light header/nav */
+      --text-light:  #9e8e7a;   /* light text on light header */
+      --black:       #000000;
+      --white:       #ffffff;
+
+      /* ── Body text (on dark backgrounds) */
+      --body-text:   #B8BCC4;   /* main body paragraph copy */
+      --body-muted:  #A8ACB4;   /* secondary/list item copy */
+      --body-faint:  #9095A0;   /* tertiary copy, CTA sub-text */
+
+      /* ── Footer text */
+      --footer-text:  #9095A0;
+      --footer-faint: #B8BCC4;
+
+      /* ── Borders (on slate-blue backgrounds) */
+      --border-bright:  #4a4858;
+      --border-mid:     #353344;
+      --border-subtle:  #2c2a38;
+      --border-faint:   #232130;
+      --border-hover:   #5a5870;
+
+      /* ── Button secondary border colors */
+      --btn-secondary-border:       #555555;
+      --btn-secondary-hover-border: #999999;
+
+      /* ── Header and nav */
+      --header-bg:     #F0F0F3;
+      --header-border: #D8D9DE;
+      --nav-bg:        #ECEDF0;
+      --nav-border:    #D8D9DE;
+      --nav-hover-bg:  #E4E5EA;
+
+      /* ── Fixed heights */
+      --header-h:   90px;
       --nav-h:      44px;
-      --total-nav:  116px;
-
-      /* ── Text grays for dark background ── */
-      --body-text:    #cccccc;
-      --body-muted:   #c2c2c2;
-      --body-faint:   #b8b8b8;
-      --footer-text:  #bbbbbb;
-      --footer-faint: #aaaaaa;
-
-      /* ── Border tones on slate-blue ── */
-      --border-bright:  #474338;
-      --border-mid:     #333028;
-      --border-subtle:  #2a2820;
-      --border-faint:   #222018;
-      --border-hover:   #5c5745;
-
-      /* ── Nav / header (cream backgrounds) ── */
-      --nav-bg:         #ede8dc;
-      --nav-border:     #ddd4c4;
-      --nav-hover-bg:   #e8e1d6;
-      --header-bg:      #f2ede8;
-      --header-border:  #ddd4c4;
+      --total-nav:  134px;
     }
 
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html, body {
-      background-color: var(--slate-blue);
-      color: var(--text-white);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
+    html, body { background-color: var(--slate-blue); color: var(--white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
 
-    /* ═══════════════════════════════════════════════════════════════
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        HEADER
-       ═══════════════════════════════════════════════════════════════ */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      height: var(--header-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 3rem;
-      background: var(--header-bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--header-border);
-    }
-
+       Fixed top bar: logo left, site name centered, Book button right.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
     .header-logo { height: 40px; width: auto; display: block; }
+    .header-title { font-family: "lindsey-signature", sans-serif; font-weight: 400; font-size: 3rem; color: var(--text-dark); text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--silver); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .header-cta:hover { background: var(--silver); color: var(--mid-gray); }
 
-    .header-title {
-      font-family: "lindsey-signature", sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
-      color: var(--text-dark);
-      text-decoration: none;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
 
-    .header-cta {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      border: 1px solid var(--warm-tan);
-      padding: 0.55rem 1.5rem;
-      transition: background 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
-
-    /* ═══════════════════════════════════════════════════════════════
-       NAV STRIP
-       ═══════════════════════════════════════════════════════════════ */
-    .site-nav {
-      position: fixed;
-      top: var(--header-h);
-      left: 0; right: 0;
-      z-index: 199;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--nav-bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--nav-border);
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-      border-left: 1px solid var(--nav-border);
-    }
-
-    .nav-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      border-right: 1px solid var(--nav-border);
-    }
-
-    .nav-link {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0 1.4rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-link:hover, .nav-link.active {
-      background: var(--nav-hover-bg);
-      color: var(--text-dark);
-    }
-
-    .nav-link.has-dropdown::after {
-      content: '';
-      display: inline-block;
-      width: 0; height: 0;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-top: 4px solid var(--text-light);
-      margin-left: 0.45rem;
-      transition: transform 0.2s;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       NAVIGATION
+       Desktop nav bar.  Hidden at 900px -- hamburger takes over.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 199; height: var(--nav-h); display: flex; align-items: center; justify-content: center; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--nav-border); }
+    .nav-list { list-style: none; display: flex; align-items: stretch; height: 100%; border-left: 1px solid var(--nav-border); }
+    .nav-item { position: relative; display: flex; align-items: center; border-right: 1px solid var(--nav-border); }
+    .nav-link { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0 1.4rem; height: 100%; display: flex; align-items: center; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    .nav-link:hover, .nav-link.active { background: var(--nav-hover-bg); color: var(--text-dark); }
+    .nav-link.has-dropdown::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid var(--text-light); margin-left: 0.45rem; transition: transform 0.2s; }
     .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%; left: 0;
-      min-width: 260px;
-      background: var(--nav-bg);
-      border: 1px solid var(--nav-border);
-      border-top: none;
-      z-index: 300;
-      list-style: none;
-      padding: 0.4rem 0;
-    }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--nav-bg); border: 1px solid var(--nav-border); border-top: none; z-index: 300; list-style: none; padding: 0.4rem 0; }
     .nav-item:hover .dropdown { display: block; }
-    .dropdown li a {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.75rem 1.4rem;
-      transition: background 0.15s, color 0.15s;
-    }
+    .dropdown li a { display: block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.75rem 1.4rem; transition: background 0.15s, color 0.15s; }
     .dropdown li a:hover { background: var(--nav-hover-bg); color: var(--text-dark); }
-
-    /* Mobile nav */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      flex-direction: column;
-      gap: 5px;
-    }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
     .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: var(--header-h);
-      left: 0; right: 0; bottom: 0;
-      background: var(--nav-bg);
-      z-index: 198;
-      overflow-y: auto;
-      padding: 2rem 2rem 4rem;
-    }
+    .mobile-nav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--nav-bg); z-index: 198; overflow-y: auto; padding: 2rem 2rem 4rem; }
     .mobile-nav.open { display: block; }
-    .mobile-nav a {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--nav-border);
-      transition: color 0.2s;
-    }
+    .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
     .mobile-nav a:hover { color: var(--text-dark); }
-    .mobile-section-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 200;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-top: 1.2rem;
-      padding: 0.5rem 0 0.3rem;
-      display: block;
-    }
+    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       PAGE CONTENT
-       ═══════════════════════════════════════════════════════════════ */
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PAGE WRAPPER & SHARED UTILITIES
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     .page-content { padding-top: var(--total-nav); }
+    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 1.2rem; }
 
-    /* ── HERO ──────────────────────────────────────────────────────── */
-    .page-hero {
-      display: flex;
-      align-items: stretch;
-      min-height: 80vh;
-      border-bottom: 1px solid var(--border-faint);
-    }
 
-    .page-hero-image {
-      flex: 0 0 55%;
-      position: relative;
-      overflow: hidden;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUTTONS
+       To change button colors: update variables in :root above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); text-decoration: none; border: 1px solid var(--silver); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--silver); color: var(--slate-blue); }
+    .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid var(--btn-secondary-border); padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
+    .btn-secondary:hover { border-color: var(--btn-secondary-hover-border); color: var(--white); }
 
-    .page-hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      filter: saturate(0.85) brightness(1);
-      display: block;
-    }
 
-    .page-hero-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%);
-      pointer-events: none;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO SECTION
+       Large image left (55%), text right (45%).
+       To flip: add flex-direction: row-reverse to .page-hero
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .page-hero { display: flex; align-items: stretch; min-height: 80vh; border-bottom: 1px solid var(--border-faint); }
 
-    .page-hero-content {
-      flex: 0 0 45%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 6vw;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      display: block;
-      margin-bottom: 1.2rem;
-    }
-
-    .page-hero-content h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2.2rem, 3.5vw, 3.6rem);
-      color: var(--white);
-      letter-spacing: 0.03em;
-      line-height: 1.1;
-      margin-bottom: 1.4rem;
-    }
-
-    .page-hero-content p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.88rem, 1.1vw, 1rem);
-      letter-spacing: 0.06em;
-      color: var(--body-text);
-      line-height: 1.8;
-      margin-bottom: 2.2rem;
-    }
-
+    /* HERO IMAGE SIZE
+       To make wider or narrower: change flex-basis (currently 55%)
+       To reframe: change object-position */
+    .page-hero-image { flex: 0 0 55%; position: relative; overflow: hidden; }
+    .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center center; filter: saturate(0.85); display: block; }
+    .page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%); pointer-events: none; }
+    .page-hero-content { flex: 0 0 45%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; position: relative; z-index: 1; }
+    .page-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 3.5vw, 3.6rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 1.4rem; }
+    .page-hero-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.88rem, 1.1vw, 1rem); letter-spacing: 0.06em; color: var(--body-text); line-height: 1.8; margin-bottom: 2.2rem; }
     .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    /* ── BUTTONS ───────────────────────────────────────────────────── */
-    .btn-primary {
-      display: inline-block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      text-decoration: none;
-      border: 1px solid var(--warm-tan);
-      padding: 0.85rem 2rem;
-      transition: background 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-    .btn-primary:hover { background: var(--warm-tan); color: var(--slate-blue); }
 
-    .btn-secondary {
-      display: inline-block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--body-muted);
-      text-decoration: none;
-      border: 1px solid #555555;
-      padding: 0.85rem 2rem;
-      transition: border-color 0.25s, color 0.25s;
-    }
-    .btn-secondary:hover { border-color: #999999; color: var(--white); }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       EVENT TYPES SECTION
+       Left: heading.  Right: dot-grid list of event types.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .event-types { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 5rem 8vw; }
+    .event-types-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 6vw; align-items: start; }
+    .event-types-heading h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-top: 1rem; }
+    .event-types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+    .event-type-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 1.5rem 1.8rem; display: flex; align-items: center; gap: 1rem; }
+    .event-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--silver); flex-shrink: 0; }
+    .event-type-item span { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.1em; color: var(--body-text); }
 
-    /* ── EVENT TYPES ───────────────────────────────────────────────── */
-    .event-types {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 5rem 8vw;
-    }
 
-    .event-types-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 6vw;
-      align-items: start;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       EVENT GRID SECTION
+       "Professional Photography That Blends Into Your Event."
+       Left (65%): alternating image grid of event photos.
+       Right (35%): headline, body text, button.
+       Images managed via the eventImages array in <script> below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .event-grid-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 3rem 3rem 3.5rem; }
 
-    .event-types-heading h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-top: 1rem;
-    }
+    /* EVENT GRID SPLIT
+       To change the grid/text width split:
+       adjust the two numbers in grid-template-columns.
+       Currently 65 (grid) and 35 (text). */
+    .event-grid-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 65fr 35fr; gap: 3rem; align-items: center; }
 
-    .event-types-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border-top: 1px solid var(--border-subtle);
-      border-left: 1px solid var(--border-subtle);
-    }
+    /* EVENT GRID CELLS
+       3 columns, 2 images per column.
+       Columns 1 and 3 (odd):  tall on top (290px), short on bottom (200px).
+       Column 2 (even):        short on top (200px), tall on bottom (290px).
+       Event images are naturally more varied -- landscape shots for
+       room/crowd images, portrait crops for speaker/individual shots.
 
-    .event-type-item {
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 1.5rem 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+       TO ADJUST THE TALL CELL HEIGHT:  change the 290px values below
+       TO ADJUST THE SHORT CELL HEIGHT: change the 200px values below
+       TO ADJUST GAP BETWEEN CELLS:     change the gap value (currently 12px)
 
-    .event-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--warm-tan);
-      flex-shrink: 0;
-    }
+       TO ADJUST CROP per image: change the "position" value in the
+       eventImages array in the <script> block below. */
+    .event-grid { display: flex; gap: 12px; width: 100%; }
+    .event-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .event-col:nth-child(odd)  .event-cell:nth-child(1) { height: 290px; }
+    .event-col:nth-child(odd)  .event-cell:nth-child(2) { height: 200px; }
+    .event-col:nth-child(even) .event-cell:nth-child(1) { height: 200px; }
+    .event-col:nth-child(even) .event-cell:nth-child(2) { height: 290px; }
+    .event-cell { overflow: hidden; }
+    .event-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .event-type-item span {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.88rem;
-      letter-spacing: 0.1em;
-      color: var(--body-text);
-    }
+    /* ── Event grid text column ──
+       Text alignment: left, center, or right (currently left)
+       To change vertical position:
+         justify-content: flex-start = top
+         justify-content: center     = middle
+         justify-content: flex-end   = bottom */
+    .event-grid-content { text-align: left; display: flex; flex-direction: column; justify-content: center; }
+    .event-grid-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.5rem; margin-top: 1rem; }
+    .event-grid-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.03em; color: var(--body-muted); margin-bottom: 1.2rem; }
 
-    /* ── THREE VALUE PROPS ─────────────────────────────────────────── */
-    .value-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-    }
 
-    .value-row {
-      display: flex;
-      align-items: stretch;
-      border-bottom: 1px solid var(--border-faint);
-    }
-
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       VALUE ROWS (sections 2 and 3)
+       Alternating full-width image/text rows.
+       Row 1: image left, text right.
+       Row 2 (.reverse): image right, text left.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .value-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); }
+    .value-row { display: flex; align-items: stretch; border-bottom: 1px solid var(--border-faint); }
     .value-row:last-child { border-bottom: none; }
+    /* Currently: image LEFT, text RIGHT.
+       To flip a row: add class="value-row reverse" in HTML. */
     .value-row.reverse { flex-direction: row-reverse; }
 
-    .value-image {
-      flex: 0 0 50%;
-      position: relative;
-      overflow: hidden;
-      min-height: 480px;
-    }
-
-    .value-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(0.85) brightness(1);
-      display: block;
-      transition: transform 0.8s ease;
-    }
+    /* VALUE IMAGE SIZE
+       To make the image column wider or narrower: change flex-basis (currently 50%)
+       To reframe what shows: change object-position */
+    .value-image { flex: 0 0 50%; position: relative; overflow: hidden; min-height: 480px; }
+    .value-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.85); display: block; transition: transform 0.8s ease; }
     .value-row:hover .value-image img { transform: scale(1.03); }
+    /* Gradient on right edge of standard row */
+    .value-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, var(--slate-blue) 100%); pointer-events: none; }
+    /* Gradient on left edge of reversed row */
+    .value-row.reverse .value-image::after { background: linear-gradient(to left, transparent 60%, var(--slate-blue) 100%); }
+    .value-content { flex: 0 0 50%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; }
+    .value-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.5rem; margin-top: 1rem; }
+    .value-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.03em; color: var(--body-muted); margin-bottom: 1.2rem; }
 
-    .value-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--slate-blue) 100%);
-      pointer-events: none;
-    }
 
-    .value-row.reverse .value-image::after {
-      background: linear-gradient(to left, transparent 60%, var(--slate-blue) 100%);
-    }
-
-    .value-content {
-      flex: 0 0 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 6vw;
-    }
-
-    .value-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .value-content p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      letter-spacing: 0.03em;
-      color: var(--body-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    /* ── COVERAGE DETAILS ──────────────────────────────────────────── */
-    .coverage-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 6rem 8vw;
-    }
-
-    .coverage-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .coverage-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      margin-top: 1rem;
-    }
-
-    .coverage-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .coverage-card {
-      border: 1px solid var(--border-subtle);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      transition: border-color 0.3s;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       COVERAGE SECTION
+       Three cards for half-day, full-day, add-on.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .coverage-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 6rem 8vw; }
+    .coverage-header { text-align: center; margin-bottom: 4rem; }
+    .coverage-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
+    .coverage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3.5rem; }
+    .coverage-card { border: 1px solid var(--border-subtle); padding: 2.5rem 2rem; text-align: center; transition: border-color 0.3s; }
     .coverage-card:hover { border-color: var(--border-hover); }
-
-    .coverage-icon {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 2.4rem;
-      color: var(--warm-tan);
-      display: block;
-      margin-bottom: 1.2rem;
-      line-height: 1;
-    }
-
-    .coverage-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-      color: var(--white);
-      letter-spacing: 0.03em;
-      margin-bottom: 0.8rem;
-    }
-
-    .coverage-card p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.88rem;
-      letter-spacing: 0.04em;
-      line-height: 1.85;
-      color: var(--body-faint);
-    }
-
+    .coverage-icon { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.4rem; color: var(--silver); display: block; margin-bottom: 1.2rem; line-height: 1; }
+    .coverage-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--white); letter-spacing: 0.03em; margin-bottom: 0.8rem; }
+    .coverage-card p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.04em; line-height: 1.85; color: var(--body-faint); }
     .coverage-cta { text-align: center; }
 
-    /* ── FAQ ───────────────────────────────────────────────────────── */
-    .faq-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 6rem 8vw;
-    }
 
-    .faq-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FAQ SECTION
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .faq-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; }
+    .faq-header { text-align: center; margin-bottom: 4rem; }
+    .faq-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+    .faq-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 2.5rem; }
+    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 1rem; }
+    .faq-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.9rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-muted); }
 
-    .faq-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      margin-top: 1rem;
-    }
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      max-width: 1000px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border-subtle);
-      border-left: 1px solid var(--border-subtle);
-    }
-
-    .faq-item {
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 2.5rem;
-    }
-
-    .faq-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-      color: var(--white);
-      letter-spacing: 0.03em;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    .faq-item p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      line-height: 1.85;
-      color: var(--body-muted);
-    }
-
-    /* ── TESTIMONIAL ───────────────────────────────────────────────── */
-    .testimonial-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 6rem 8vw;
-      text-align: center;
-    }
-
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       TESTIMONIAL SECTION
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .testimonial-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
     .stars { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 2.5rem; }
-    .stars span { color: var(--warm-tan); font-size: 1rem; }
+    .stars span { color: var(--silver); font-size: 1rem; }
+    .testimonial-section blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--white); line-height: 1.55; max-width: 820px; margin: 0 auto 1.5rem; letter-spacing: 0.02em; }
+    .testimonial-section cite { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); font-style: normal; }
 
-    .testimonial-section blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-      color: var(--white);
-      line-height: 1.55;
-      max-width: 820px;
-      margin: 0 auto 1.5rem;
-      letter-spacing: 0.02em;
-    }
 
-    .testimonial-section cite {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      font-style: normal;
-    }
-
-    /* ── PORTFOLIO LINK ────────────────────────────────────────────── */
-    .portfolio-link-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 5rem 8vw;
-      text-align: center;
-    }
-
-    .portfolio-link-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-    }
-
-    .portfolio-link-section p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      color: var(--body-faint);
-      line-height: 1.8;
-      max-width: 500px;
-      margin: 0 auto 2.5rem;
-    }
-
-    /* ── FINAL CTA ─────────────────────────────────────────────────── */
-    .cta-section {
-      background: var(--slate-blue);
-      padding: 7rem 8vw;
-      text-align: center;
-    }
-
-    .cta-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-    }
-
-    .cta-section p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      letter-spacing: 0.04em;
-      color: var(--body-faint);
-      max-width: 580px;
-      margin: 0 auto 3rem;
-    }
-
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FINAL CTA SECTION
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .cta-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 7rem 8vw; text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
+    .cta-section p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.04em; color: var(--body-faint); max-width: 580px; margin: 0 auto 3rem; }
     .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
 
-    /* ═══════════════════════════════════════════════════════════════
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        FOOTER
-       ═══════════════════════════════════════════════════════════════ */
-    .site-footer {
-      background: var(--slate-blue);
-      border-top: 1px solid var(--border-bright);
-      padding: 4rem 3rem 3rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
-    .footer-brand p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      line-height: 1.8;
-      color: var(--footer-text);
-    }
-
-    .footer-col h4 {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-bottom: 1.2rem;
-    }
-
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-footer { background: var(--slate-blue); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand img { height: 120px; width: auto; display: block; margin-bottom: 1.2rem; }
+    .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
+    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.6rem; }
-    .footer-col ul li a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      color: var(--footer-text);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-col ul li a:hover { color: var(--warm-tan); }
-
-    .footer-contact-item {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      color: var(--footer-text);
-      text-decoration: none;
-      margin-bottom: 0.6rem;
-      transition: color 0.2s;
-    }
-    .footer-contact-item:hover { color: var(--warm-tan); }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-mid);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-bottom p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--footer-faint);
-    }
-
+    .footer-col ul li a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--footer-text); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--silver); }
+    .footer-contact-item { display: block; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--footer-text); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-contact-item:hover { color: var(--silver); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; }
+    .footer-bottom p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); }
     .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--footer-faint);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--silver); }
     .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       RESPONSIVE
-       ═══════════════════════════════════════════════════════════════ */
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE -- TABLET (max 900px)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 900px) {
       .site-nav { display: none; }
       .mobile-menu-btn { display: flex; }
       .header-title { display: none; }
-
       .page-hero { flex-direction: column; }
       .page-hero-image { flex: none; width: 100%; min-height: 350px; }
       .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
       .page-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
-
       .event-types-inner { grid-template-columns: 1fr; gap: 2rem; }
       .event-types-grid { grid-template-columns: 1fr; }
-
-      .value-row,
-      .value-row.reverse { flex-direction: column; }
+      /* Event grid section stacks: text on top, grid below */
+      .event-grid-inner { grid-template-columns: 1fr; gap: 2rem; }
+      /* Mobile grid: 2 columns, slightly shorter cells */
+      .event-col:nth-child(odd)  .event-cell:nth-child(1) { height: 200px; }
+      .event-col:nth-child(odd)  .event-cell:nth-child(2) { height: 160px; }
+      .event-col:nth-child(even) .event-cell:nth-child(1) { height: 160px; }
+      .event-col:nth-child(even) .event-cell:nth-child(2) { height: 200px; }
+      .value-row, .value-row.reverse { flex-direction: column; }
       .value-image { flex: none; width: 100%; min-height: 300px; }
       .value-image::after,
-      .value-row.reverse .value-image::after {
-        background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%);
-      }
+      .value-row.reverse .value-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
       .value-content { flex: none; width: 100%; padding: 3rem 2rem; }
-
       .coverage-grid { grid-template-columns: 1fr 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE -- MOBILE (max 600px)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
       .page-hero-content { padding: 3rem 1.5rem; }
@@ -844,9 +357,9 @@
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+
   </style>
 </head>
-
 <body>
 
   <header class="site-header">
@@ -858,6 +371,10 @@
     <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
   </header>
 
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       DESKTOP NAVIGATION
+       NOTE: Keep in sync with mobile nav below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="site-nav" aria-label="Main navigation">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -898,9 +415,12 @@
 
   <main class="page-content">
 
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         HERO -- large image left, text right
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="page-hero">
       <div class="page-hero-image">
-        <img src="../images/corporate-event-portfolio-16.jpg" alt="Corporate event photography Cincinnati and Northern Kentucky" />
+        <img src="/images/corporate-event-portfolio-16.jpg" alt="Corporate event photography Cincinnati and Northern Kentucky" />
       </div>
       <div class="page-hero-content">
         <span class="section-label">Events &amp; Conferences</span>
@@ -913,6 +433,9 @@
       </div>
     </section>
 
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         EVENT TYPES
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="event-types">
       <div class="event-types-inner">
         <div class="event-types-heading">
@@ -934,73 +457,80 @@
       </div>
     </section>
 
-    <section class="value-section">
-
-      <div class="value-row">
-        <div class="value-image">
-          <img src="../images/corporate-event-portfolio-29.jpg" alt="Panel discussion at corporate conference in Cincinnati" />
-        </div>
-        <div class="value-content">
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         EVENT GRID SECTION
+         Alternating image grid left, text right.
+         Images controlled by eventImages array in <script> below.
+         To change images: scroll to EVENT IMAGES ARRAY
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="event-grid-section">
+      <div class="event-grid-inner">
+        <div class="event-grid" id="event-grid"></div>
+        <div class="event-grid-content">
           <span class="section-label">Experienced &amp; Trusted</span>
           <h2>Professional Photography That Blends Into Your Event</h2>
           <p>I specialize in capturing the energy, professionalism, and meaningful moments that define your event.&nbsp; With extensive experience photographing corporate events throughout Cincinnati and Northern Kentucky, I blend seamlessly into the environment while delivering clean, consistent, standout visuals your organization can rely on.</p>
-          <p>From keynote speakers and performers to candid interactions between attendees, I provide dynamic, high-quality images that highlight the impact of your team's work &mdash; without ever being a distraction.</p>
+          <p>From keynote speakers and performers to candid interactions between attendees, I provide dynamic, high-quality images that highlight the impact of your team's work -- without ever being a distraction.</p>
+          <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;">Schedule a Phone Consult</a>
         </div>
       </div>
+    </section>
 
-      <div class="value-row reverse">
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         VALUE ROWS
+         Two remaining alternating image/text sections.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="value-section">
+
+      <!-- Row 1: image left, text right -->
+      <div class="value-row">
         <div class="value-image">
-          <img src="../images/corporate-event-portfolio-01.jpg" alt="Live entertainment photography at corporate event Cincinnati" />
+          <img src="/images/corporate-event-portfolio-01.jpg" alt="Live entertainment photography at corporate event Cincinnati" />
         </div>
         <div class="value-content">
           <span class="section-label">Visual Storytelling</span>
           <h2>Every Event Has a Story Worth Telling</h2>
-          <p>Your event is more than a schedule &mdash; it's a milestone for your team and your organization.&nbsp; I capture the moments that show your team in action, your attendees fully engaged, and your brand at its best.</p>
+          <p>Your event is more than a schedule -- it's a milestone for your team and your organization.&nbsp; I capture the moments that show your team in action, your attendees fully engaged, and your brand at its best.</p>
           <p>Whether you're hosting a leadership summit, award ceremony, training event, fundraiser, or corporate retreat, you'll walk away with a collection of polished images ready for press releases, newsletters, social media, and internal communications.</p>
         </div>
       </div>
 
-      <div class="value-row">
+      <!-- Row 2: image right, text left (reverse) -->
+      <div class="value-row reverse">
         <div class="value-image">
-          <img src="../images/corporate-event-portfolio-21.jpg" alt="Candid networking moment at corporate event in Northern Kentucky" />
+          <img src="/images/corporate-event-portfolio-21.jpg" alt="Candid networking moment at corporate event in Northern Kentucky" />
         </div>
         <div class="value-content">
           <span class="section-label">Effortless Coordination</span>
           <h2>You Focus on the Event. I'll Handle the Photography.</h2>
           <p>From pre-event planning to final image delivery, I make the process seamless.&nbsp; I coordinate with your event staff, understand your run-of-show, and stay flexible with shifting schedules.</p>
-          <p>Clients value my ability to anticipate key moments and capture them naturally.&nbsp; No staged distractions.&nbsp; No added stress.&nbsp; Just honest, engaging images that reflect your brand's energy and excellence &mdash; delivered within 48 hours of your event.</p>
+          <p>Clients value my ability to anticipate key moments and capture them naturally.&nbsp; No staged distractions.&nbsp; No added stress.&nbsp; Just honest, engaging images that reflect your brand's energy and excellence -- delivered within 48 hours of your event.</p>
         </div>
       </div>
 
     </section>
 
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         COVERAGE OPTIONS
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="coverage-section">
       <div class="coverage-header">
         <span class="section-label">Coverage Options</span>
         <h2>Flexible Coverage for Events of Any Size</h2>
       </div>
       <div class="coverage-grid">
-        <div class="coverage-card">
-          <span class="coverage-icon">&#189;</span>
-          <h3>Half-Day Coverage</h3>
-          <p>Up to 4 hours of professional event photography.&nbsp; Ideal for focused gatherings, award ceremonies, networking events, and shorter corporate programs.</p>
-        </div>
-        <div class="coverage-card">
-          <span class="coverage-icon">&#9788;</span>
-          <h3>Full-Day Coverage</h3>
-          <p>Complete coverage from setup through final session.&nbsp; Perfect for multi-session conferences, all-day trainings, retreats, and large-scale corporate events.</p>
-        </div>
-        <div class="coverage-card">
-          <span class="coverage-icon">+</span>
-          <h3>On-Site Headshot Add-On</h3>
-          <p>Add a professional headshot station to your event.&nbsp; A popular add-on for conferences and company celebrations &mdash; attendees leave with a polished portrait to use immediately.</p>
-        </div>
+        <div class="coverage-card"><span class="coverage-icon">&#189;</span><h3>Half-Day Coverage</h3><p>Up to 4 hours of professional event photography.&nbsp; Ideal for focused gatherings, award ceremonies, networking events, and shorter corporate programs.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">&#9788;</span><h3>Full-Day Coverage</h3><p>Complete coverage from setup through final session.&nbsp; Perfect for multi-session conferences, all-day trainings, retreats, and large-scale corporate events.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">+</span><h3>On-Site Headshot Add-On</h3><p>Add a professional headshot station to your event.&nbsp; A popular add-on for conferences and company celebrations -- attendees leave with a polished portrait to use immediately.</p></div>
       </div>
       <div class="coverage-cta">
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Phone Consult</a>
       </div>
     </section>
 
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FAQ
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="faq-section">
       <div class="faq-header">
         <span class="section-label">Common Questions</span>
@@ -1009,7 +539,7 @@
       <div class="faq-grid">
         <div class="faq-item"><h3>What types of events do you cover?</h3><p>I photograph conferences, fundraisers, trainings, award ceremonies, leadership summits, corporate retreats, and private business gatherings of all sizes across Cincinnati and Northern Kentucky.</p></div>
         <div class="faq-item"><h3>Can you do portraits at events?</h3><p>Yes.&nbsp; I can set up a small professional lighting station for on-site headshots or team portraits.&nbsp; This is a popular add-on for conferences and company celebrations and can be coordinated in advance.</p></div>
-        <div class="faq-item"><h3>How long will you cover an event?</h3><p>Coverage is flexible &mdash; from a single hour to multiple days depending on your schedule and needs.&nbsp; We will discuss timing during your consultation so you receive exactly the coverage you need.</p></div>
+        <div class="faq-item"><h3>How long will you cover an event?</h3><p>Coverage is flexible -- from a single hour to multiple days depending on your schedule and needs.&nbsp; We will discuss timing during your consultation so you receive exactly the coverage you need.</p></div>
         <div class="faq-item"><h3>How much does it cost?</h3><p>Event photography is priced based on coverage time and any add-on services such as on-site headshots.&nbsp; Contact me for a quick consultation and I will provide a detailed quote tailored to your event.</p></div>
         <div class="faq-item"><h3>How quickly will we receive our images?</h3><p>Most events are delivered within 48 hours.&nbsp; For time-sensitive needs such as press releases or internal communications, please mention this during your consultation.</p></div>
         <div class="faq-item"><h3>How many images do you deliver?</h3><p>You will receive a curated collection of fully edited images that truly reflect your event.&nbsp; The final number depends on coverage length, but clients typically receive a generous selection documenting all key moments.</p></div>
@@ -1018,23 +548,20 @@
       </div>
     </section>
 
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         TESTIMONIAL
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="testimonial-section">
       <div class="stars">
         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
       </div>
-      <blockquote>
-        "We were so impressed with Deborah!&nbsp; She went above and beyond to capture every moment of our conference &mdash; from the speakers on stage to candid shots of our team, attendees, and the venue.&nbsp; She hustled nonstop to make sure nothing was missed, and the photos turned out absolutely amazing.&nbsp; Professional, friendly, and so easy to work with &mdash; highly recommend!"
-      </blockquote>
+      <blockquote>"We were so impressed with Deborah!&nbsp; She went above and beyond to capture every moment of our conference -- from the speakers on stage to candid shots of our team, attendees, and the venue.&nbsp; She hustled nonstop to make sure nothing was missed, and the photos turned out absolutely amazing.&nbsp; Professional, friendly, and so easy to work with -- highly recommend!"</blockquote>
       <cite>&mdash; Amanda, Board Member, GetWitIt.Org</cite>
     </section>
 
-    <section class="portfolio-link-section">
-      <span class="section-label">See the Work</span>
-      <h2>View Recent Corporate Event Photography</h2>
-      <p>Take a look at conferences, fundraisers, corporate celebrations, and business gatherings recently documented across Cincinnati and Northern Kentucky.</p>
-      <a href="/corporate-event-portfolio/" class="btn-primary">View Events Portfolio</a>
-    </section>
-
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FINAL CTA
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="cta-section">
       <h2>Ready to Plan Your Event Photography?</h2>
       <p>Professional event photography ensures the moments you've worked hard to create are captured with care and style.&nbsp; We'll start with a quick phone consultation to review your event details and build a coverage plan that fits your needs perfectly.</p>
@@ -1051,7 +578,7 @@
       <div class="footer-brand">
         <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="../images/logo-PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
+        <img src="/images/logo-PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="/the-headshot-experience/">Studio Headshots</a></li><li><a href="/corporate-headshots/">Corporate Headshots</a></li><li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li></ul></div>
       <div class="footer-col"><h4>Explore</h4><ul><li><a href="/portfolio/">Headshots Portfolio</a></li><li><a href="/corporate-event-portfolio/">Events Portfolio</a></li><li><a href="/about-deborah-heinlen/">About</a></li><li><a href="/blog/">Blog</a></li></ul></div>
@@ -1061,7 +588,7 @@
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
         <a href="/cdn-cgi/l/email-protection#2a6e4f4845584b42624f4344464f447a42455e454d584b5a42536a4d474b434604494547" class="footer-contact-item"><span class="__cf_email__" data-cfemail="2a6e4f4845584b42624f4344464f447a42455e454d584b5a42536a4d474b434604494547">[email&#160;protected]</span></a>
         <br />
-        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;display:inline-block;">Book a Session</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1074,14 +601,84 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    mobileBtn.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       EVENT IMAGES ARRAY
+       These 6 images appear in the "Professional Photography" grid section.
+       Desktop shows all 6 in 3 columns.  Mobile shows first 4 in 2 columns.
+
+       TO ADD AN IMAGE:    Add a new line inside the array.
+                           Keep to 6 images for the grid to fill properly.
+       TO REMOVE AN IMAGE: Delete that line.
+       TO REORDER:         Move lines up or down.
+       TO ADJUST THE CROP: Change the "position" value for that image.
+                           The format is "50% XX%" where:
+                             50% = horizontally centered
+                             XX% = how far down to start the crop
+                                   Lower number = subject sits higher in cell
+                                   Higher number = subject sits lower in cell
+                           For landscape/crowd shots "center center" often works well.
+
+       File path format: "/images/corporate-event-portfolio-XX.jpg"
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var eventImages = [
+      { src: "/images/corporate-event-portfolio-29.jpg", alt: "Corporate event photography by Deborah Heinlen Photography", position: "center center" },
+      { src: "/images/corporate-event-portfolio-05.jpg", alt: "Corporate event photography by Deborah Heinlen Photography", position: "center top"    },
+      { src: "/images/corporate-event-portfolio-12.jpg", alt: "Corporate event photography by Deborah Heinlen Photography", position: "center center" },
+      { src: "/images/corporate-event-portfolio-08.jpg", alt: "Corporate event photography by Deborah Heinlen Photography", position: "center top"    },
+      { src: "/images/corporate-event-portfolio-18.jpg", alt: "Corporate event photography by Deborah Heinlen Photography", position: "center center" },
+      { src: "/images/corporate-event-portfolio-24.jpg", alt: "Corporate event photography by Deborah Heinlen Photography", position: "center top"    }
+    ];
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUILD EVENT GRID
+       Reads the eventImages array and builds 3 flex columns,
+       each with 2 images.  CSS alternates tall/short heights.
+       On mobile (under 768px) shows first 4 images in 2 columns.
+       Do not edit this function -- make all changes in the array above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    function buildEventGrid() {
+      var grid = document.getElementById('event-grid');
+      if (!grid) return;
+      var isMobile = window.innerWidth < 768;
+      var numCols  = isMobile ? 2 : 3;
+      var images   = isMobile ? eventImages.slice(0, 4) : eventImages.slice(0, 6);
+      for (var c = 0; c < numCols; c++) {
+        var col = document.createElement('div');
+        col.className = 'event-col';
+        for (var r = 0; r < 2; r++) {
+          var idx = c * 2 + r;
+          if (idx >= images.length) break;
+          var cell = document.createElement('div');
+          cell.className = 'event-cell';
+          var img = document.createElement('img');
+          img.src  = images[idx].src;
+          img.alt  = images[idx].alt;
+          img.style.objectPosition = images[idx].position;
+          img.setAttribute('loading', 'lazy');
+          cell.appendChild(img);
+          col.appendChild(cell);
+        }
+        grid.appendChild(col);
+      }
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MOBILE MENU
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var mobileBtn = document.getElementById('mobile-menu-btn');
+    var mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-   document.body.style.overflow = isOpen ? 'hidden' : '';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-</script>
+
+    buildEventGrid();
+
+  </script>
 </body>
 </html>

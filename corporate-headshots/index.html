@@ -7,950 +7,356 @@
   <title>Corporate Headshots Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography</title>
   <meta name="description" content="Professional corporate headshots for executives, teams, and businesses across Cincinnati and Northern Kentucky. On-site or studio sessions. Consistent, polished images for websites, LinkedIn, and marketing materials." />
   <link rel="canonical" href="https://www.deborahheinlenphotography.com/corporate-headshots/" />
-
   <meta property="og:title" content="Corporate Headshots Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography" />
   <meta property="og:description" content="Professional corporate headshots for executives, teams, and businesses across Cincinnati and Northern Kentucky. On-site or studio sessions." />
   <meta property="og:image" content="https://www.deborahheinlenphotography.com/images/banner_2026.jpg" />
   <meta property="og:url" content="https://www.deborahheinlenphotography.com/corporate-headshots/" />
   <meta property="og:type" content="website" />
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
-
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       QUICK REFERENCE -- WHERE TO FIND COMMON CHANGES
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ALL COLORS ........................ find :root below
+       Grid image sizes .................. search: GRID CELLS
+       Grid/text split (65/35) ........... search: GRID SPLIT
+       Font sizes ........................ each has a note above font-size
+       Section padding/spacing ........... each has a note above padding
+       Left/right layout flip ............ each section has a note
+       Text alignment .................... each section has a note
+       Vertical content position ......... each section has a note
+       Hero image size ................... search: HERO IMAGE SIZE
+       Approach image size ............... search: APPROACH IMAGE SIZE
+       Adding/removing grid images ....... search: CONSISTENT IMAGES ARRAY
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       COLOR SYSTEM -- ALL COLORS LIVE HERE
+       Change any color in this block and it updates everywhere.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     :root {
-      --slate-blue: #252330;
-      --cream:      #f5f0e8;
-      --linen:      #ede8dc;
-      --warm-tan:   #d4c4aa;
-      --text-dark:  #2e2419;
-      --text-mid:   #6b5c4a;
-      --text-light: #9e8e7a;
-      --black:      #000000;
-      --white:      #ffffff;
-      --text-white: #ffffff;
-      --header-h:   72px;
+      --slate-blue:  #252330;   /* main background throughout */
+      --silver:      #B8BCC4;   /* borders, icons, labels, hover fills */
+      --mid-gray:    #9095A0;   /* secondary accents */
+      --cream:       #f5f0e8;
+      --text-dark:   #2e2419;   /* dark text on light header */
+      --text-mid:    #6b5c4a;   /* medium text on light header/nav */
+      --text-light:  #9e8e7a;   /* light text on light header */
+      --black:       #000000;
+      --white:       #ffffff;
+
+      /* ── Body text (on dark backgrounds) */
+      --body-text:   #B8BCC4;   /* main body paragraph copy */
+      --body-muted:  #A8ACB4;   /* secondary/list item copy */
+      --body-faint:  #9095A0;   /* tertiary copy, CTA sub-text */
+
+      /* ── Footer text */
+      --footer-text:  #9095A0;
+      --footer-faint: #B8BCC4;
+
+      /* ── Borders (on slate-blue backgrounds) */
+      --border-bright:  #4a4858;
+      --border-mid:     #353344;
+      --border-subtle:  #2c2a38;
+      --border-faint:   #232130;
+      --border-hover:   #5a5870;
+
+      /* ── Button secondary border colors */
+      --btn-secondary-border:       #555555;
+      --btn-secondary-hover-border: #999999;
+
+      /* ── Header and nav */
+      --header-bg:     #F0F0F3;
+      --header-border: #D8D9DE;
+      --nav-bg:        #ECEDF0;
+      --nav-border:    #D8D9DE;
+      --nav-hover-bg:  #E4E5EA;
+
+      /* ── Fixed heights */
+      --header-h:   90px;
       --nav-h:      44px;
-      --total-nav:  116px;
-
-      /* ── Text grays for dark background ── */
-      --body-text:    #cccccc;   /* main body copy          */
-      --body-muted:   #c2c2c2;   /* secondary body copy     */
-      --body-faint:   #b8b8b8;   /* tertiary / CTA sub-text */
-      --footer-text:  #bbbbbb;   /* footer body             */
-      --footer-faint: #aaaaaa;   /* footer bottom bar       */
-
-      /* ── Border tones on slate-blue ── */
-      --border-bright:  #474338;   /* visible tan border      */
-      --border-mid:     #333028;   /* mid-weight tan border   */
-      --border-subtle:  #2a2820;   /* subtle tan border       */
-      --border-faint:   #222018;   /* barely-there separator  */
-      --border-hover:   #5c5745;   /* hover state border      */
-
-      /* ── Nav / header (cream backgrounds) ── */
-      --nav-bg:         #ede8dc;
-      --nav-border:     #ddd4c4;
-      --nav-hover-bg:   #e8e1d6;
-      --header-bg:      #f2ede8;
-      --header-border:  #ddd4c4;
+      --total-nav:  134px;
     }
 
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html, body {
-      background-color: var(--slate-blue);
-      color: var(--text-white);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
+    html, body { background-color: var(--slate-blue); color: var(--white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
 
-    /* ═══════════════════════════════════════════════════════════════
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        HEADER
-       ═══════════════════════════════════════════════════════════════ */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      height: var(--header-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 3rem;
-      background: var(--header-bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--header-border);
-    }
-
+       Fixed top bar: logo left, site name centered, Book button right.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
     .header-logo { height: 40px; width: auto; display: block; }
+    .header-title { font-family: "lindsey-signature", sans-serif; font-weight: 400; font-size: 3rem; color: var(--text-dark); text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--silver); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .header-cta:hover { background: var(--silver); color: var(--mid-gray); }
 
-    .header-title {
-      font-family: "lindsey-signature", sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
-      color: var(--text-dark);
-      text-decoration: none;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
 
-    .header-cta {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      border: 1px solid var(--warm-tan);
-      padding: 0.55rem 1.5rem;
-      transition: background 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
-
-    /* ═══════════════════════════════════════════════════════════════
-       NAV STRIP
-       ═══════════════════════════════════════════════════════════════ */
-    .site-nav {
-      position: fixed;
-      top: var(--header-h);
-      left: 0; right: 0;
-      z-index: 199;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--nav-bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--nav-border);
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-      border-left: 1px solid var(--nav-border);
-    }
-
-    .nav-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      border-right: 1px solid var(--nav-border);
-    }
-
-    .nav-link {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0 1.4rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-link:hover, .nav-link.active {
-      background: var(--nav-hover-bg);
-      color: var(--text-dark);
-    }
-
-    .nav-link.has-dropdown::after {
-      content: '';
-      display: inline-block;
-      width: 0; height: 0;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-top: 4px solid var(--text-light);
-      margin-left: 0.45rem;
-      transition: transform 0.2s;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       NAVIGATION
+       Desktop nav bar.  Hidden at 900px -- hamburger takes over.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 199; height: var(--nav-h); display: flex; align-items: center; justify-content: center; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--nav-border); }
+    .nav-list { list-style: none; display: flex; align-items: stretch; height: 100%; border-left: 1px solid var(--nav-border); }
+    .nav-item { position: relative; display: flex; align-items: center; border-right: 1px solid var(--nav-border); }
+    .nav-link { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0 1.4rem; height: 100%; display: flex; align-items: center; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    .nav-link:hover, .nav-link.active { background: var(--nav-hover-bg); color: var(--text-dark); }
+    .nav-link.has-dropdown::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid var(--text-light); margin-left: 0.45rem; transition: transform 0.2s; }
     .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%; left: 0;
-      min-width: 260px;
-      background: var(--nav-bg);
-      border: 1px solid var(--nav-border);
-      border-top: none;
-      z-index: 300;
-      list-style: none;
-      padding: 0.4rem 0;
-    }
+    .dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--nav-bg); border: 1px solid var(--nav-border); border-top: none; z-index: 300; list-style: none; padding: 0.4rem 0; }
     .nav-item:hover .dropdown { display: block; }
-    .dropdown li a {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.75rem 1.4rem;
-      transition: background 0.15s, color 0.15s;
-    }
+    .dropdown li a { display: block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.75rem 1.4rem; transition: background 0.15s, color 0.15s; }
     .dropdown li a:hover { background: var(--nav-hover-bg); color: var(--text-dark); }
-
-    /* Mobile nav */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      flex-direction: column;
-      gap: 5px;
-    }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
     .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: var(--header-h);
-      left: 0; right: 0; bottom: 0;
-      background: var(--nav-bg);
-      z-index: 198;
-      overflow-y: auto;
-      padding: 2rem 2rem 4rem;
-    }
+    .mobile-nav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--nav-bg); z-index: 198; overflow-y: auto; padding: 2rem 2rem 4rem; }
     .mobile-nav.open { display: block; }
-    .mobile-nav a {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--nav-border);
-      transition: color 0.2s;
-    }
+    .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
     .mobile-nav a:hover { color: var(--text-dark); }
-    .mobile-section-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 200;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-top: 1.2rem;
-      padding: 0.5rem 0 0.3rem;
-      display: block;
-    }
+    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       PAGE CONTENT
-       ═══════════════════════════════════════════════════════════════ */
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PAGE WRAPPER & SHARED UTILITIES
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     .page-content { padding-top: var(--total-nav); }
+    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 1.2rem; }
 
-    /* ── HERO ──────────────────────────────────────────────────────── */
-    .page-hero {
-      display: flex;
-      align-items: stretch;
-      min-height: 80vh;
-      border-bottom: 1px solid var(--border-faint);
-    }
 
-    .page-hero-image {
-      flex: 0 0 55%;
-      position: relative;
-      overflow: hidden;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUTTONS
+       To change button colors: update variables in :root above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); text-decoration: none; border: 1px solid var(--silver); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--silver); color: var(--slate-blue); }
+    .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid var(--btn-secondary-border); padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
+    .btn-secondary:hover { border-color: var(--btn-secondary-hover-border); color: var(--white); }
 
-    .page-hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(0.85) brightness(1);
-      display: block;
-    }
 
-    .page-hero-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%);
-      pointer-events: none;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO SECTION
+       Large image left (55%), text right (45%).
+       To flip: add flex-direction: row-reverse to .page-hero
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .page-hero { display: flex; align-items: stretch; min-height: 80vh; border-bottom: 1px solid var(--border-faint); }
 
-    .page-hero-content {
-      flex: 0 0 45%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 6vw;
-      position: relative;
-      z-index: 1;
-    }
+    /* HERO IMAGE SIZE
+       To make wider or narrower: change flex-basis (currently 55%)
+       To reframe what part of the image shows: change object-position
+         "center top" = top of image,  "center center" = middle */
+    .page-hero-image { flex: 0 0 55%; position: relative; overflow: hidden; }
+    .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; }
+    .page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%); pointer-events: none; }
+    .page-hero-content { flex: 0 0 45%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; position: relative; z-index: 1; }
 
-    .section-label {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      display: block;
-      margin-bottom: 1.2rem;
-    }
-
-    .page-hero-content h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2.2rem, 3.5vw, 3.6rem);
-      color: var(--white);
-      letter-spacing: 0.03em;
-      line-height: 1.1;
-      margin-bottom: 1.4rem;
-    }
-
-    .page-hero-content p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.88rem, 1.1vw, 1rem);
-      letter-spacing: 0.06em;
-      color: var(--body-text);
-      line-height: 1.8;
-      margin-bottom: 2.2rem;
-    }
-
+    /* Hero headline -- to resize: adjust the last clamp value (currently 3.6rem) */
+    .page-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 3.5vw, 3.6rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 1.4rem; }
+    .page-hero-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.88rem, 1.1vw, 1rem); letter-spacing: 0.06em; color: var(--body-text); line-height: 1.8; margin-bottom: 2.2rem; }
     .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    /* ── BUTTONS ───────────────────────────────────────────────────── */
-    .btn-primary {
-      display: inline-block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      text-decoration: none;
-      border: 1px solid var(--warm-tan);
-      padding: 0.85rem 2rem;
-      transition: background 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-    .btn-primary:hover { background: var(--warm-tan); color: var(--slate-blue); }
 
-    .btn-secondary {
-      display: inline-block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--body-muted);
-      text-decoration: none;
-      border: 1px solid #555555;
-      padding: 0.85rem 2rem;
-      transition: border-color 0.25s, color 0.25s;
-    }
-    .btn-secondary:hover { border-color: #999999; color: var(--white); }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       WHO I SERVE SECTION
+       Left: heading.  Right: dot-grid list.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .who-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 5rem 8vw; }
+    .who-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 6vw; align-items: start; }
+    .who-heading h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-top: 1rem; }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+    .who-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 1.5rem 1.8rem; display: flex; align-items: center; gap: 1rem; }
+    .who-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--silver); flex-shrink: 0; }
+    .who-item span { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.1em; color: var(--body-text); }
 
-    /* ── WHO I SERVE ───────────────────────────────────────────────── */
-    .who-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 5rem 8vw;
-    }
 
-    .who-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 6vw;
-      align-items: start;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CONSISTENT SECTION
+       Why Consistent Headshots Matter.
+       Left (65%): alternating image grid.
+       Right (35%): headline, text, list, button.
+       Images managed via consistentImages array in the <script> block below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .consistent-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 3rem 3rem 3.5rem; }
 
-    .who-heading h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-top: 1rem;
-    }
+    /* GRID SPLIT
+       To change the grid/text width split:
+       adjust the two numbers in grid-template-columns.
+       Currently 65 (grid) and 35 (text). */
+    .consistent-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 65fr 35fr; gap: 3rem; align-items: center; }
 
-    .who-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border-top: 1px solid var(--border-subtle);
-      border-left: 1px solid var(--border-subtle);
-    }
+    /* GRID CELLS
+       3 columns, 2 images per column.
+       Columns 1 and 3 (odd):  tall on top (290px), short on bottom (200px).
+       Column 2 (even):        short on top (200px), tall on bottom (290px).
 
-    .who-item {
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 1.5rem 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+       TO ADJUST THE TALL CELL HEIGHT:  change the 290px values below
+       TO ADJUST THE SHORT CELL HEIGHT: change the 200px values below
+       TO ADJUST GAP BETWEEN CELLS:     change the gap value (currently 12px)
 
-    .who-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--warm-tan);
-      flex-shrink: 0;
-    }
+       TO ADJUST CROP per image: change the "position" value in the
+       consistentImages array in the <script> block below. */
+    .consistent-grid { display: flex; gap: 12px; width: 100%; }
+    .consistent-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 290px; }
+    .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 200px; }
+    .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 200px; }
+    .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 290px; }
+    .consistent-cell { overflow: hidden; }
+    .consistent-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .who-item span {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.88rem;
-      letter-spacing: 0.1em;
-      color: var(--body-text);
-    }
+    /* ── Text column ──
+       Text alignment: left, center, or right (currently left)
+       To change vertical position:
+         justify-content: flex-start = top
+         justify-content: center     = middle
+         justify-content: flex-end   = bottom */
+    .consistent-content { text-align: left; display: flex; flex-direction: column; justify-content: center; }
 
-    /* ── WHY CONSISTENT ────────────────────────────────────────────── */
-    .consistent-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      display: flex;
-      align-items: stretch;
-    }
+    /* Consistent headline -- to resize: adjust the last clamp value (currently 2.8rem) */
+    .consistent-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.8rem; margin-top: 1rem; }
+    .consistent-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.03em; color: var(--body-muted); margin-bottom: 1.2rem; }
+    .benefit-list { list-style: none; margin: 1.5rem 0 2.5rem; }
+    .benefit-list li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.04em; color: var(--body-muted); line-height: 1.7; padding: 0.55rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: baseline; gap: 0.8rem; }
+    .benefit-list li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--silver); flex-shrink: 0; position: relative; top: -3px; }
 
-    .consistent-image {
-      flex: 0 0 50%;
-      position: relative;
-      overflow: hidden;
-      min-height: 540px;
-    }
 
-    .consistent-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(0.85) brightness(1);
-      display: block;
-    }
-
-    .consistent-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--slate-blue) 100%);
-      pointer-events: none;
-    }
-
-    .consistent-content {
-      flex: 0 0 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 6vw;
-    }
-
-    .consistent-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-bottom: 1.8rem;
-      margin-top: 1rem;
-    }
-
-    .consistent-content p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      letter-spacing: 0.03em;
-      color: var(--body-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .benefit-list {
-      list-style: none;
-      margin: 1.5rem 0 2.5rem;
-    }
-
-    .benefit-list li {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.88rem;
-      letter-spacing: 0.04em;
-      color: var(--body-muted);
-      line-height: 1.7;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid var(--border-faint);
-      display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
-    }
-
-    .benefit-list li::before {
-      content: '';
-      display: inline-block;
-      width: 18px;
-      height: 1px;
-      background: var(--warm-tan);
-      flex-shrink: 0;
-      position: relative;
-      top: -3px;
-    }
-
-    /* ── WHAT'S INCLUDED ───────────────────────────────────────────── */
-    .included-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 6rem 8vw;
-    }
-
-    .included-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .included-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      margin-top: 1rem;
-    }
-
-    .included-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .included-item {
-      border: 1px solid var(--border-subtle);
-      padding: 2.5rem 2rem;
-      transition: border-color 0.3s;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       WHAT'S INCLUDED SECTION
+       Six numbered cards in two rows of three.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .included-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 6rem 8vw; }
+    .included-header { text-align: center; margin-bottom: 4rem; }
+    .included-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
+    .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3.5rem; }
+    .included-item { border: 1px solid var(--border-subtle); padding: 2.5rem 2rem; transition: border-color 0.3s; }
     .included-item:hover { border-color: var(--border-hover); }
-
-    .included-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 2.8rem;
-      color: #3d3a30;
-      line-height: 1;
-      margin-bottom: 1.2rem;
-      display: block;
-    }
-
-    .included-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-      color: var(--white);
-      letter-spacing: 0.03em;
-      line-height: 1.3;
-      margin-bottom: 0.8rem;
-    }
-
-    .included-item p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.88rem;
-      letter-spacing: 0.03em;
-      line-height: 1.85;
-      color: var(--body-faint);
-    }
-
+    .included-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.8rem; color: var(--border-bright); line-height: 1; margin-bottom: 1.2rem; display: block; }
+    .included-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 0.8rem; }
+    .included-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-faint); }
     .included-cta { text-align: center; }
 
-    /* ── PORTFOLIO STRIP ───────────────────────────────────────────── */
-    .portfolio-strip {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 5rem 0;
-      overflow: hidden;
-    }
 
-    .portfolio-strip-label {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      text-align: center;
-      display: block;
-      margin-bottom: 2.5rem;
-    }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       APPROACH SECTION
+       Currently: text LEFT, image RIGHT (row-reverse).
+       To flip: remove flex-direction: row-reverse
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .approach-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); display: flex; align-items: stretch; flex-direction: row-reverse; }
 
-    .portfolio-scroll {
-      display: flex;
-      gap: 1.2rem;
-      padding: 0 8vw;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .portfolio-scroll::-webkit-scrollbar { display: none; }
+    /* APPROACH IMAGE SIZE
+       To make wider or narrower: change flex-basis (currently 55%)
+       To reframe what shows: change object-position */
+    .approach-image { flex: 0 0 55%; position: relative; overflow: hidden; min-height: 520px; }
+    .approach-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; }
+    /* Gradient on LEFT edge (image is on the right side) */
+    .approach-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, transparent 60%, var(--slate-blue) 100%); pointer-events: none; }
+    .approach-content { flex: 0 0 45%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; }
+    .approach-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.8rem; margin-top: 1rem; }
+    .approach-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.03em; color: var(--body-muted); margin-bottom: 1.2rem; }
 
-    .portfolio-thumb {
-      flex: 0 0 280px;
-      height: 360px;
-      overflow: hidden;
-    }
 
-    .portfolio-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(0.85);
-      transition: transform 0.6s ease, filter 0.6s ease;
-      display: block;
-    }
-    .portfolio-thumb:hover img { transform: scale(1.05); filter: saturate(1); }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FAQ SECTION
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .faq-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; }
+    .faq-header { text-align: center; margin-bottom: 4rem; }
+    .faq-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+    .faq-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 2.5rem; }
+    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 1rem; }
+    .faq-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.9rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-muted); }
 
-    /* ── MY APPROACH ───────────────────────────────────────────────── */
-    .approach-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      display: flex;
-      align-items: stretch;
-      flex-direction: row-reverse;
-    }
 
-    .approach-image {
-      flex: 0 0 55%;
-      position: relative;
-      overflow: hidden;
-      min-height: 520px;
-    }
-
-    .approach-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(0.85);
-      display: block;
-    }
-
-    .approach-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to left, transparent 60%, var(--slate-blue) 100%);
-      pointer-events: none;
-    }
-
-    .approach-content {
-      flex: 0 0 45%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 6vw;
-    }
-
-    .approach-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-bottom: 1.8rem;
-      margin-top: 1rem;
-    }
-
-    .approach-content p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      letter-spacing: 0.03em;
-      color: var(--body-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    /* ── FAQ ───────────────────────────────────────────────────────── */
-    .faq-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 6rem 8vw;
-    }
-
-    .faq-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .faq-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      margin-top: 1rem;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      max-width: 1000px;
-      margin: 0 auto;
-      border-top: 1px solid var(--border-subtle);
-      border-left: 1px solid var(--border-subtle);
-    }
-
-    .faq-item {
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 2.5rem;
-    }
-
-    .faq-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-      color: var(--white);
-      letter-spacing: 0.03em;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    .faq-item p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      line-height: 1.85;
-      color: var(--body-muted);
-    }
-
-    /* ── TESTIMONIAL ───────────────────────────────────────────────── */
-    .testimonial-section {
-      background: var(--slate-blue);
-      border-bottom: 1px solid var(--border-faint);
-      padding: 6rem 8vw;
-      text-align: center;
-    }
-
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       TESTIMONIAL SECTION
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .testimonial-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
     .stars { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 2.5rem; }
-    .stars span { color: var(--warm-tan); font-size: 1rem; }
+    .stars span { color: var(--silver); font-size: 1rem; }
+    .testimonial-section blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--white); line-height: 1.55; max-width: 760px; margin: 0 auto 1.5rem; letter-spacing: 0.02em; }
+    .testimonial-section cite { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); font-style: normal; }
 
-    .testimonial-section blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-      color: var(--white);
-      line-height: 1.55;
-      max-width: 760px;
-      margin: 0 auto 1.5rem;
-      letter-spacing: 0.02em;
-    }
 
-    .testimonial-section cite {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      font-style: normal;
-    }
-
-    /* ── FINAL CTA ─────────────────────────────────────────────────── */
-    .cta-section {
-      background: var(--slate-blue);
-      padding: 7rem 8vw;
-      text-align: center;
-    }
-
-    .cta-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--white);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-    }
-
-    .cta-section p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.9;
-      letter-spacing: 0.04em;
-      color: var(--body-faint);
-      max-width: 580px;
-      margin: 0 auto 3rem;
-    }
-
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FINAL CTA SECTION
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .cta-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 7rem 8vw; text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
+    .cta-section p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.04em; color: var(--body-faint); max-width: 580px; margin: 0 auto 3rem; }
     .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
 
-    /* ═══════════════════════════════════════════════════════════════
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        FOOTER
-       ═══════════════════════════════════════════════════════════════ */
-    .site-footer {
-      background: var(--slate-blue);
-      border-top: 1px solid var(--border-bright);
-      padding: 4rem 3rem 3rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
-    .footer-brand p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      line-height: 1.8;
-      color: var(--footer-text);
-    }
-
-    .footer-col h4 {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-bottom: 1.2rem;
-    }
-
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-footer { background: var(--slate-blue); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand img { height: 120px; width: auto; display: block; margin-bottom: 1.2rem; }
+    .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
+    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.6rem; }
-    .footer-col ul li a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      color: var(--footer-text);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-col ul li a:hover { color: var(--warm-tan); }
-
-    .footer-contact-item {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      color: var(--footer-text);
-      text-decoration: none;
-      margin-bottom: 0.6rem;
-      transition: color 0.2s;
-    }
-    .footer-contact-item:hover { color: var(--warm-tan); }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-mid);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-bottom p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--footer-faint);
-    }
-
+    .footer-col ul li a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--footer-text); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--silver); }
+    .footer-contact-item { display: block; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--footer-text); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-contact-item:hover { color: var(--silver); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; }
+    .footer-bottom p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); }
     .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--footer-faint);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-bottom-links a:hover { color: var(--warm-tan); }
+    .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--silver); }
     .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
 
-    /* ═══════════════════════════════════════════════════════════════
-       RESPONSIVE
-       ═══════════════════════════════════════════════════════════════ */
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE -- TABLET (max 900px)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 900px) {
       .site-nav { display: none; }
       .mobile-menu-btn { display: flex; }
       .header-title { display: none; }
-
       .page-hero { flex-direction: column; }
       .page-hero-image { flex: none; width: 100%; min-height: 350px; }
       .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
       .page-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
-
       .who-inner { grid-template-columns: 1fr; gap: 2rem; }
       .who-grid { grid-template-columns: 1fr; }
-
-      .consistent-section,
+      .consistent-inner { grid-template-columns: 1fr; gap: 2rem; }
+      /* Mobile grid: 2 columns, slightly shorter cells */
+      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 200px; }
+      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 160px; }
+      .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 160px; }
+      .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 200px; }
       .approach-section { flex-direction: column; }
-      .consistent-image,
       .approach-image { flex: none; width: 100%; min-height: 300px; }
-      .consistent-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
       .approach-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
-      .consistent-content,
       .approach-content { flex: none; width: 100%; padding: 3rem 2rem; }
-
       .included-grid { grid-template-columns: 1fr 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE -- MOBILE (max 600px)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
       .page-hero-content { padding: 3rem 1.5rem; }
       .included-grid { grid-template-columns: 1fr; }
-      .portfolio-scroll { padding: 0 1.5rem; }
-      .portfolio-thumb { flex: 0 0 200px; height: 260px; }
       .faq-item { padding: 1.8rem 1.5rem; }
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+
   </style>
 </head>
-
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       HEADER
-       ═══════════════════════════════════════════════════════════════ -->
   <header class="site-header">
     <a href="/"><img src="/images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
     <a href="/" class="header-title">Deborah Heinlen Photography</a>
@@ -960,9 +366,10 @@
     <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
   </header>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       NAV STRIP
-       ═══════════════════════════════════════════════════════════════ -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       DESKTOP NAVIGATION
+       NOTE: Keep in sync with mobile nav below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="site-nav" aria-label="Main navigation">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -987,7 +394,6 @@
     </ul>
   </nav>
 
-  <!-- Mobile nav -->
   <nav class="mobile-nav" id="mobile-nav">
     <a href="/">Home</a>
     <span class="mobile-section-label">Services</span>
@@ -1002,18 +408,19 @@
     <a href="/contact-deborah-heinlen/">Contact</a>
   </nav>
 
-
   <main class="page-content">
 
-    <!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         HERO -- large image left, text right
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="page-hero">
       <div class="page-hero-image">
-        <img src="../images/me-at-cartridge-brewing.jpg" alt="Corporate team headshot session on location in Cincinnati and Northern Kentucky" />
+        <img src="/images/me-at-cartridge-brewing.jpg" alt="Corporate team headshot session on location in Cincinnati and Northern Kentucky" />
       </div>
       <div class="page-hero-content">
         <span class="section-label">Teams &amp; Companies</span>
         <h1>Corporate Headshot Photography in Cincinnati &amp; Northern Kentucky</h1>
-        <p>Your professional image is one of the first impressions you make.&nbsp; I provide polished, high-quality corporate headshots for executives, teams, and professionals across Cincinnati and Northern Kentucky &mdash; whether you need a single portrait or a full team session.</p>
+        <p>Your professional image is one of the first impressions you make.&nbsp; I provide polished, high-quality corporate headshots for executives, teams, and professionals across Cincinnati and Northern Kentucky -- whether you need a single portrait or a full team session.</p>
         <div class="hero-buttons">
           <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Phone Consult</a>
           <a href="/contact-deborah-heinlen/" class="btn-secondary">Get a Team Quote</a>
@@ -1021,7 +428,9 @@
       </div>
     </section>
 
-    <!-- ── WHO I SERVE ─────────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         WHO I SERVE
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="who-section">
       <div class="who-inner">
         <div class="who-heading">
@@ -1041,97 +450,67 @@
       </div>
     </section>
 
-    <!-- ── WHY CONSISTENT HEADSHOTS MATTER ────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         CONSISTENT SECTION
+         Alternating image grid left, text right.
+         Images controlled by consistentImages array in <script> below.
+         To change images: scroll to CONSISTENT IMAGES ARRAY
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="consistent-section">
-      <div class="consistent-image">
-        <img src="/images/hs-Daniel.jpg" alt="Professional corporate headshot Cincinnati" />
-      </div>
-      <div class="consistent-content">
-        <span class="section-label">Why It Matters</span>
-        <h2>Why Consistent Headshots Matter for Your Business</h2>
-        <p>Your team's headshots are more than portraits &mdash; they represent your brand's story.&nbsp; In today's competitive marketplace, high-quality headshots are an essential part of your brand's visual identity.&nbsp; Professional images on your website, social media, and marketing materials help clients and partners feel more connected to your business.</p>
-        <p>A cohesive set of headshots strengthens your brand, builds trust, and creates a polished, unified look across all of your communications.</p>
-        <ul class="benefit-list">
-          <li>Make a strong first impression by showcasing your team's professionalism</li>
-          <li>Enhance brand consistency and visibility across all platforms</li>
-          <li>Support marketing, recruitment, and employer branding</li>
-          <li>Boost team morale with updated, flattering portraits</li>
-          <li>Stay current and competitive in your industry</li>
-          <li>Present a unified visual identity across your website and LinkedIn</li>
-        </ul>
-        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Phone Consult</a>
+      <div class="consistent-inner">
+        <div class="consistent-grid" id="consistent-grid"></div>
+        <div class="consistent-content">
+          <span class="section-label">Why It Matters</span>
+          <h2>Why Consistent Headshots Matter for Your Business</h2>
+          <p>Your team's headshots are more than portraits -- they represent your brand's story.&nbsp; In today's competitive marketplace, high-quality headshots are an essential part of your brand's visual identity.&nbsp; Professional images on your website, social media, and marketing materials help clients and partners feel more connected to your business.</p>
+          <p>A cohesive set of headshots strengthens your brand, builds trust, and creates a polished, unified look across all of your communications.</p>
+          <ul class="benefit-list">
+            <li>Make a strong first impression by showcasing your team's professionalism</li>
+            <li>Enhance brand consistency and visibility across all platforms</li>
+            <li>Support marketing, recruitment, and employer branding</li>
+            <li>Boost team morale with updated, flattering portraits</li>
+            <li>Stay current and competitive in your industry</li>
+            <li>Present a unified visual identity across your website and LinkedIn</li>
+          </ul>
+          <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Phone Consult</a>
+        </div>
       </div>
     </section>
 
-    <!-- ── WHAT'S INCLUDED ─────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         WHAT'S INCLUDED
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="included-section">
       <div class="included-header">
         <span class="section-label">Every Session Includes</span>
         <h2>What You Receive With Your Corporate Headshot Session</h2>
       </div>
       <div class="included-grid">
-        <div class="included-item">
-          <span class="included-number">01</span>
-          <h3>Full Studio-Quality Lighting</h3>
-          <p>I bring a complete studio lighting kit directly to your location for consistent, professional results across every team member.</p>
-        </div>
-        <div class="included-item">
-          <span class="included-number">02</span>
-          <h3>Expert Coaching for Every Person</h3>
-          <p>Professional guidance and expression coaching for each individual to ensure natural, confident results &mdash; even for those who are camera shy.</p>
-        </div>
-        <div class="included-item">
-          <span class="included-number">03</span>
-          <h3>Professionally Edited Images</h3>
-          <p>One high-resolution, professionally retouched image per team member, with the option to purchase additional images from your session.</p>
-        </div>
-        <div class="included-item">
-          <span class="included-number">04</span>
-          <h3>Consistent Style &amp; Framing</h3>
-          <p>Your choice of background and framing to match your brand style, applied consistently across every portrait for a unified look.</p>
-        </div>
-        <div class="included-item">
-          <span class="included-number">05</span>
-          <h3>Private Online Gallery</h3>
-          <p>Downloadable images delivered within 5&ndash;7 business days in a private online gallery, ready for immediate use.</p>
-        </div>
-        <div class="included-item">
-          <span class="included-number">06</span>
-          <h3>Full Business Use Licensing</h3>
-          <p>Licensing for websites, print materials, social media, digital campaigns, and internal communications included with every session.</p>
-        </div>
+        <div class="included-item"><span class="included-number">01</span><h3>Full Studio-Quality Lighting</h3><p>I bring a complete studio lighting kit directly to your location for consistent, professional results across every team member.</p></div>
+        <div class="included-item"><span class="included-number">02</span><h3>Expert Coaching for Every Person</h3><p>Professional guidance and expression coaching for each individual to ensure natural, confident results -- even for those who are camera shy.</p></div>
+        <div class="included-item"><span class="included-number">03</span><h3>Professionally Edited Images</h3><p>One high-resolution, professionally retouched image per team member, with the option to purchase additional images from your session.</p></div>
+        <div class="included-item"><span class="included-number">04</span><h3>Consistent Style &amp; Framing</h3><p>Your choice of background and framing to match your brand style, applied consistently across every portrait for a unified look.</p></div>
+        <div class="included-item"><span class="included-number">05</span><h3>Private Online Gallery</h3><p>Downloadable images delivered within 5&ndash;7 business days in a private online gallery, ready for immediate use.</p></div>
+        <div class="included-item"><span class="included-number">06</span><h3>Full Business Use Licensing</h3><p>Licensing for websites, print materials, social media, digital campaigns, and internal communications included with every session.</p></div>
       </div>
       <div class="included-cta">
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Phone Consult</a>
       </div>
     </section>
 
-    <!-- ── PORTFOLIO STRIP ────────────────────────────────────────── -->
-    <div class="portfolio-strip">
-      <span class="portfolio-strip-label">Corporate Headshots Portfolio</span>
-      <div class="portfolio-scroll">
-        <div class="portfolio-thumb"><img src="/images/hs-Tyler.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Greg.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Briana.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Sam.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Peter.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Wayne.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Dave.jpg" alt="Corporate headshot" /></div>
-        <div class="portfolio-thumb"><img src="/images/hs-Mark.jpg" alt="Corporate headshot" /></div>
-      </div>
-    </div>
-
-    <!-- ── MY APPROACH ────────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         MY APPROACH -- text left, image right
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="approach-section">
       <div class="approach-image">
-        <img src="../images/me-with-DeMayne.jpg" alt="Deborah Heinlen coaching a client during a headshot session" />
+        <img src="/images/me-with-DeMayne.jpg" alt="Deborah Heinlen coaching a client during a headshot session" />
       </div>
       <div class="approach-content">
         <span class="section-label">My Approach</span>
         <h2>Efficient, Respectful, and Seamless for Your Team</h2>
         <p>I create a relaxed, professional environment so each person feels comfortable in front of the camera.&nbsp; With years of experience photographing business professionals, I guide every client through expression, posture, and angles to achieve natural, flattering results.</p>
         <p>For corporate teams, I work efficiently and respectfully within your workflow.&nbsp; Whether I'm photographing 3 people or 30, your employees will have a smooth, positive experience with consistent, high-quality headshots.</p>
-        <p>I coordinate with your event staff, understand your schedule, and stay flexible with shifting timelines &mdash; so your team can stay focused on their work while I take care of the photography.</p>
+        <p>I coordinate with your event staff, understand your schedule, and stay flexible with shifting timelines -- so your team can stay focused on their work while I take care of the photography.</p>
         <ul class="benefit-list" style="margin-bottom: 2.5rem;">
           <li>5&ndash;10 people photographed per hour</li>
           <li>Minimal disruption to your team's workflow</li>
@@ -1142,60 +521,42 @@
       </div>
     </section>
 
-    <!-- ── FAQ ────────────────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FAQ
+         To add a question: copy one faq-item block and paste it.
+         To remove: delete the faq-item block.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="faq-section">
       <div class="faq-header">
         <span class="section-label">Common Questions</span>
         <h2>Frequently Asked Questions</h2>
       </div>
       <div class="faq-grid">
-        <div class="faq-item">
-          <h3>How long does it take per person?</h3>
-          <p>Individual sessions typically take 5&ndash;10 minutes per person, depending on team size and your scheduling needs.&nbsp; I can photograph 5&ndash;10 people per hour.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Do you bring lighting and backgrounds?</h3>
-          <p>Yes.&nbsp; I bring a full studio-style lighting kit and background options to your location to achieve consistent, professional results for every team member.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can you match our existing team headshots?</h3>
-          <p>Absolutely.&nbsp; I can match background, lighting, framing, and overall style so your portraits remain consistent when adding new team members.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What should our team wear?</h3>
-          <p>Solid colors and simple patterns photograph best.&nbsp; Your team may bring a second outfit if they'd like options.&nbsp; I'll send wardrobe guidance in advance.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How much does it cost?</h3>
-          <p>Pricing varies based on team size and location.&nbsp; After a quick phone consultation, I'll prepare a custom quote tailored to your needs &mdash; no surprises.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How soon will we receive our images?</h3>
-          <p>Edited images are delivered within 5&ndash;7 business days in a private online gallery where your team can easily download their photos.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Do you retouch the photos?</h3>
-          <p>Yes.&nbsp; All headshots include natural professional retouching for a polished but authentic look that your team will be proud to use.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What licensing is included?</h3>
-          <p>Your team receives licensing for all standard business use including websites, print materials, social media, digital campaigns, and internal communications.</p>
-        </div>
+        <div class="faq-item"><h3>How long does it take per person?</h3><p>Individual sessions typically take 5&ndash;10 minutes per person, depending on team size and your scheduling needs.&nbsp; I can photograph 5&ndash;10 people per hour.</p></div>
+        <div class="faq-item"><h3>Do you bring lighting and backgrounds?</h3><p>Yes.&nbsp; I bring a full studio-style lighting kit and background options to your location to achieve consistent, professional results for every team member.</p></div>
+        <div class="faq-item"><h3>Can you match our existing team headshots?</h3><p>Absolutely.&nbsp; I can match background, lighting, framing, and overall style so your portraits remain consistent when adding new team members.</p></div>
+        <div class="faq-item"><h3>What should our team wear?</h3><p>Solid colors and simple patterns photograph best.&nbsp; Your team may bring a second outfit if they'd like options.&nbsp; I'll send wardrobe guidance in advance.</p></div>
+        <div class="faq-item"><h3>How much does it cost?</h3><p>Pricing varies based on team size and location.&nbsp; After a quick phone consultation, I'll prepare a custom quote tailored to your needs -- no surprises.</p></div>
+        <div class="faq-item"><h3>How soon will we receive our images?</h3><p>Edited images are delivered within 5&ndash;7 business days in a private online gallery where your team can easily download their photos.</p></div>
+        <div class="faq-item"><h3>Do you retouch the photos?</h3><p>Yes.&nbsp; All headshots include natural professional retouching for a polished but authentic look that your team will be proud to use.</p></div>
+        <div class="faq-item"><h3>What licensing is included?</h3><p>Your team receives licensing for all standard business use including websites, print materials, social media, digital campaigns, and internal communications.</p></div>
       </div>
     </section>
 
-    <!-- ── TESTIMONIAL ─────────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         TESTIMONIAL
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="testimonial-section">
       <div class="stars">
         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
       </div>
-      <blockquote>
-        "Our latest law firm photoshoot was an absolute sensation!&nbsp; I can't recommend Deborah Heinlen Photography enough!&nbsp; If you're in the Tri-state area, Kentucky / Indiana / Ohio &mdash; you MUST schedule a photo shoot with her!"
-      </blockquote>
+      <blockquote>"Our latest law firm photoshoot was an absolute sensation!&nbsp; I can't recommend Deborah Heinlen Photography enough!&nbsp; If you're in the Tri-state area, Kentucky / Indiana / Ohio -- you MUST schedule a photo shoot with her!"</blockquote>
       <cite>&mdash; Larry Forman, Attorney</cite>
     </section>
 
-    <!-- ── FINAL CTA ───────────────────────────────────────────────── -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FINAL CTA
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="cta-section">
       <h2>Let's Elevate Your Team's Professional Image</h2>
       <p>Whether you need updated headshots for your entire staff or a select group of key individuals, I offer sessions tailored to your company's size, brand, and scheduling needs.&nbsp; Let's start with a conversation.</p>
@@ -1207,41 +568,22 @@
 
   </main>
 
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <img src="/images/logo-white.png" alt="Deborah Heinlen Photography" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="../images/logo-PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
+        <img src="/images/logo-PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
-          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
-          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="/portfolio/">Headshots Portfolio</a></li>
-          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
-          <li><a href="/about-deborah-heinlen/">About</a></li>
-          <li><a href="/blog/">Blog</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="/the-headshot-experience/">Studio Headshots</a></li><li><a href="/corporate-headshots/">Corporate Headshots</a></li><li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li></ul></div>
+      <div class="footer-col"><h4>Explore</h4><ul><li><a href="/portfolio/">Headshots Portfolio</a></li><li><a href="/corporate-event-portfolio/">Events Portfolio</a></li><li><a href="/about-deborah-heinlen/">About</a></li><li><a href="/blog/">Blog</a></li></ul></div>
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
-        <a href="/cdn-cgi/l/email-protection#7a3e1f1815081b12321f1314161f142a12150e151d081b0a12033a1d171b131654191517" class="footer-contact-item"><span class="__cf_email__" data-cfemail="5a1e3f3835283b32123f3334363f340a32352e353d283b2a32231a3d373b333674393537">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#7a3e1f1815081b12321f1314161f142a12152e151d081b0a12031a3d373b333674393537" class="footer-contact-item"><span class="__cf_email__" data-cfemail="5a1e3f3835283b32123f3334363f340a32352e353d283b2a32231a3d373b333674393537">[email&#160;protected]</span></a>
         <br />
-        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;display:inline-block;">Book a Session</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1254,14 +596,84 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    mobileBtn.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CONSISTENT IMAGES ARRAY
+       These 6 images appear in the "Why Consistent Headshots Matter" grid.
+       Desktop shows all 6 in 3 columns.  Mobile shows first 4 in 2 columns.
+
+       TO ADD AN IMAGE:    Add a new line inside the array.
+                           Keep to 6 images for the grid to fill properly.
+       TO REMOVE AN IMAGE: Delete that line.
+       TO REORDER:         Move lines up or down.
+       TO ADJUST THE CROP: Change the "position" value for that image.
+                           The format is "50% XX%" where:
+                             50% = horizontally centered (keep at 50 for headshots)
+                             XX% = how far down to start the crop
+                                   Lower number = face sits higher in the cell
+                                   Higher number = face sits lower in the cell
+                           Vary these across images to avoid a perfectly even row of faces.
+
+       File path format: "/images/hs-filename.jpg"
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var consistentImages = [
+      { src: "/images/hs-Tyler.jpg",  alt: "Corporate headshot by Deborah Heinlen Photography", position: "50% 10%" },
+      { src: "/images/hs-Greg.jpg",   alt: "Corporate headshot by Deborah Heinlen Photography", position: "50% 20%" },
+      { src: "/images/hs-Briana.jpg", alt: "Corporate headshot by Deborah Heinlen Photography", position: "50% 8%"  },
+      { src: "/images/hs-Sam.jpg",    alt: "Corporate headshot by Deborah Heinlen Photography", position: "50% 18%" },
+      { src: "/images/hs-Wayne.jpg",  alt: "Corporate headshot by Deborah Heinlen Photography", position: "50% 12%" },
+      { src: "/images/hs-Mark.jpg",   alt: "Corporate headshot by Deborah Heinlen Photography", position: "50% 22%" }
+    ];
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUILD CONSISTENT GRID
+       Reads the consistentImages array and builds 3 flex columns,
+       each with 2 images.  CSS alternates tall/short heights.
+       On mobile (under 768px) shows first 4 images in 2 columns.
+       Do not edit this function -- make all changes in the array above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    function buildConsistentGrid() {
+      var grid = document.getElementById('consistent-grid');
+      if (!grid) return;
+      var isMobile = window.innerWidth < 768;
+      var numCols  = isMobile ? 2 : 3;
+      var images   = isMobile ? consistentImages.slice(0, 4) : consistentImages.slice(0, 6);
+      for (var c = 0; c < numCols; c++) {
+        var col = document.createElement('div');
+        col.className = 'consistent-col';
+        for (var r = 0; r < 2; r++) {
+          var idx = c * 2 + r;
+          if (idx >= images.length) break;
+          var cell = document.createElement('div');
+          cell.className = 'consistent-cell';
+          var img = document.createElement('img');
+          img.src  = images[idx].src;
+          img.alt  = images[idx].alt;
+          img.style.objectPosition = images[idx].position;
+          img.setAttribute('loading', 'lazy');
+          cell.appendChild(img);
+          col.appendChild(cell);
+        }
+        grid.appendChild(col);
+      }
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MOBILE MENU
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var mobileBtn = document.getElementById('mobile-menu-btn');
+    var mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-</script>
+
+    buildConsistentGrid();
+
+  </script>
 </body>
 </html>
