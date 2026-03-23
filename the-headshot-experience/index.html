@@ -14,214 +14,1185 @@
   <meta property="og:type" content="website" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+  <style>
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       QUICK REFERENCE -- WHERE TO FIND COMMON CHANGES
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+       ALL COLORS ........................ find :root below
+       Hero grid image sizes ............. search: HERO GRID CELLS
+       Hero grid/text split (65/35) ...... search: HERO SPLIT
+       Bottom gallery image sizes ........ search: GALLERY CELLS
+       Font sizes ........................ each has a note above font-size
+       Section padding/spacing ........... each has a note above padding
+       Left/right layout flip ............ each section has a note
+       Text alignment .................... each section has a note
+       Vertical content position ......... each section has a note
+       Works Everywhere image size ....... search: WORKS IMAGE SIZE
+       Experience section image size ..... search: EXPERIENCE IMAGE SIZE
+       Package card image size ........... search: PACKAGE IMAGE SIZE
+       Button styles ..................... search: BUTTONS
+       Adding/removing hero images ....... search: HERO IMAGES ARRAY
+       Adding/removing gallery images .... search: GALLERY IMAGES ARRAY
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       COLOR SYSTEM -- ALL COLORS LIVE HERE
+       Change any color in this block and it updates everywhere
+       on the page automatically.  Never need to hunt through
+       individual sections.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     :root {
+
+      /* ── Main background (dark slate blue used throughout) */
       --slate-blue: #252330;
-      --silver:     #B8BCC4;
-      --mid-gray:   #9095A0;
+
+      /* ── Accent colors */
+      --silver:     #B8BCC4;   /* borders, icons, labels, hover fills */
+      --mid-gray:   #9095A0;   /* secondary accents */
+
+      /* ── Light-mode areas (header and nav bar at top) */
       --cream:      #f5f0e8;
-      --text-dark:  #2e2419;
-      --text-mid:   #6b5c4a;
-      --text-light: #9e8e7a;
+      --text-dark:  #2e2419;   /* dark text on light header */
+      --text-mid:   #6b5c4a;   /* medium text on light header/nav */
+      --text-light: #9e8e7a;   /* light/muted text on light header */
+
+      /* ── Basic utility */
       --black:      #000000;
       --white:      #ffffff;
-      --text-white: #ffffff;
+
+      /* ── Body text colors (on dark slate-blue backgrounds) */
+      --body-text:    #B8BCC4;   /* main body paragraph copy */
+      --body-muted:   #A8ACB4;   /* secondary/list item copy */
+      --body-faint:   #9095A0;   /* tertiary copy, CTA sub-text */
+
+      /* ── Footer text colors */
+      --footer-text:  #9095A0;   /* footer body copy */
+      --footer-faint: #B8BCC4;   /* footer bottom bar copy */
+
+      /* ── Border colors (on slate-blue backgrounds, lightest to faintest) */
+      --border-bright:  #4a4858;
+      --border-mid:     #353344;
+      --border-subtle:  #2c2a38;
+      --border-faint:   #232130;
+      --border-hover:   #5a5870;
+
+      /* ── Header and nav (light cream bar at top of page) */
+      --header-bg:     #F0F0F3;
+      --header-border: #D8D9DE;
+      --nav-bg:        #ECEDF0;
+      --nav-border:    #D8D9DE;
+      --nav-hover-bg:  #E4E5EA;
+
+      /* ── Button colors (secondary/ghost button borders) */
+      --btn-secondary-border:       #555555;   /* default border */
+      --btn-secondary-hover-border: #999999;   /* border on hover */
+
+      /* ── Fixed heights (header and nav -- change if you resize those bars) */
       --header-h:   90px;
       --nav-h:      44px;
-      --total-nav:  116px;
+      --total-nav:  134px;   /* header-h + nav-h -- update if either changes */
 
-      /* ── Text grays for dark background ── */
-      --body-text:    #B8BCC4;   /* main body copy          */
-      --body-muted:   #A8ACB4;   /* secondary body copy     */
-      --body-faint:   #9095A0;   /* tertiary / CTA sub-text */
-      --footer-text:  #9095A0;   /* footer body             */
-      --footer-faint: #B8BCC4;   /* footer bottom bar       */
+    }
 
-      /* ── Border tones on slate-blue ── */
-     --border-bright:  #4a4858;
-     --border-mid:     #353344;
-     --border-subtle:  #2c2a38;
-     --border-faint:   #232130;
-     --border-hover:   #5a5870;
 
-      /* ── Nav / header (cream backgrounds) ── */
-     --nav-bg:        #ECEDF0;
-     --nav-border:    #D8D9DE;
-     --nav-hover-bg:  #E4E5EA;
-     --header-bg:     #F0F0F3;
-     --header-border: #D8D9DE;
-     }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESET & BASE
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    html, body { background-color: var(--slate-blue); color: var(--text-white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
+    html, body {
+      background-color: var(--slate-blue);
+      color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
 
-    /* ── HEADER ── */
-    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HEADER
+       The top bar with logo, site name, and Book button.
+       Fixed to top of screen -- stays visible while scrolling.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      background: var(--header-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--header-border);
+    }
     .header-logo { height: 40px; width: auto; display: block; }
-    .header-title { font-family: "lindsey-signature", sans-serif; font-weight: 400; font-size: 3rem; color: var(--text-dark); text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--silver); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    .header-title {
+      font-family: "lindsey-signature", sans-serif;
+      font-weight: 400;
+      font-size: 3rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .header-cta {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      border: 1px solid var(--silver);
+      padding: 0.55rem 1.5rem;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
     .header-cta:hover { background: var(--silver); color: var(--mid-gray); }
 
-    /* ── NAV ── */
-    .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 199; height: var(--nav-h); display: flex; align-items: center; justify-content: center; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--nav-border); }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       NAVIGATION
+       Desktop nav bar below the header.
+       Hidden on mobile -- hamburger menu takes over.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+    /* NOTE: When/if the portfolio pages are removed, update the Portfolio
+       dropdown below (and in the mobile nav further down) to remove those links. */
+
+    .site-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0;
+      z-index: 199;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--nav-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--nav-border);
+    }
     .nav-list { list-style: none; display: flex; align-items: stretch; height: 100%; border-left: 1px solid var(--nav-border); }
     .nav-item { position: relative; display: flex; align-items: center; border-right: 1px solid var(--nav-border); }
-    .nav-link { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0 1.4rem; height: 100%; display: flex; align-items: center; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    .nav-link {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0 1.4rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
     .nav-link:hover, .nav-link.active { background: var(--nav-hover-bg); color: var(--text-dark); }
-    .nav-link.has-dropdown::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid var(--text-light); margin-left: 0.45rem; transition: transform 0.2s; }
+    .nav-link.has-dropdown::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 4px solid var(--text-light);
+      margin-left: 0.45rem;
+      transition: transform 0.2s;
+    }
     .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
-    .dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--nav-bg); border: 1px solid var(--nav-border); border-top: none; z-index: 300; list-style: none; padding: 0.4rem 0; }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      min-width: 260px;
+      background: var(--nav-bg);
+      border: 1px solid var(--nav-border);
+      border-top: none;
+      z-index: 300;
+      list-style: none;
+      padding: 0.4rem 0;
+    }
     .nav-item:hover .dropdown { display: block; }
-    .dropdown li a { display: block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.75rem 1.4rem; transition: background 0.15s, color 0.15s; }
+    .dropdown li a {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0.75rem 1.4rem;
+      transition: background 0.15s, color 0.15s;
+    }
     .dropdown li a:hover { background: var(--nav-hover-bg); color: var(--text-dark); }
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+
+    /* ── Mobile menu button (hamburger) ── */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
     .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
-    .mobile-nav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--nav-bg); z-index: 198; overflow-y: auto; padding: 2rem 2rem 4rem; }
+
+    /* ── Mobile nav panel ── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0; bottom: 0;
+      background: var(--nav-bg);
+      z-index: 198;
+      overflow-y: auto;
+      padding: 2rem 2rem 4rem;
+    }
     .mobile-nav.open { display: block; }
-    .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
+    .mobile-nav a {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--nav-border);
+      transition: color 0.2s;
+    }
     .mobile-nav a:hover { color: var(--text-dark); }
-    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
+    .mobile-section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 200;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-top: 1.2rem;
+      padding: 0.5rem 0 0.3rem;
+      display: block;
+    }
 
-    /* ── PAGE ── */
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PAGE WRAPPER & SHARED UTILITIES
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     .page-content { padding-top: var(--total-nav); }
-    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 1.2rem; }
 
-    /* ── CAROUSEL ── */
-    .hero-carousel { background: var(--slate-blue); border-top: 1px solid var(--border-bright); border-bottom: 1px solid var(--border-faint); padding: 2rem 0; overflow: hidden; }
-    .carousel-track { display: flex; gap: 1rem; padding: 0 2rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
-    .carousel-track::-webkit-scrollbar { display: none; }
-    .carousel-slide { flex: 0 0 280px; height: 360px; overflow: hidden; }
-    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.88) brightness(1); display: block; }
+    /* Small uppercase label that appears above section headings */
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
 
-    /* ── PAGE INTRO ── */
-    .page-intro { background: var(--slate-blue); padding: 5rem 8vw 4rem; text-align: center; border-bottom: 1px solid var(--border-faint); }
-    .page-intro h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.4rem, 5vw, 4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.15; margin-bottom: 1.4rem; }
-    .page-intro p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.9rem, 1.2vw, 1rem); letter-spacing: 0.06em; color: var(--body-text); line-height: 1.8; max-width: 620px; margin: 0 auto 2.5rem; }
-    .intro-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-    /* ── WORKS EVERYWHERE ── */
-    .works-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); display: flex; align-items: center; gap: 6vw; padding: 5rem 8vw; }
-    .works-image { flex: 0 0 50%; overflow: hidden; }
-    .works-image img { width: 100%; height: auto; display: block; filter: saturate(0.9); }
-    .works-content { flex: 0 0 44%; }
-    .works-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.2; margin-bottom: 1.2rem; margin-top: 1rem; }
-    .works-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.04em; line-height: 1.85; color: var(--body-faint); margin-bottom: 1.8rem; }
-    .works-list { list-style: none; margin-bottom: 2.5rem; }
-    .works-list li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.08em; color: var(--body-muted); padding: 0.55rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: center; gap: 0.8rem; }
-    .works-list li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--silver); flex-shrink: 0; }
-
-    /* ── BUTTONS ── */
-    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); text-decoration: none; border: 1px solid var(--silver); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUTTONS
+       Two styles used throughout the page.
+       btn-primary  = outlined silver (main actions)
+       btn-secondary = subtle gray outline (secondary actions)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--silver);
+      text-decoration: none;
+      border: 1px solid var(--silver);
+      padding: 0.85rem 2rem;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
     .btn-primary:hover { background: var(--silver); color: var(--slate-blue); }
-    .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid #555555; padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
-    .btn-secondary:hover { border-color: #999999; color: var(--white); }
 
-    /* ── EXPERIENCE ── */
-    .experience-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); display: flex; align-items: stretch; }
-    .experience-image { flex: 0 0 45%; position: relative; overflow: hidden; min-height: 380px; }
-    .experience-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; }
-    .experience-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%); pointer-events: none; }
-    .experience-content { flex: 0 0 55%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; }
-    .experience-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 2rem; margin-top: 1rem; }
+    /* BUTTONS -- secondary style
+       To change the default border color: update --btn-secondary-border in :root
+       To change the hover border color: update --btn-secondary-hover-border in :root */
+    .btn-secondary {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--body-muted);
+      text-decoration: none;
+      border: 1px solid var(--btn-secondary-border);
+      padding: 0.85rem 2rem;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--btn-secondary-hover-border);
+      color: var(--white);
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO SECTION
+       First thing visitors see.  Replaces the old scrolling carousel
+       and text-only intro.  Two-column layout:
+         Left (65%): 3-column x 2-row image grid
+         Right (35%): headline, description, two CTA buttons
+       Images are managed via the heroImages array in the <script> block below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .hero-section {
+      background: var(--slate-blue);
+      border-bottom: 1px solid var(--border-faint);
+      /* To change space around the whole hero section:
+         adjust the padding values below.
+         Format: top right bottom left (or top/bottom left/right) */
+      padding: 3rem 8vw 3.5rem;
+    }
+
+    /* HERO SPLIT -- outer two-column layout
+       To change the image/text width split:
+       adjust the two numbers in grid-template-columns.
+       Currently 65 (images) and 35 (text).
+       They do not need to add up to 100 -- the gap fills the rest. */
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 65fr 35fr;   /* image side vs text side */
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* HERO GRID CELLS
+       The image grid: 3 columns, 2 images per column.
+       Columns 1 and 3: tall image on top, short image on bottom.
+       Column 2:        short image on top, tall image on bottom.
+       This creates a checkerboard of tall and short cells across both rows.
+
+       TO ADJUST THE TALL CELL HEIGHT:  change the 290px values below
+       TO ADJUST THE SHORT CELL HEIGHT: change the 200px values below
+       TO ADJUST GAP BETWEEN CELLS:     change the gap value (currently 12px)
+
+       NOTE: "odd" columns are columns 1 and 3.  "even" column is column 2. */
+    .hero-grid {
+      display: flex;       /* 3 side-by-side flex columns */
+      gap: 12px;
+    }
+
+    /* Each column stacks its two images vertically */
+    .hero-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Columns 1 and 3 (odd): tall on top, short on bottom */
+    .hero-col:nth-child(odd)  .hero-cell:nth-child(1) { height: 240px; }
+    .hero-col:nth-child(odd)  .hero-cell:nth-child(2) { height: 200px; }
+
+    /* Column 2 (even): short on top, tall on bottom */
+    .hero-col:nth-child(even) .hero-cell:nth-child(1) { height: 200px; }
+    .hero-col:nth-child(even) .hero-cell:nth-child(2) { height: 240px; }
+
+    /* Individual hero grid cells.
+       object-fit: cover  -- image fills the cell completely without distortion.
+       object-position    -- controlled per image in the heroImages array.
+
+       TO ADJUST WHERE AN IMAGE IS CROPPED within its cell:
+       Go to the heroImages array in the <script> block and change
+       the "position" value for that specific image:
+         "center top"    = shows top of image (keeps face/head in frame)
+         "center center" = shows middle of image
+         "center bottom" = shows bottom of image
+         "50% 20%"       = fine-tune with percentages (horizontal% vertical%) */
+    .hero-cell {
+      overflow: hidden;
+    }
+    .hero-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;       /* fills the cell, crops as needed */
+      display: block;
+      /* object-position is set per image via the JS array */
+    }
+
+    /* ── Hero text column ──
+       Text alignment: left, center, or right
+       Currently: left */
+    .hero-text {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      /* To change where text sits vertically in the column:
+         justify-content: flex-start  = pins to the top
+         justify-content: center      = centers vertically
+         justify-content: flex-end    = pins to the bottom */
+      justify-content: center;
+    }
+
+    /* Hero headline (h1)
+       To make larger: increase the last clamp value (currently 3.6rem)
+       To make smaller: decrease the last clamp value
+       Format: clamp(smallest on phone, fluid scaling, largest on desktop) */
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3.6rem);
+      color: var(--white);
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+      margin-top: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Hero body text
+       To make larger or smaller: adjust the last clamp value (currently 0.98rem) */
+    .hero-text p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.88rem, 1.1vw, 0.98rem);
+      letter-spacing: 0.05em;
+      line-height: 1.85;
+      color: var(--body-text);
+      margin-bottom: 2rem;
+    }
+
+    /* Hero CTA buttons row
+       To center the buttons: change flex-start to center
+       To right-align: change flex-start to flex-end */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       WORKS EVERYWHERE SECTION
+       Left: image.  Right: headline, list, button.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .works-section {
+      background: var(--slate-blue);
+      border-bottom: 1px solid var(--border-faint);
+      /* To change space around this section: adjust padding values */
+      padding: 5rem 8vw;
+
+      /* Currently: image LEFT, text RIGHT.
+         To flip (image right, text left): change row to row-reverse */
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6vw;
+    }
+
+    /* WORKS IMAGE SIZE
+       To make the image area wider or narrower: change the flex-basis value (currently 50%)
+       To make the image taller or shorter: change the height value on works-image img */
+    .works-image { flex: 0 0 50%; overflow: hidden; }
+    .works-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(0.9);
+      /* object-fit: cover and height can be added here if you want a fixed height.
+         Currently the image scales naturally with its own proportions. */
+    }
+
+    .works-content { flex: 0 0 44%; }
+
+    /* Works headline
+       To make larger or smaller: adjust the last clamp value (currently 2.6rem) */
+    .works-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      margin-top: 1rem;
+    }
+    .works-content p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      line-height: 1.85;
+      color: var(--body-faint);
+      margin-bottom: 1.8rem;
+    }
+    .works-list { list-style: none; margin-bottom: 2.5rem; }
+    .works-list li {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: var(--body-muted);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border-faint);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    /* The short horizontal line before each list item */
+    .works-list li::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: var(--silver);
+      flex-shrink: 0;
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       EXPERIENCE SECTION
+       Left: full-height photo.  Right: bullet points and button.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .experience-section {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-faint);
+      /* Currently: image LEFT, content RIGHT.
+         To flip: add flex-direction: row-reverse here */
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* EXPERIENCE IMAGE SIZE
+       To make the image column wider or narrower: change flex-basis (currently 45%)
+       The image stretches to fill the full height of the section automatically.
+       To reframe which part of the image shows:
+         change object-position on the img below
+         "center top"    = shows top of image
+         "center center" = shows middle
+         "center bottom" = shows bottom */
+    .experience-image {
+      flex: 0 0 45%;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+    }
+    .experience-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;   /* change this to reframe the image */
+      filter: saturate(0.85);
+      display: block;
+    }
+    /* Gradient fade on the right edge of the experience image -- blends into the content area */
+    .experience-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%);
+      pointer-events: none;
+    }
+
+    .experience-content {
+      flex: 0 0 55%;
+      display: flex;
+      flex-direction: column;
+      /* To change vertical position of content within the column:
+         justify-content: flex-start  = top
+         justify-content: center      = middle
+         justify-content: flex-end    = bottom */
+      justify-content: center;
+      /* To change space inside the content column: adjust padding values */
+      padding: 5rem 6vw;
+    }
+
+    /* Experience headline
+       To make larger or smaller: adjust the last clamp value (currently 2.8rem) */
+    .experience-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
     .experience-points { list-style: none; margin-bottom: 2.5rem; }
-    .experience-points li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.9rem; letter-spacing: 0.04em; color: var(--body-text); line-height: 1.7; padding: 0.6rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: baseline; gap: 0.8rem; }
-    .experience-points li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--silver); flex-shrink: 0; position: relative; top: -3px; }
-    .experience-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; letter-spacing: 0.04em; color: var(--body-faint); line-height: 1.8; margin-bottom: 2rem; }
+    .experience-points li {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: var(--body-text);
+      line-height: 1.7;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-faint);
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+    .experience-points li::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: var(--silver);
+      flex-shrink: 0;
+      position: relative;
+      top: -3px;
+    }
+    .experience-content p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--body-faint);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
 
-    /* ── PACKAGES ── */
-    .packages-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; }
-    .packages-header { text-align: center; margin-bottom: 4rem; }
-    .packages-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
-    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3rem; }
-    .package-card { border: 1px solid var(--border-subtle); padding: 3rem 2.5rem; position: relative; transition: border-color 0.3s; }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PACKAGES SECTION
+       Three side-by-side pricing cards.
+       The middle card is "featured" with a Most Popular badge.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .packages-section {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-faint);
+      /* To change space around this section: adjust padding values */
+      padding: 6rem 8vw;
+    }
+    .packages-header {
+      /* To change heading alignment: left, center, or right */
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    /* Packages headline
+       To make larger or smaller: adjust the last clamp value (currently 3rem) */
+    .packages-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-top: 1rem;
+    }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto 3rem ;
+    }
+    .package-card {
+      border: 1px solid var(--border-subtle);
+      padding: 3rem 2.5rem;
+      position: relative;
+      transition: border-color 0.3s;
+    }
     .package-card:hover { border-color: var(--border-hover); }
     .package-card.featured { border-color: var(--silver); }
-    .package-card.featured::before { content: 'Most Popular'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); font-family: 'Jost', sans-serif; font-size: 0.6rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--slate-blue); background: var(--silver); padding: 0.3rem 1.2rem; white-space: nowrap; }
-    .package-image { width: 100%; height: 220px; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; margin-bottom: 2rem; }
-    .package-name { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 0.5rem; }
-    .package-price { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.8rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.3rem; }
-    .package-duration { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--body-faint); display: block; margin-bottom: 1.8rem; }
+    .package-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--slate-blue);
+      background: var(--silver);
+      padding: 0.3rem 1.2rem;
+      white-space: nowrap;
+    }
+
+    /* PACKAGE IMAGE SIZE
+       All three package card images share this height.
+       To make taller or shorter: change the height value below (currently 220px)
+       To reframe what part of the image shows: change object-position
+         "center top"    = shows top (good for faces)
+         "center center" = shows middle */
+    .package-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;   /* change to reframe */
+      filter: saturate(0.85);
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .package-name {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .package-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2.8rem;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .package-duration {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--body-faint);
+      display: block;
+      margin-bottom: 1.8rem;
+    }
     .package-includes { list-style: none; margin-bottom: 2rem; }
-    .package-includes li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--body-muted); line-height: 1.6; padding: 0.45rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: baseline; gap: 0.7rem; }
-    .package-includes li::before { content: ''; display: inline-block; width: 14px; height: 1px; background: var(--silver); flex-shrink: 0; position: relative; top: -3px; }
-    .package-ideal { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1rem; color: var(--body-faint); line-height: 1.5; margin-bottom: 2rem; }
+    .package-includes li {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      color: var(--body-muted);
+      line-height: 1.6;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border-faint);
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+    }
+    .package-includes li::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 1px;
+      background: var(--silver);
+      flex-shrink: 0;
+      position: relative;
+      top: -3px;
+    }
+    .package-ideal {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--body-faint);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
     .packages-cta { text-align: center; }
 
-    /* ── FAQ ── */
-    .faq-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; }
-    .faq-header { text-align: center; margin-bottom: 4rem; }
-    .faq-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
-    .faq-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 2.5rem; }
-    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 1rem; }
-    .faq-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.9rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-muted); }
 
-    /* ── TESTIMONIAL ── */
-    .testimonial-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BOTTOM GALLERY SECTION
+       Full-width grid of headshot images below the packages.
+       4 images per row x 2 rows = 8 images total (default).
+       Alternating narrow and wide columns give visual variety.
+       Images are managed via the galleryImages array in the <script> block below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .gallery-section {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-faint);
+      /* To change space around this section: adjust padding values */
+      padding: 5rem 8vw;
+    }
+    .gallery-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Gallery heading
+       To hide the heading entirely: add style="display:none" to the h2 tag in the HTML.
+       To change alignment: left, center, or right (currently center) */
+    .gallery-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    /* GALLERY CELLS
+       4 columns with alternating tall/short heights within each column.
+       Columns 1 and 3: tall on top, short on bottom.
+       Columns 2 and 4: short on top, tall on bottom.
+       This creates a checkerboard of tall and short cells across both rows --
+       the same alternating pattern used in the hero grid above.
+
+       TO ADJUST THE TALL CELL HEIGHT:  change the 330px values below
+       TO ADJUST THE SHORT CELL HEIGHT: change the 260px values below
+       TO ADJUST GAPS between cells:    change the gap value (currently 12px)
+       TO ADD A THIRD ROW:              add more images to the galleryImages array --
+                                        the pattern will repeat automatically. */
+    .gallery-grid {
+      display: flex;       /* 4 side-by-side flex columns */
+      gap: 12px;
+    }
+
+    /* Each gallery column stacks its images vertically */
+    .gallery-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Columns 1 and 3 (odd): tall on top, short on bottom */
+    .gallery-col:nth-child(odd)  .gallery-cell:nth-child(1) { height: 330px; }
+    .gallery-col:nth-child(odd)  .gallery-cell:nth-child(2) { height: 260px; }
+
+    /* Columns 2 and 4 (even): short on top, tall on bottom */
+    .gallery-col:nth-child(even) .gallery-cell:nth-child(1) { height: 260px; }
+    .gallery-col:nth-child(even) .gallery-cell:nth-child(2) { height: 330px; }
+
+    /* Individual gallery cells.
+       object-fit: cover -- fills each cell without distortion.
+       object-position   -- controlled per image in the galleryImages array.
+
+       TO ADJUST WHERE AN IMAGE IS CROPPED within its cell:
+       Go to the galleryImages array in the <script> block and change
+       the "position" value for that specific image. */
+    .gallery-cell { overflow: hidden; }
+    .gallery-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;   /* fills the cell completely, crops as needed */
+      display: block;
+      /* object-position is set per image via the JS array */
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FAQ SECTION
+       Two-column grid of question/answer pairs.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .faq-section {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-faint);
+      padding: 6rem 8vw;
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .faq-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-top: 1rem;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border-subtle);
+      border-left: 1px solid var(--border-subtle);
+    }
+    .faq-item {
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 2.5rem;
+    }
+    .faq-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      color: var(--white);
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .faq-item p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      line-height: 1.85;
+      color: var(--body-muted);
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       TESTIMONIAL SECTION
+       Centered quote with stars above and attribution below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .testimonial-section {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-faint);
+      padding: 6rem 8vw;
+      text-align: center;
+    }
     .stars { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 2.5rem; }
     .stars span { color: var(--silver); font-size: 1rem; }
-    .testimonial-section blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--white); line-height: 1.55; max-width: 760px; margin: 0 auto 1.5rem; letter-spacing: 0.02em; }
-    .testimonial-section cite { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); font-style: normal; }
+    .testimonial-section blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      color: var(--white);
+      line-height: 1.55;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .testimonial-section cite {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--silver);
+      font-style: normal;
+    }
 
-    /* ── CTA ── */
-    .cta-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 7rem 8vw; text-align: center; }
-    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
-    .cta-section p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.04em; color: var(--body-faint); max-width: 560px; margin: 0 auto 3rem; }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FINAL CTA SECTION
+       Centered headline, description, and two buttons.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .cta-section {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-faint);
+      padding: 7rem 8vw;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .cta-section p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      color: var(--body-faint);
+      max-width: 560px;
+      margin: 0 auto 3rem;
+    }
     .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
 
-    /* ── FOOTER ── */
-    .site-footer { background: var(--slate-blue); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
-    .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER
+       Four-column layout: brand info, Services, Explore, Contact.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .site-footer {
+      background: var(--slate-blue);
+      border-top: 1px solid var(--border-bright);
+      padding: 4rem 3rem 3rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
     .footer-brand img { height: 120px; width: auto; display: block; margin-bottom: 1.2rem; }
-    .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
-    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
+    .footer-brand p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      color: var(--footer-text);
+    }
+    .footer-col h4 {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 1.2rem;
+    }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.6rem; }
-    .footer-col ul li a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--footer-text); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      color: var(--footer-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
     .footer-col ul li a:hover { color: var(--silver); }
-    .footer-contact-item { display: block; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--footer-text); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
+    .footer-contact-item {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--footer-text);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
     .footer-contact-item:hover { color: var(--silver); }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; }
-    .footer-bottom p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-mid);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-bottom p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--footer-faint);
+    }
     .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--footer-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
     .footer-bottom-links a:hover { color: var(--silver); }
     .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
 
-    /* ── RESPONSIVE ── */
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE -- TABLET (max 900px)
+       Desktop nav hidden, hamburger shown.
+       Sections stack vertically.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 900px) {
+
+      /* Show hamburger, hide desktop nav */
       .site-nav { display: none; }
       .mobile-menu-btn { display: flex; }
+
+      /* Hide the script title in the header at the hamburger breakpoint */
       .header-title { display: none; }
-      .carousel-slide { flex: 0 0 50% !important; }
+
+      /* Hero section stacks: text on top, grid below */
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      /* Text moves above the image grid on mobile */
+      .hero-text { order: 1; }
+      .hero-grid  { order: 2; }
+
+      /* JS only loads 4 images on mobile, so switch to 2 columns */
+      /* The same alternating tall/short pattern applies on mobile */
+      .hero-col:nth-child(odd)  .hero-cell:nth-child(1) { height: 200px; }
+      .hero-col:nth-child(odd)  .hero-cell:nth-child(2) { height: 160px; }
+      .hero-col:nth-child(even) .hero-cell:nth-child(1) { height: 160px; }
+      .hero-col:nth-child(even) .hero-cell:nth-child(2) { height: 200px; }
+
+      /* Works section stacks */
       .works-section { flex-direction: column; gap: 2.5rem; }
       .works-image, .works-content { flex: none; width: 100%; }
+
+      /* Experience section stacks */
       .experience-section { flex-direction: column; }
       .experience-image { flex: none; width: 100%; min-height: 320px; }
-      .experience-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
+      /* Gradient shifts to bottom fade on mobile (instead of right-side fade) */
+      .experience-image::after {
+        background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%);
+      }
       .experience-content { flex: none; width: 100%; padding: 3rem 2rem; }
+
+      /* Packages drop to single column */
       .packages-grid { grid-template-columns: 1fr; max-width: 480px; }
+
+      /* Bottom gallery drops to 2 columns on tablet/mobile */
+      .gallery-col:nth-child(odd)  .gallery-cell:nth-child(1) { height: 220px; }
+      .gallery-col:nth-child(odd)  .gallery-cell:nth-child(2) { height: 180px; }
+      .gallery-col:nth-child(even) .gallery-cell:nth-child(1) { height: 180px; }
+      .gallery-col:nth-child(even) .gallery-cell:nth-child(2) { height: 220px; }
+
+      /* FAQ drops to single column */
       .faq-grid { grid-template-columns: 1fr; }
+
+      /* Footer drops to 2-column layout */
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
 
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE -- MOBILE (max 600px)
+       Single column layouts, reduced padding.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
-      .carousel-slide { flex: 0 0 100% !important; }
-      .carousel-slide img { height: 45vw; object-position: center 30%; }
-      .page-intro { padding: 3rem 1.5rem 2.5rem; }
+
+      /* Hero buttons stack on small phones */
+      .hero-buttons { flex-direction: column; align-items: flex-start; }
+
+      /* Sections get tighter padding on small screens */
       .works-section { padding: 3rem 1.5rem; }
-      .intro-buttons { flex-direction: column; align-items: center; }
+      .packages-section { padding: 3rem 1.5rem; }
+      .gallery-section { padding: 3rem 1.5rem; }
+      .faq-section { padding: 3rem 1.5rem; }
+
+      /* FAQ items get tighter padding */
       .faq-item { padding: 1.8rem 1.5rem; }
+
+      /* Footer goes full single column */
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+
+      /* CTA buttons stack */
       .cta-buttons { flex-direction: column; align-items: center; }
     }
+
   </style>
 </head>
 <body>
 
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HEADER
+       Logo left, site name centered, Book button right.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <header class="site-header">
     <a href="/"><img src="/images/logo-black.jpg" alt="Deborah Heinlen Photography" class="header-logo" /></a>
     <a href="/" class="header-title">Deborah Heinlen Photography</a>
@@ -231,6 +1202,13 @@
     <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
   </header>
 
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       DESKTOP NAVIGATION
+       Hidden on mobile -- hamburger takes over at 900px.
+       NOTE: When/if portfolio pages are removed, update the Portfolio
+       dropdown here AND in the mobile nav below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="site-nav" aria-label="Main navigation">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -255,6 +1233,13 @@
     </ul>
   </nav>
 
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MOBILE NAVIGATION PANEL
+       Shown when hamburger is tapped.
+       Mirrors the desktop nav structure.
+       NOTE: Keep this in sync with the desktop nav above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="mobile-nav" id="mobile-nav">
     <a href="/">Home</a>
     <span class="mobile-section-label">Services</span>
@@ -269,44 +1254,43 @@
     <a href="/contact-deborah-heinlen/">Contact</a>
   </nav>
 
+
   <main class="page-content">
 
-    <!-- CAROUSEL -->
-    <div class="hero-carousel">
-      <div class="carousel-track">
-        <div class="carousel-slide"><img src="../images/hs-Christy.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Daniel.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Kambua.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Dave.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Laura.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Peter.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Ashley2.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Tevon.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Ben.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Paula.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-David.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Greg.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Larry.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Briana.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Sam.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Tyler.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Cortney.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-        <div class="carousel-slide"><img src="/images/hs-Wayne.jpg" alt="Professional headshot by Deborah Heinlen Photography" /></div>
-      </div>
-    </div>
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         HERO SECTION
+         Image grid on the left, text on the right.
+         Images are controlled by the heroImages array in the <script> block below.
+         To change which images appear here, scroll to the bottom of this page
+         and find the section labeled: HERO IMAGES ARRAY
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="hero-section">
+      <div class="hero-inner">
 
-    <!-- PAGE INTRO -->
-    <div class="page-intro">
-      <span class="section-label">Studio Sessions</span>
-      <h1>Studio Headshots in Cincinnati &amp; Northern Kentucky</h1>
-      <p>Professional headshots and LinkedIn profile photos designed to make a strong first impression online.&nbsp; Relaxed, guided sessions with expert lighting and expression coaching in Hebron, KY.</p>
-      <div class="intro-buttons">
-        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book Your Session</a>
-        <a href="#packages" class="btn-secondary">View Session Options</a>
-      </div>
-    </div>
+        <!-- Image grid -- populated automatically by JS from heroImages array -->
+        <div class="hero-grid" id="hero-grid"></div>
 
-    <!-- WORKS EVERYWHERE -->
+        <!-- Text column -->
+        <div class="hero-text">
+          <span class="section-label">Studio Sessions</span>
+          <h1>Studio Headshots in Cincinnati &amp; Northern Kentucky</h1>
+          <p>Professional headshots and LinkedIn profile photos designed to make a strong first impression online.&nbsp; Relaxed, guided sessions with expert lighting and expression coaching in Hebron, KY.</p>
+          <div class="hero-buttons">
+            <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book Your Session</a>
+            <a href="#packages" class="btn-secondary">View Session Options</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         WORKS EVERYWHERE SECTION
+         Image on the left, text/list/button on the right.
+         To flip left/right: find .works-section in CSS and
+         change flex-direction: row to flex-direction: row-reverse
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <div class="works-section">
       <div class="works-image">
         <img src="/images/headshots-everywhere.jpg" alt="Headshots that work everywhere your name appears - LinkedIn, email signatures, websites" />
@@ -327,10 +1311,16 @@
       </div>
     </div>
 
-    <!-- THE EXPERIENCE -->
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         THE HEADSHOT EXPERIENCE SECTION
+         Large photo on the left, bullet points and button on the right.
+         To flip left/right: find .experience-section in CSS and
+         add: flex-direction: row-reverse
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="experience-section">
       <div class="experience-image">
-        <img src="../images/me-with-client.jpg" alt="Deborah Heinlen coaching a client during a studio headshot session" />
+        <img src="/images/me-with-client.jpg" alt="Deborah Heinlen coaching a client during a studio headshot session" />
       </div>
       <div class="experience-content">
         <span class="section-label">The Headshot Experience</span>
@@ -350,13 +1340,20 @@
       </div>
     </section>
 
-    <!-- PACKAGES -->
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         PACKAGES SECTION
+         Three pricing cards side by side.
+         The middle card gets the "Most Popular" badge via the
+         class="package-card featured" on that card.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="packages-section" id="packages">
       <div class="packages-header">
         <span class="section-label">Session Options</span>
         <h2>Studio Headshot Packages</h2>
       </div>
       <div class="packages-grid">
+
         <div class="package-card">
           <img src="/images/hs-Kambua.jpg" alt="Express headshot session" class="package-image" />
           <span class="package-name">The Express Session</span>
@@ -372,6 +1369,8 @@
           <p class="package-ideal">Perfect for quick updates, LinkedIn profiles, resumes, and applications.</p>
           <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book Express Session</a>
         </div>
+
+        <!-- This card has class="featured" which adds the Most Popular badge -->
         <div class="package-card featured">
           <img src="/images/hs-Ashley.jpg" alt="Signature headshot session" class="package-image" />
           <span class="package-name">The Signature Session</span>
@@ -387,8 +1386,9 @@
           <p class="package-ideal">Ideal for professionals seeking more variety, updated branding, or a polished online presence.</p>
           <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book Signature Session</a>
         </div>
+
         <div class="package-card">
-          <img src="../images/laura-model.jpg" alt="VIP headshot session" class="package-image" />
+          <img src="/images/laura-model.jpg" alt="VIP headshot session" class="package-image" />
           <span class="package-name">The VIP Session</span>
           <div class="package-price">$650</div>
           <span class="package-duration">Unlimited time</span>
@@ -403,13 +1403,41 @@
           <p class="package-ideal">Best for executives, entrepreneurs, speakers, and anyone needing a full branding update.</p>
           <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Book VIP Session</a>
         </div>
+
       </div>
       <div class="packages-cta">
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-secondary" target="_blank" rel="noopener">Not Sure Which Session?&nbsp; Schedule a Free Consult</a>
       </div>
     </section>
 
-    <!-- FAQ -->
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         BOTTOM GALLERY SECTION
+         Portfolio-style image grid below the packages.
+         Images are controlled by the galleryImages array in the <script> block below.
+         To change which images appear here, scroll to the bottom of this page
+         and find the section labeled: GALLERY IMAGES ARRAY
+
+         To hide the heading: add style="display:none" to the h2 tag below.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section class="gallery-section">
+      <div class="gallery-inner">
+        <span class="section-label">The Work</span>
+        <h2>Studio Headshots</h2>
+
+        <!-- Gallery grid -- populated automatically by JS from galleryImages array -->
+        <div class="gallery-grid" id="gallery-grid"></div>
+
+      </div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FAQ SECTION
+         Two-column grid of question and answer pairs.
+         To add a question: copy one faq-item block and paste it.
+         To remove a question: delete the faq-item block.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="faq-section">
       <div class="faq-header">
         <span class="section-label">Common Questions</span>
@@ -419,7 +1447,7 @@
         <div class="faq-item"><h3>Where are you located?</h3><p>My home studio is located in Hebron, Kentucky, just minutes from I-275 and the Cincinnati / Northern Kentucky Airport.</p></div>
         <div class="faq-item"><h3>Can you come to my location?</h3><p>Yes.&nbsp; On-site headshot sessions and corporate team headshots are available throughout Cincinnati, Northern Kentucky, and the Tri-State region.</p></div>
         <div class="faq-item"><h3>How do I prepare for my session?</h3><p>You'll receive prep guidance on clothing, grooming, and what to bring.&nbsp; I'll also coach you into natural, confident expressions during your session.</p></div>
-        <div class="faq-item"><h3>What should I wear?</h3><p>Simple, solid colors work best.&nbsp; Avoid busy patterns.&nbsp; Bring options &mdash; I'll help you choose what photographs best once you arrive.</p></div>
+        <div class="faq-item"><h3>What should I wear?</h3><p>Simple, solid colors work best.&nbsp; Avoid busy patterns.&nbsp; Bring options -- I'll help you choose what photographs best once you arrive.</p></div>
         <div class="faq-item"><h3>I don't feel photogenic. Will this still work?</h3><p>Absolutely.&nbsp; Expression coaching is a key part of every session.&nbsp; My job is to help you feel comfortable so your natural confidence comes through on camera.</p></div>
         <div class="faq-item"><h3>How do I choose between sessions?</h3><p>Choose Express for a quick update, Signature for multiple looks, or VIP for a full branding set.&nbsp; A free phone consult will make the choice clear.</p></div>
         <div class="faq-item"><h3>Why not just use my phone or AI?</h3><p>Professional lighting, posing, expression coaching, and high-end lenses produce results that phone cameras and AI cannot match.&nbsp; Your headshot represents your reputation.</p></div>
@@ -427,7 +1455,11 @@
       </div>
     </section>
 
-    <!-- TESTIMONIAL -->
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         TESTIMONIAL SECTION
+         Stars, quote, and attribution.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="testimonial-section">
       <div class="stars">
         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
@@ -436,7 +1468,11 @@
       <cite>&mdash; Laura</cite>
     </section>
 
-    <!-- FINAL CTA -->
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         FINAL CTA SECTION
+         Closing headline, description, and two booking buttons.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <section class="cta-section">
       <h2>Ready for a Headshot You're Proud to Share?</h2>
       <p>Schedule your free phone consultation to discuss what you're looking for, get answers to your questions, and feel confident going into your session.&nbsp; Located in Hebron, KY, serving all of Greater Cincinnati and Northern Kentucky.</p>
@@ -448,6 +1484,10 @@
 
   </main>
 
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -455,20 +1495,34 @@
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
         <img src="/images/logo-PPA_Member_Color.png" alt="Professional Photographers of America" class="footer-badge" />
       </div>
-        
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="/the-headshot-experience/">Studio Headshots</a></li><li><a href="/corporate-headshots/">Corporate Headshots</a></li><li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li></ul></div>
-        
-      <div class="footer-col"><h4>Explore</h4><ul><li><a href="/portfolio/">Headshots Portfolio</a></li><li><a href="/corporate-event-portfolio/">Events Portfolio</a></li><li><a href="/about-deborah-heinlen/">About</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/the-headshot-experience/">Studio Headshots</a></li>
+          <li><a href="/corporate-headshots/">Corporate Headshots</a></li>
+          <li><a href="/corporate-event-photography-in-cincinnati-northern-kentucky/">Corporate Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/portfolio/">Headshots Portfolio</a></li>
+          <li><a href="/corporate-event-portfolio/">Events Portfolio</a></li>
+          <li><a href="/about-deborah-heinlen/">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:8599188559" class="footer-contact-item">(859) 918-8559</a>
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
-        <a href="/cdn-cgi/l/email-protection#6a2e0f0805180b02220f0304060f043a02051e050d180b1a02132a0d070b030644090507" class="footer-contact-item"><span class="__cf_email__" data-cfemail="1b5f7e7974697a73537e7275777e754b73746f747c697a6b73625b7c767a727735787476">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#6a2e0f0805180b02220f0304060f043a02051e050d180b1a02132a0d070b030644090507" class="footer-contact-item">
+          <span class="__cf_email__" data-cfemail="1b5f7e7974697a73537e7275777e754b73746f747c697a6b73625b7c767a727735787476">[email&#160;protected]</span>
+        </a>
         <br />
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;display:inline-block;">Book a Session</a>
       </div>
     </div>
-      
     <div class="footer-bottom">
       <p>&copy; 2026 Deborah Heinlen Photography &nbsp;&middot;&nbsp; All images are protected by copyright owned by Deborah Heinlen.</p>
       <div class="footer-bottom-links">
@@ -479,14 +1533,169 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    mobileBtn.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO IMAGES ARRAY
+       These 6 images appear in the top hero grid section.
+       Desktop shows all 6.  Mobile (under 768px) shows the first 4.
+
+       TO ADD AN IMAGE:    Add a new line inside the array.
+                           Keep to 6 images for the 3x2 grid to fill properly.
+       TO REMOVE AN IMAGE: Delete that line.
+       TO REORDER:         Move lines up or down.
+       TO ADJUST THE CROP: Change the "position" value for that image.
+                           The format is "50% XX%" where:
+                             50% = horizontally centered (keep this at 50 for headshots)
+                             XX% = how far down into the image to start the crop
+                                   Lower number = face sits higher in the cell
+                                   Higher number = face sits lower in the cell
+                           Examples:
+                             "50% 5%"  = face near the top of the cell
+                             "50% 15%" = face slightly lower
+                             "50% 25%" = face noticeably lower
+                           Vary these across images to avoid a perfectly even row of faces.
+
+       File path format: "/images/hs-filename.jpg"
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var heroImages = [
+      { src: "/images/hs-Larry.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 15%" },
+      { src: "/images/hs-Daniel.jpg",  alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 5%"  },
+      { src: "/images/hs-Ashley2.jpg", alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 20%" },
+      { src: "/images/hs-Dave.jpg",    alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 10%" },
+      { src: "/images/hs-Kambua.jpg",  alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 25%" },
+      { src: "/images/hs-Christy.jpg", alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 8%"  }
+    ];
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       GALLERY IMAGES ARRAY
+       These images appear in the portfolio grid section below the packages.
+       8 images fills 2 complete rows.  You can add up to 12 for 3 rows.
+
+       TO ADD AN IMAGE:    Add a new line inside the array.
+       TO REMOVE AN IMAGE: Delete that line.
+       TO REORDER:         Move lines up or down.
+       TO ADJUST THE CROP: Change the "position" value (same options as hero above).
+
+       File path format: "/images/hs-filename.jpg"
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var galleryImages = [
+      { src: "/images/hs-Paula.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 10%" },
+      { src: "/images/hs-Tyler.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 20%" },
+      { src: "/images/hs-Laura.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 8%"  },
+      { src: "/images/hs-Tevon.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 18%" },
+      { src: "/images/hs-Ben.jpg",     alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 12%" },
+      { src: "/images/hs-David.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 22%" },
+      { src: "/images/hs-Greg.jpg",    alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 5%"  },
+      { src: "/images/hs-Peter.jpg",   alt: "Professional headshot by Deborah Heinlen Photography", position: "50% 15%" }
+    ];
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUILD HERO GRID
+       Reads the heroImages array above and builds 3 flex columns,
+       each containing 2 images.  The CSS alternates tall/short heights
+       so columns 1 and 3 are tall-then-short, column 2 is short-then-tall.
+       On mobile (under 768px wide) only the first 4 images are shown in 2 columns.
+       Do not edit this function -- make all changes in the heroImages array above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    function buildHeroGrid() {
+      var grid = document.getElementById('hero-grid');
+      if (!grid) return;
+
+      var isMobile = window.innerWidth < 768;
+      var numCols  = isMobile ? 2 : 3;
+      var images   = isMobile ? heroImages.slice(0, 4) : heroImages.slice(0, 6);
+
+      /* Build one flex column per numCols, placing 2 images in each */
+      for (var c = 0; c < numCols; c++) {
+        var col = document.createElement('div');
+        col.className = 'hero-col';
+
+        for (var r = 0; r < 2; r++) {
+          var idx = c * 2 + r;  /* col 1 gets images 0,1 -- col 2 gets 2,3 -- col 3 gets 4,5 */
+          if (idx >= images.length) break;
+
+          var cell = document.createElement('div');
+          cell.className = 'hero-cell';
+
+          var img = document.createElement('img');
+          img.src  = images[idx].src;
+          img.alt  = images[idx].alt;
+          img.style.objectPosition = images[idx].position;
+          img.setAttribute('loading', 'lazy');
+
+          cell.appendChild(img);
+          col.appendChild(cell);
+        }
+        grid.appendChild(col);
+      }
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BUILD BOTTOM GALLERY
+       Reads the galleryImages array above and builds 4 flex columns,
+       each containing 2 images.  The CSS alternates tall/short heights
+       so columns 1 and 3 are tall-then-short, columns 2 and 4 are short-then-tall --
+       the same checkerboard pattern used in the hero grid above.
+       On mobile (under 768px wide) only the first 4 images are shown in 2 columns.
+       Do not edit this function -- make all changes in the galleryImages array above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    function buildGallery() {
+      var grid = document.getElementById('gallery-grid');
+      if (!grid) return;
+
+      var isMobile = window.innerWidth < 768;
+      var numCols  = isMobile ? 2 : 4;
+      var images   = isMobile ? galleryImages.slice(0, 4) : galleryImages;
+
+      /* Build one flex column per numCols, placing 2 images in each */
+      for (var c = 0; c < numCols; c++) {
+        var col = document.createElement('div');
+        col.className = 'gallery-col';
+
+        for (var r = 0; r < 2; r++) {
+          var idx = c * 2 + r;  /* col 1 gets images 0,1 -- col 2 gets 2,3 -- etc */
+          if (idx >= images.length) break;
+
+          var cell = document.createElement('div');
+          cell.className = 'gallery-cell';
+
+          var img = document.createElement('img');
+          img.src  = images[idx].src;
+          img.alt  = images[idx].alt;
+          img.style.objectPosition = images[idx].position;
+          img.setAttribute('loading', 'lazy');
+
+          cell.appendChild(img);
+          col.appendChild(cell);
+        }
+        grid.appendChild(col);
+      }
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MOBILE MENU
+       Hamburger button opens and closes the mobile nav panel.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    var mobileBtn = document.getElementById('mobile-menu-btn');
+    var mobileNav = document.getElementById('mobile-nav');
+    mobileBtn.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-</script>
+
+
+    /* Run the grid builders when the page loads */
+    buildHeroGrid();
+    buildGallery();
+
+  </script>
 </body>
 </html>
