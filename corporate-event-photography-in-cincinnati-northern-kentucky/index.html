@@ -359,6 +359,9 @@
       .cta-buttons { flex-direction: column; align-items: center; }
     }
 
+      /* IMAGE PROTECTION -- DO NOT REMOVE */
+img { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none; }
+a, button { pointer-events: auto; }
   </style>
 </head>
 <body>
@@ -680,6 +683,11 @@
 
     buildEventGrid();
 
+      // IMAGE PROTECTION -- DO NOT REMOVE
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+document.addEventListener('dragstart', function(e) {
+  if (e.target.tagName === 'IMG') { e.preventDefault(); }
+});
   </script>
 </body>
 </html>
