@@ -20,8 +20,34 @@
   <meta property="og:url" content="https://www.deborahheinlenphotography.com/" />
   <meta property="og:type" content="website" />
 
+  <!-- FIX 1: preconnect hints so the font connections start earlier -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
+
+  <!-- FIX 2: load Typekit asynchronously so it no longer blocks rendering -->
+  <script>
+    (function(d) {
+      var config = { kitId: 'uug2krd', scriptTimeout: 3000, async: true },
+          h = d.documentElement, t = setTimeout(function() {
+            h.className = h.className.replace(/\bwf-loading\b/g, '') + ' wf-inactive';
+          }, config.scriptTimeout),
+          tk = d.createElement('script'), f = false,
+          s = d.getElementsByTagName('script')[0],
+          a;
+      h.className += ' wf-loading';
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function() {
+        a = this.readyState;
+        if (f || a && a != 'complete' && a != 'loaded') return;
+        f = true;
+        clearTimeout(t);
+        try { Typekit.load(config); } catch(e) {}
+      };
+      s.parentNode.insertBefore(tk, s);
+    })(document);
+  </script>
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1112,6 +1138,7 @@ a, button { pointer-events: auto; }
        HEADER
        ═══════════════════════════════════════════════════════════════ -->
   <header class="site-header">
+    <!-- FIX 3: header logo is above the fold, no lazy loading -->
     <a href="/">
       <img src="/images/logo-black.jpg" alt="Deborah Heinlen Photography logo" class="header-logo" />
     </a>
@@ -1185,25 +1212,28 @@ a, button { pointer-events: auto; }
 
     <!-- LAYER 1: FIXED BACKGROUNDS -->
     <div id="story-bg">
+      <!-- FIX 3: Daniel is the first visible background image -- no lazy loading -->
       <img class="bg-image active" data-index="0" src="/images/hs-Daniel.jpg"  alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in gray blazer and patterned shirt against dark background" />
         
-      <img class="bg-image"        data-index="1" src="/images/hs-Ashley2.jpg"    alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with blonde hair against dark studio background" />
+      <!-- FIX 3: remaining background images are lazy loaded -->
+      <img class="bg-image" loading="lazy" data-index="1" src="/images/hs-Ashley2.jpg"    alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with blonde hair against dark studio background" />
         
-      <img class="bg-image"        data-index="2" src="/images/hs-Greg.jpg"  alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — distinguished man with white beard in dark shirt against dark studio background" />
+      <img class="bg-image" loading="lazy" data-index="2" src="/images/hs-Greg.jpg"  alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — distinguished man with white beard in dark shirt against dark studio background" />
         
-      <img class="bg-image"        data-index="3" src="/images/hs-Peter.jpg"      alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man with bold rectangular glasses and dark shirt against dark studio background" />
+      <img class="bg-image" loading="lazy" data-index="3" src="/images/hs-Peter.jpg"      alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man with bold rectangular glasses and dark shirt against dark studio background" />
         
-      <img class="bg-image"        data-index="4" src="/images/hs-Briana.jpg"     alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with dark hair and bangs in black turtleneck against dark studio background" />
+      <img class="bg-image" loading="lazy" data-index="4" src="/images/hs-Briana.jpg"     alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with dark hair and bangs in black turtleneck against dark studio background" />
         
-      <img class="bg-image"        data-index="5" src="/images/hs-Tyler.jpg"      alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — young professional man in gray blazer and lavender check shirt against dark studio background" />
+      <img class="bg-image" loading="lazy" data-index="5" src="/images/hs-Tyler.jpg"      alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — young professional man in gray blazer and lavender check shirt against dark studio background" />
         
-      <div class="bg-slate-blue"        data-index="6"></div>
+      <div class="bg-slate-blue" data-index="6"></div>
     </div>
 
     <!-- LAYER 2: SCROLLING CONTENT -->
     <div id="story-scroll">
 
       <!-- Opening hero card -->
+      <!-- FIX 3: hero logo is above the fold, no lazy loading -->
     <div class="story-card card-hero" style="justify-content: flex-start; align-items: center; flex-direction: column; background: linear-gradient(to bottom, #252330 0%, #25233000 100%); padding-top: calc(var(--total-nav) + 1rem);">
   <img src="/images/logo-white.png" alt="Deborah Heinlen Photography logo" style="width: 25%; max-width: 300px; height: auto;" />
 
@@ -1244,9 +1274,10 @@ a, button { pointer-events: auto; }
           <div class="card-spacer" data-bg="0"></div>    
 
       <!-- CARD: Larry -->
+      <!-- FIX 3: card images are below the fold, lazy loaded -->
       <div class="story-card" data-bg="1">
         <div class="card-image-side">
-          <img src="/images/hs-Larry.jpg" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in dark suit, white shirt, and burgundy tie against dark studio background" />
+          <img src="/images/hs-Larry.jpg" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in dark suit, white shirt, and burgundy tie against dark studio background" />
         </div>
         <div class="card-text-side">
           <p>Your reputation didn't happen overnight.</p>
@@ -1264,7 +1295,7 @@ a, button { pointer-events: auto; }
       <!-- CARD: Mark -->
       <div class="story-card" data-bg="2">
         <div class="card-image-side">
-          <img src="images/hs-Mark.jpg" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling man in gray suit and silver tie against dark studio background" />
+          <img src="images/hs-Mark.jpg" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling man in gray suit and silver tie against dark studio background" />
         </div>
         <div class="card-text-side">
           <p>A headshot is more than a photograph.</p>
@@ -1282,7 +1313,7 @@ a, button { pointer-events: auto; }
       <!-- CARD: Paula -->
       <div class="story-card" data-bg="3">
         <div class="card-image-side">
-          <img src="/images/hs-Paula.jpg" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with long blonde hair in black top against dark studio background" />
+          <img src="/images/hs-Paula.jpg" loading="lazy" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with long blonde hair in black top against dark studio background" />
         </div>
         <div class="card-text-side">
           <p>The details tell the story.</p>
@@ -1300,7 +1331,7 @@ a, button { pointer-events: auto; }
       <!-- CARD: Ben -->
       <div class="story-card" data-bg="4">
         <div class="card-image-side">
-          <img src="/images/hs-Ben.jpg" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling young man in navy suit and blue patterned tie against dark studio background" />
+          <img src="/images/hs-Ben.jpg" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling young man in navy suit and blue patterned tie against dark studio background" />
         </div>
         <div class="card-text-side">
           <p>For professionals who expect more.</p>
@@ -1317,7 +1348,7 @@ a, button { pointer-events: auto; }
       <!-- CARD:Alex -->
       <div class="story-card" data-bg="5">
         <div class="card-image-side">
-          <img src="/images/hs-Alex.jpg" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in white dress shirt and red paisley bow tie against dark studio background" />
+          <img src="/images/hs-Alex.jpg" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in white dress shirt and red paisley bow tie against dark studio background" />
         </div>
         <div class="card-text-side">
           <p>Results you can trust.</p>
@@ -1334,7 +1365,7 @@ a, button { pointer-events: auto; }
       <!-- CARD: David on slate-blue bg -->
       <div class="story-card" data-bg="6">
         <div class="card-image-side">
-          <img src="/images/hs-Dave.jpg" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — senior professional man with white beard and wire-rimmed glasses in light blue shirt against dark studio background" />
+          <img src="/images/hs-Dave.jpg" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — senior professional man with white beard and wire-rimmed glasses in light blue shirt against dark studio background" />
         </div>
         <div class="card-text-side">
           <p>Where powerful headshots happen.</p>
@@ -1390,7 +1421,8 @@ a, button { pointer-events: auto; }
     <!-- Studio Headshots -->
     <div class="service-row">
       <div class="service-image">
-        <img src="/images/hs-Kambua.jpg" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with locs updo and colorful floral top and beaded jewelry against dark studio background" />
+        <!-- FIX 3: services section is well below the fold, lazy loaded -->
+        <img src="/images/hs-Kambua.jpg" loading="lazy" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with locs updo and colorful floral top and beaded jewelry against dark studio background" />
       </div>
       <div class="service-content">
         <span class="service-tag">Individual Sessions</span>
@@ -1410,7 +1442,7 @@ a, button { pointer-events: auto; }
     <!-- Corporate Team Headshots -->
     <div class="service-row reverse">
       <div class="service-image">
-        <img src="/images/me-at-cartridge-brewing.jpg" alt="Deborah Heinlen Photography photographing a corporate headshot session on-site in Greater Cincinnati — professional lighting setup with female subject" />
+        <img src="/images/me-at-cartridge-brewing.jpg" loading="lazy" alt="Deborah Heinlen Photography photographing a corporate headshot session on-site in Greater Cincinnati — professional lighting setup with female subject" />
       </div>
       <div class="service-content">
         <span class="service-tag">Teams &amp; Companies</span>
@@ -1430,7 +1462,7 @@ a, button { pointer-events: auto; }
     <!-- Corporate Event Photography -->
     <div class="service-row">
       <div class="service-image">
-        <img src="images/corporate-event-portfolio-17.jpg" alt="Corporate event photography by Deborah Heinlen Photography, Cincinnati — diverse group of business professionals with name badges at a corporate conference" />
+        <img src="images/corporate-event-portfolio-17.jpg" loading="lazy" alt="Corporate event photography by Deborah Heinlen Photography, Cincinnati — diverse group of business professionals with name badges at a corporate conference" />
       </div>
       <div class="service-content">
         <span class="service-tag">Events &amp; Conferences</span>
@@ -1455,7 +1487,7 @@ a, button { pointer-events: auto; }
        ═══════════════════════════════════════════════════════════════ -->
   <section class="about-section">
     <div class="about-image">
-      <img src="images/me-with-client.jpg" alt="Deborah Heinlen, Cincinnati headshot photographer, coaching a client during a relaxed on-location headshot session" />
+      <img src="images/me-with-client.jpg" loading="lazy" alt="Deborah Heinlen, Cincinnati headshot photographer, coaching a client during a relaxed on-location headshot session" />
     </div>
     <div class="about-content">
       <span class="section-label">About Deborah</span>
@@ -1521,9 +1553,9 @@ a, button { pointer-events: auto; }
     <div class="footer-inner">
 
       <div class="footer-brand">
-        <img src="/images/logo-white.png" alt="Deborah Heinlen Photography logo" />
+        <img src="/images/logo-white.png" loading="lazy" alt="Deborah Heinlen Photography logo" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="images/logo-PPA_Member_Color.png" alt="Professional Photographers of America logo" class="footer-badge" />
+        <img src="images/logo-PPA_Member_Color.png" loading="lazy" alt="Professional Photographers of America logo" class="footer-badge" />
       </div>
 
       <div class="footer-col">
