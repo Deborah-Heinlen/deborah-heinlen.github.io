@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.deborahheinlenphotography.com/sitemap.xml
+Sitemap: https://deborahheinlenphotography.com/sitemap.xml
