@@ -20,7 +20,7 @@
   <meta property="og:type" content="website" />
 
   <!-- preload the LCP image so the browser fetches it immediately -->
-  <link rel="preload" as="image" href="/images/hs-Daniel.webp" />
+  <link rel="preload" as="image" href="/images/hs-Paula.webp" />
 
   <!-- preconnect hints so the font connections start earlier -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -305,7 +305,7 @@
         "author": { "@type": "Person", "name": "Amberly Crockett" },
         "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
         "datePublished": "2025-01-14",
-        "reviewBody": "This was my first time getting headshots and had a wonderful experience! Super knowledgeable, quick, professional, and kind. Would definitely recommend to anyone looking for photos!"
+        "reviewBody": "This was my first time getting headshots and I had a wonderful experience! Super knowledgeable, quick, professional, and kind. Would definitely recommend to anyone looking for photos!"
       },
       {
         "@type": "Review",
@@ -593,190 +593,129 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
-       STORY SECTION
+       HERO SLIDESHOW
        ═══════════════════════════════════════════════════════════════ */
-    #story-section {
-      position: relative;
-    }
+ #hero-section {
+  position: relative;
+  height: 120vh;
+  min-height: 550px;
+  max-height: 900px;
+  overflow: hidden;
+  background: var(--slate-blue);
+  display: flex;
+  justify-content: center;
+  padding-top: calc(var(--total-nav) + 2rem);   /* MOVED HERE -- pushes the whole hero content below the fixed header */
+}
 
-    #story-bg {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100vh;
-      z-index: 1;
-      background-color: var(--slate-blue);
-    }
-    #story-bg.hidden { visibility: hidden; }
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  /* no padding-top here anymore */
+}
 
-    .bg-slate-blue {
+    .hero-slideshow {
       position: absolute;
       inset: 0;
-      background: var(--slate-blue);
-      opacity: 0;
-    }
-    .bg-slate-blue.active { opacity: 1; }
-
-    .bg-image {
-      position: absolute;
-      top: var(--total-nav);
-      left: 15vw;
-      right: 15vw;
-      height: calc(100% - var(--total-nav));
-      width: calc(100% - 30vw);
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(0.9) brightness(1);
-      opacity: 0;
-      transition: opacity 0.6s ease;
     }
 
-    .bg-image.active { opacity: 1; }
+    .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* changed from cover -- shows the whole photo, no cropping */
+  object-position: center;       /* centers the photo since there's no more cropping to position */
+  filter: saturate(0.9);
+  opacity: 0;
+  transition: opacity 1s ease;
+}   /* crossfade duration -- change this number to speed up/slow down the fade */
+   
 
-    #story-scroll {
-      position: relative;
-      z-index: 2;
-      background: transparent;
+    .hero-slide.active {
+      opacity: 1;
     }
 
-    .story-spacer {
-      height: 60vh;
-      background: transparent;
-    }
-
-    .story-text-block {
-      min-height: 50vh;
-      display: flex;
-      align-items: center;
-      background: transparent;
-      padding: 4vh 4vw;
-    }
-
-    .text-daniel  { justify-content: flex-start; }
-    .text-greg    { justify-content: flex-start;   }
-    .text-ashley2 { justify-content: flex-start; }
-    .text-ben     { justify-content: flex-start;   }
-    .text-paula   { justify-content: flex-start; }
-    .text-dave    { justify-content: flex-end;   }
-
-    .story-text-block p {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(2rem, 4vw, 3.8rem);
-      line-height: 1.2;
-      color: var(--white);
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 24px #0a0602cc, 0 0 60px #0a060280;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .story-card {
-      display: flex;
-      align-items: stretch;
-      min-height: 120vh;
-      background: var(--slate-blue);
-      position: relative;
-      overflow: hidden;
-      margin: 8vh 0;
-    }
-    .card-hero {
-      min-height: 180vh;
-    }
-
-    .story-card::before {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; top: 0;
-      height: 18%;
-      pointer-events: none;
-      z-index: 10;
-      background: linear-gradient(to bottom, var(--slate-blue) 0%, transparent 100%);
-    }
-
-    .story-card::after {
+    /* Gradient only at the bottom, just enough to keep the tagline readable */
+    .hero-inner::after {
       content: '';
       position: absolute;
       left: 0; right: 0; bottom: 0;
-      height: 18%;
+      height: 35%;
+      z-index: 1;
+      background: linear-gradient(to top, #252330cc 0%, #25233000 100%);
       pointer-events: none;
-      z-index: 10;
-      background: linear-gradient(to top, var(--slate-blue) 0%, transparent 100%);
     }
 
-    .card-hero::before,
-    .card-hero::after { background: transparent; }
-
-    .card-image-side {
-      flex: 0 0 50%;
-      overflow: hidden;
-      position: relative;
-      padding: 0.5rem 0.5rem 0.5rem 3.5rem;
-      background: var(--slate-blue);
-    }
-
-    .card-image-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      filter: saturate(0.88);
-      display: block;
-    }
-
-    .card-image-side::after {
-      content: '';
+    /* Logo -- upper left corner of the image */
+    .hero-logo {
       position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(to right,  var(--slate-blue) 0%, transparent 12%),
-        linear-gradient(to left,   var(--slate-blue) 0%, transparent 12%),
-        linear-gradient(to bottom, var(--slate-blue) 0%, transparent 10%),
-        linear-gradient(to top,    var(--slate-blue) 0%, transparent 10%);
+      top: calc(var(--total-nav) + 1.5rem);
+      left: 2rem;
+      z-index: 2;
+      width: 90px;
+      height: auto;
     }
 
-    .card-text-side {
-      flex: 0 0 48%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 1rem 10vw;
-      background: var(--slate-blue);
+    /* Tagline -- centered at the bottom of the image, with breathing room below it */
+    .hero-tagline-wrap {
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 2.5rem;   /* space between the text and the very edge of the image */
+      z-index: 2;
       text-align: center;
+      padding: 0 2rem;
     }
 
-    .card-text-side::before {
-      content: '';
-      display: block;
-      width: 300px;
-      height: 2px;
-      background: var(--white);
-      margin: 2rem auto 1.75rem auto;
-    }
-
-    .card-text-side::after {
-      content: '';
-      display: block;
-      width: 300px;
-      height: 2px;
-      background: var(--white);
-      margin: 2rem auto 3rem auto;
-    }
-
-    .card-text-side p {
+    .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(2rem, 3.2vw, 3.6rem);
-      line-height: 1.25;
-      color: var(--text-white);
-      letter-spacing: 0.02em;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .hero-tagline em { font-style: italic; }
+
+    /* Everything else -- sits below the image on the solid background */
+    .hero-below {
+      position: relative;
+      z-index: 2;
+      background: var(--slate-blue);
       text-align: center;
+      padding: 2.5rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .card-spacer {
-      height: 40vh;
-      background: transparent;
+    .hero-subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      color: var(--white);
+      letter-spacing: 0.03em;
+    }
+
+    .hero-location {
+      font-family: 'Jost', sans-serif;
+      font-weight: 200;
+      font-size: clamp(0.65rem, 1vw, 0.8rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+
+    .hero-cta {
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      #hero-section { height: 50vh; min-height: 350px; }
+      .hero-logo { width: 60px; top: calc(var(--total-nav) + 1rem); left: 1rem; }
+      .hero-tagline-wrap { bottom: 1.5rem; }
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -1522,17 +1461,6 @@
     @media (max-width: 600px) {
       .site-header { padding: 0 1.25rem; }
 
-      #story-bg { padding: 0; }
-      .bg-image { left: 0; right: 0; width: 100%; }
-
-      .story-card { flex-direction: column; margin: 5vh 0; }
-      .card-image-side { flex: none; width: 100%; height: 55vw; padding: 1rem; }
-      .card-text-side { flex: none; width: 100%; padding: 2.5rem 1.5rem; }
-      .card-text-side p { font-size: clamp(1.6rem, 5vw, 2.4rem); }
-
-      .story-text-block { padding: 3vh 1.5rem; }
-      .story-text-block p { font-size: clamp(1.6rem, 5vw, 2.8rem); max-width: 90vw; }
-
       .trust-bar { padding: 2rem 1.5rem; gap: 1.5rem; }
       .trust-divider { display: none; }
 
@@ -1632,121 +1560,35 @@
 
 
   <!-- ═══════════════════════════════════════════════════════════════
-       STORY SECTION
+       HERO SLIDESHOW
        ═══════════════════════════════════════════════════════════════ -->
-  <div id="story-section">
+  <div id="hero-section">
+    <div class="hero-inner">
 
-    <div id="story-bg">
-      <img class="bg-image active" data-index="0" src="/images/hs-Daniel.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in gray blazer and patterned shirt against dark background" />
-      <img class="bg-image" loading="lazy" data-index="1" src="/images/hs-Ashley2.webp" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with blonde hair against dark studio background" />
-      <img class="bg-image" loading="lazy" data-index="2" src="/images/hs-Greg.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — distinguished man with white beard in dark shirt against dark studio background" />
-      <img class="bg-image" loading="lazy" data-index="3" src="/images/hs-Peter.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man with bold rectangular glasses and dark shirt against dark studio background" />
-      <img class="bg-image" loading="lazy" data-index="4" src="/images/hs-Briana.webp" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with dark hair and bangs in black turtleneck against dark studio background" />
-      <img class="bg-image" loading="lazy" data-index="5" src="/images/hs-Tyler.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — young professional man in gray blazer and lavender check shirt against dark studio background" />
-      <div class="bg-slate-blue" data-index="6"></div>
-    </div>
-
-    <div id="story-scroll">
-
-      <div class="story-card card-hero" style="justify-content: flex-start; align-items: center; flex-direction: column; background: linear-gradient(to bottom, #252330 0%, #25233000 100%); padding-top: calc(var(--total-nav) + 1rem);">
-        <img src="/images/logo-white.png" alt="Deborah Heinlen Photography logo" style="width: 25%; max-width: 300px; height: auto;" />
-        <h1 style="text-align: center; margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.6rem;">
-          <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.6rem, 2.5vw, 2.4rem); color: var(--white); letter-spacing: 0.04em;">Studio &amp; Team Headshots | Corporate Event Photography</span>
-          <span style="font-family: 'Jost', sans-serif; font-weight: 200; font-size: clamp(0.65rem, 1vw, 0.8rem); letter-spacing: 0.35em; text-transform: uppercase; color: var(--white);">Cincinnati | Hebron, KY | Northern Kentucky</span>
-        </h1>
+      <div class="hero-slideshow">
+        <img class="hero-slide active" data-index="0" src="/images/hs-Paula.webp" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with long blonde hair in black top against dark studio background" />
+        <img class="hero-slide" loading="lazy" data-index="1" src="/images/hs-Daniel.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in gray blazer and patterned shirt against dark background" />
+        <img class="hero-slide" loading="lazy" data-index="2" src="/images/hs-Kambua.webp" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with locs updo and colorful floral top and beaded jewelry against dark studio background" />
+        <img class="hero-slide" loading="lazy" data-index="3" src="/images/hs-Peter.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man with bold rectangular glasses and dark shirt against dark studio background" />
+        <img class="hero-slide" loading="lazy" data-index="4" src="/images/hs-Briana.webp" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with dark hair and bangs in black turtleneck against dark studio background" />
+        <img class="hero-slide" loading="lazy" data-index="5" src="/images/hs-Alex.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in white dress shirt and red paisley bow tie against dark studio background" />
+        <img class="hero-slide" loading="lazy" data-index="6" src="/images/hs-Ben.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling young man in navy suit and blue patterned tie against dark studio background" />
+        <img class="hero-slide" loading="lazy" data-index="7" src="/images/hs-Dave.webp" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — senior professional man with white beard and wire-rimmed glasses in light blue shirt against dark studio background" />
       </div>
 
-      <div class="story-text-block text-daniel" data-bg="0">
-        <p style="max-width: 240px; text-align: center;">What story does your image tell?</p>
-      </div>
+      <img src="/images/logo-white.png" alt="Deborah Heinlen Photography logo" class="hero-logo" />
 
-      <div class="card-spacer" data-bg="0"></div>
-
-      <div class="story-card" data-bg="1">
-        <div class="card-image-side">
-          <img src="/images/hs-Larry.webp" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in dark suit, white shirt, and burgundy tie against dark studio background" />
-        </div>
-        <div class="card-text-side">
-          <p>Your reputation didn't happen overnight.</p>
-        </div>
-      </div>
-
-      <div class="story-text-block text-ashley2" data-bg="1">
-        <p style="max-width: 240px; text-align: center;">Shouldn't your image say the same?</p>
-      </div>
-
-      <div class="card-spacer" data-bg="1"></div>
-
-      <div class="story-card" data-bg="2">
-        <div class="card-image-side">
-          <img src="images/hs-Mark.webp" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling man in gray suit and silver tie against dark studio background" />
-        </div>
-        <div class="card-text-side">
-          <p>A headshot is more than a photograph.</p>
-        </div>
-      </div>
-
-      <div class="story-text-block text-greg" data-bg="2">
-        <p style="max-width: 240px; text-align: center;">It's your credibility, on full display</p>
-      </div>
-
-      <div class="card-spacer" data-bg="2"></div>
-
-      <div class="story-card" data-bg="3">
-        <div class="card-image-side">
-          <img src="/images/hs-Paula.webp" loading="lazy" alt="Professional female headshot by Deborah Heinlen Photography, Cincinnati — smiling woman with long blonde hair in black top against dark studio background" />
-        </div>
-        <div class="card-text-side">
-          <p>The details tell the story.</p>
-        </div>
-      </div>
-
-      <div class="story-text-block text-peter" data-bg="3">
-        <p style="max-width: 240px; text-align: center;">Nothing gets overlooked.</p>
-      </div>
-
-      <div class="card-spacer" data-bg="3"></div>
-
-      <div class="story-card" data-bg="4">
-        <div class="card-image-side">
-          <img src="/images/hs-Ben.webp" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — smiling young man in navy suit and blue patterned tie against dark studio background" />
-        </div>
-        <div class="card-text-side">
-          <p>For professionals who expect more.</p>
-        </div>
-      </div>
-
-      <div class="story-text-block text-briana" data-bg="4">
-        <p style="max-width: 240px; text-align: center;">Experience you can see.</p>
-      </div>
-
-      <div class="card-spacer" data-bg="4"></div>
-
-      <div class="story-card" data-bg="5">
-        <div class="card-image-side">
-          <img src="/images/hs-Alex.webp" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — man in white dress shirt and red paisley bow tie against dark studio background" />
-        </div>
-        <div class="card-text-side">
-          <p>Results you can trust.</p>
-        </div>
-      </div>
-
-      <div class="story-text-block text-tyler" data-bg="5">
-        <p style="max-width: 240px; text-align: center;">Deborah Heinlen Photography</p>
-      </div>
-
-      <div class="card-spacer"></div>
-
-      <div class="story-card" data-bg="6">
-        <div class="card-image-side">
-          <img src="/images/hs-Dave.webp" loading="lazy" alt="Professional male headshot by Deborah Heinlen Photography, Cincinnati — senior professional man with white beard and wire-rimmed glasses in light blue shirt against dark studio background" />
-        </div>
-        <div class="card-text-side">
-          <p>Where powerful headshots happen.</p>
-        </div>
+      <div class="hero-tagline-wrap">
+        <span class="hero-tagline">Confident.&nbsp; <em>Professional.</em>&nbsp; Undeniable.</span>
       </div>
 
     </div>
+  </div>
+
+  <div class="hero-below">
+    <span class="hero-subhead">Studio &amp; Team Headshots | Corporate Event Photography</span>
+    <span class="hero-location">Cincinnati | Hebron, KY | Northern Kentucky</span>
+    <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary hero-cta" target="_blank" rel="noopener">Schedule Your Headshot</a>
   </div>
 
 
@@ -1780,7 +1622,6 @@
        STATEMENT
        ═══════════════════════════════════════════════════════════════ -->
   <section class="statement-section">
-    <h2>Confident.<br><em>Professional.</em><br>Undeniable.</h2>
     <p>Executive headshots and corporate event photography that strengthen your professional brand across Cincinnati and Northern Kentucky.&nbsp; Expert lighting and expression coaching for professionals who know that first impressions matter.</p>
     <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule Your Headshot</a>
   </section>
@@ -1832,7 +1673,7 @@
 
     <div class="service-row">
       <div class="service-image">
-        <img src="images/corporate-event-portfolio-17.webp" loading="lazy" alt="Corporate event photography by Deborah Heinlen Photography, Cincinnati — diverse group of business professionals with name badges at a corporate conference" />
+        <img src="/images/corporate-event-portfolio-17.webp" loading="lazy" alt="Corporate event photography by Deborah Heinlen Photography, Cincinnati — diverse group of business professionals with name badges at a corporate conference" />
       </div>
       <div class="service-content">
         <span class="service-tag">Events &amp; Conferences</span>
@@ -1857,7 +1698,7 @@
        ═══════════════════════════════════════════════════════════════ -->
   <section class="about-section">
     <div class="about-image">
-      <img src="images/me-with-client.webp" loading="lazy" alt="Deborah Heinlen, Cincinnati headshot photographer, coaching a client during a relaxed on-location headshot session" />
+      <img src="/images/me-with-client.webp" loading="lazy" alt="Deborah Heinlen, Cincinnati headshot photographer, coaching a client during a relaxed on-location headshot session" />
     </div>
     <div class="about-content">
       <span class="section-label">About Deborah</span>
@@ -2002,16 +1843,6 @@
           <span class="review-date">November 2025</span>
         </div>
         <p class="review-text">Deborah did an amazing job!  I&#39;ve had several headshots over the years but this was over the top!  Great experience and great results &mdash; thanks!</p>
-        <span class="review-source">Google Review</span>
-      </div>
-
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-meta">
-          <span class="review-name">Amanda Blades</span>
-          <span class="review-date">October 2025</span>
-        </div>
-        <p class="review-text">We were so impressed with Deborah!  She went above and beyond to capture every moment of our conference &mdash; from the speakers on stage to candid shots of our team, attendees, and the venue.  She hustled nonstop to make sure nothing was missed, and the photos turned out absolutely amazing.  Professional, friendly, and so easy to work with &mdash; highly recommend!</p>
         <span class="review-source">Google Review</span>
       </div>
 
@@ -2320,7 +2151,7 @@
       <div class="footer-brand">
         <img src="/images/logo-white.webp" loading="lazy" alt="Deborah Heinlen Photography logo" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="images/logo-PPA_Member_Color.webp" loading="lazy" alt="Professional Photographers of America logo" class="footer-badge" />
+        <img src="/images/logo-PPA_Member_Color.webp" loading="lazy" alt="Professional Photographers of America logo" class="footer-badge" />
       </div>
 
       <div class="footer-col">
@@ -2385,44 +2216,18 @@
       });
     });
 
-    // ── BACKGROUND IMAGE SWAP ──────────────────────────────────────
-    const storySection = document.getElementById('story-section');
-    const storyBg      = document.getElementById('story-bg');
-    const allBgEls     = Array.from(document.querySelectorAll('.bg-image, .bg-slate-blue'));
-    const scrollItems  = Array.from(document.querySelectorAll('[data-bg]'));
+    // ── HERO SLIDESHOW ─────────────────────────────────────────────
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
 
-    let currentBg = 0;
-
-    function setBackground(index) {
-      if (index === currentBg) return;
-      currentBg = index;
-      allBgEls.forEach(el => {
-        const i = parseInt(el.dataset.index);
-        el.classList.toggle('active', i === index);
-      });
+    function nextSlide() {
+      heroSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
     }
 
-    function onScroll() {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
-      const storyBottom = storySection.offsetTop + storySection.offsetHeight;
-      storyBg.classList.toggle('hidden', scrollY + vh > storyBottom - 100);
-
-      let activeBg = 0;
-      const triggerPoint = scrollY + (vh * .25);
-
-      scrollItems.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top + scrollY;
-        if (itemTop <= triggerPoint) {
-          activeBg = parseInt(item.dataset.bg);
-        }
-      });
-
-      setBackground(activeBg);
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    // change 3500 to adjust how long each photo stays on screen (in milliseconds)
+    setInterval(nextSlide, 3500);
 
     // ── REVIEWS TOGGLE ─────────────────────────────────────────────
     function toggleReviews() {
