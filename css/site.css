@@ -17,6 +17,7 @@
 
   /* ── Page background ── */
   --bg:                #252330;   /* dark slate blue behind all content */
+  --panel:             #2c2a38;   /* slightly lighter slate for cards and side panels */
 
   /* ── Text ── */
   --text:              #ffffff;   /* ALL text on the dark background: headings, paragraphs, labels, footer */

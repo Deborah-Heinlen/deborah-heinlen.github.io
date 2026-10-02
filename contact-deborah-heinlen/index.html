@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- DEBORAH HEINLEN PHOTOGRAPHY CONTACT PAGE -->
+
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Book Professional Headshots in Cincinnati | Deborah Heinlen Photography</title>
   <meta name="description" content="Contact Deborah Heinlen Photography to book studio headshots, corporate team headshots, or event photography in Cincinnati and Northern Kentucky. Schedule a free phone consultation today." />
@@ -14,578 +18,22 @@
   <meta property="og:url" content="https://deborahheinlenphotography.com/contact-deborah-heinlen/" />
   <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
 
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- SHARED SITE STYLES: colors, header, nav, buttons, footer, section building blocks -->
+  <link rel="stylesheet" href="/css/site.css" />
 
-    :root {
-      --cream:      #f5f0e8;
-      --linen:      #ede8dc;
-      --warm-tan:   #d4c4aa;
-      --text-dark:  #2e2419;
-      --text-mid:   #6b5c4a;
-      --text-light: #9e8e7a;
-      --black:      #000000;
-      --white:      #ffffff;
-      --text-white: #ffffff;
-      --header-h:   72px;
-      --nav-h:      44px;
-      --total-nav:  116px;
-    }
+  <!-- Styles for each section sit right above that section in the body. -->
 
-    html { scroll-behavior: smooth; }
-    html, body {
-      background-color: var(--cream);
-      color: var(--text-dark);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       HEADER
-       ═══════════════════════════════════════════════════════════════ */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      height: var(--header-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 3rem;
-      background: rgba(242, 237, 232, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
-    }
-
-    .header-logo { height: 40px; width: auto; display: block; }
-
-    .header-title {
-      font-family: "lindsey-signature", sans-serif;
-      font-weight: 400;
-      font-size: 3rem;
-      color: var(--text-dark);
-      text-decoration: none;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-
-    .header-cta {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      border: 1px solid var(--warm-tan);
-      padding: 0.55rem 1.5rem;
-      transition: background 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-    .header-cta:hover { background: var(--warm-tan); color: var(--cream); }
-
-    /* ═══════════════════════════════════════════════════════════════
-       NAV STRIP
-       ═══════════════════════════════════════════════════════════════ */
-    .site-nav {
-      position: fixed;
-      top: var(--header-h);
-      left: 0; right: 0;
-      z-index: 199;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(237, 232, 220, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      align-items: stretch;
-      height: 100%;
-      border-left: 1px solid rgba(200, 184, 154, 0.3);
-    }
-
-    .nav-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      border-right: 1px solid rgba(200, 184, 154, 0.3);
-    }
-
-    .nav-link {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0 1.4rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      transition: background 0.2s, color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-link:hover, .nav-link.active {
-      background: rgba(200, 184, 154, 0.2);
-      color: var(--text-dark);
-    }
-
-    .nav-link.has-dropdown::after {
-      content: '';
-      display: inline-block;
-      width: 0; height: 0;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      border-top: 4px solid var(--text-light);
-      margin-left: 0.45rem;
-      transition: transform 0.2s;
-    }
-    .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%; left: 0;
-      min-width: 260px;
-      background: rgba(237, 232, 220, 0.99);
-      border: 1px solid rgba(200, 184, 154, 0.3);
-      border-top: none;
-      z-index: 300;
-      list-style: none;
-      padding: 0.4rem 0;
-    }
-    .nav-item:hover .dropdown { display: block; }
-    .dropdown li a {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.75rem 1.4rem;
-      transition: background 0.15s, color 0.15s;
-    }
-    .dropdown li a:hover { background: rgba(200, 184, 154, 0.2); color: var(--text-dark); }
-
-    /* Mobile nav */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: var(--header-h);
-      left: 0; right: 0; bottom: 0;
-      background: rgba(237, 232, 220, 0.99);
-      z-index: 198;
-      overflow-y: auto;
-      padding: 2rem 2rem 4rem;
-    }
-    .mobile-nav.open { display: block; }
-    .mobile-nav a {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid rgba(200, 184, 154, 0.25);
-      transition: color 0.2s;
-    }
-    .mobile-nav a:hover { color: var(--text-dark); }
-    .mobile-section-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.55rem;
-      font-weight: 200;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-top: 1.2rem;
-      padding: 0.5rem 0 0.3rem;
-      display: block;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       PAGE CONTENT
-       ═══════════════════════════════════════════════════════════════ */
-    .page-content { padding-top: var(--total-nav); }
-
-    /* ── PAGE HEADER ───────────────────────────────────────────────── */
-    .page-header {
-      padding: 5rem 8vw 4rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
-    }
-
-    .section-label {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.6rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      display: block;
-      margin-bottom: 1.2rem;
-    }
-
-    .page-header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      color: var(--text-dark);
-      letter-spacing: 0.04em;
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-    }
-
-    .page-header p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: clamp(0.82rem, 1.2vw, 0.95rem);
-      letter-spacing: 0.08em;
-      color: var(--text-mid);
-      max-width: 580px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    /* ── CONTACT LAYOUT ────────────────────────────────────────────── */
-    .contact-layout {
-      display: flex;
-      align-items: stretch;
-      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
-    }
-
-    /* Left column -- info */
-    .contact-info {
-      flex: 0 0 38%;
-      background: var(--linen);
-      border-right: 1px solid rgba(200, 184, 154, 0.3);
-      padding: 5rem 5vw;
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-    }
-
-    .contact-info-block h3 {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-bottom: 1.2rem;
-    }
-
-    .contact-info-block p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      line-height: 1.8;
-      color: var(--text-mid);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-link {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      color: var(--text-dark);
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      transition: color 0.2s;
-    }
-    .contact-link:hover { color: var(--warm-tan); }
-
-    .consult-block {
-      border: 1px solid rgba(200, 184, 154, 0.4);
-      padding: 2rem;
-      background: var(--cream);
-    }
-
-    .consult-block h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.3rem, 2vw, 1.6rem);
-      color: var(--text-dark);
-      letter-spacing: 0.03em;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    .consult-block p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
-      line-height: 1.8;
-      color: var(--text-mid);
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 300;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      text-decoration: none;
-      border: 1px solid var(--warm-tan);
-      padding: 0.85rem 2rem;
-      transition: background 0.25s, color 0.25s;
-      white-space: nowrap;
-    }
-    .btn-primary:hover { background: var(--warm-tan); color: var(--cream); }
-
-    /* Right column -- form */
-    .contact-form-wrap {
-      flex: 0 0 62%;
-      background: var(--cream);
-      padding: 5rem 6vw;
-    }
-
-    .contact-form-wrap h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-      color: var(--text-dark);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .contact-form-wrap > p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.82rem;
-      letter-spacing: 0.05em;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── SERVICES QUICK LINKS ──────────────────────────────────────── */
-    .services-strip {
-      background: var(--linen);
-      border-bottom: 1px solid rgba(200, 184, 154, 0.3);
-      padding: 5rem 8vw;
-    }
-
-    .services-strip-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .services-strip-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      color: var(--text-dark);
-      letter-spacing: 0.04em;
-      margin-top: 1rem;
-    }
-
-    .services-quick-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .service-quick-card {
-      border: 1px solid rgba(200, 184, 154, 0.4);
-      padding: 2.5rem 2rem;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.3s;
-      background: var(--cream);
-    }
-    .service-quick-card:hover { border-color: var(--warm-tan); }
-
-    .service-quick-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-      color: var(--text-dark);
-      letter-spacing: 0.03em;
-      margin-bottom: 0.8rem;
-    }
-
-    .service-quick-card p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      line-height: 1.8;
-      color: var(--text-mid);
-      margin-bottom: 1.2rem;
-    }
-
-    .service-quick-card span {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-    }
-
-    /* ═══════════════════════════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════════════════════════ */
-    .site-footer {
-      background: var(--linen);
-      border-top: 1px solid rgba(200, 184, 154, 0.3);
-      padding: 4rem 3rem 3rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.2rem; }
-    .footer-brand p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      line-height: 1.8;
-      color: var(--text-mid);
-    }
-
-    .footer-col h4 {
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--warm-tan);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.6rem; }
-    .footer-col ul li a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: var(--text-mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-col ul li a:hover { color: var(--warm-tan); }
-
-    .footer-contact-item {
-      display: block;
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--text-mid);
-      text-decoration: none;
-      margin-bottom: 0.6rem;
-      transition: color 0.2s;
-    }
-    .footer-contact-item:hover { color: var(--warm-tan); }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(200, 184, 154, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-bottom p {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--text-light);
-    }
-
-    .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a {
-      font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-bottom-links a:hover { color: var(--warm-tan); }
-    .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
-
-    /* ═══════════════════════════════════════════════════════════════
-       RESPONSIVE
-       ═══════════════════════════════════════════════════════════════ */
-    @media (max-width: 900px) {
-      .site-nav { display: none; }
-      .mobile-menu-btn { display: flex; }
-      .header-title { display: none; }
-
-      .contact-layout { flex-direction: column; }
-      .contact-info { flex: none; width: 100%; border-right: none; border-bottom: 1px solid rgba(200, 184, 154, 0.3); padding: 3rem 2rem; }
-      .contact-form-wrap { flex: none; width: 100%; padding: 3rem 2rem; }
-
-      .services-quick-grid { grid-template-columns: 1fr 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    }
-
-    @media (max-width: 600px) {
-      .site-header { padding: 0 1.25rem; }
-      .page-header { padding: 3rem 1.5rem 2.5rem; }
-      .services-quick-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-    }
-  </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM0WHZ0KF4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-RM0WHZ0KF4');
 </script>
 </head>
@@ -649,14 +97,193 @@
 
   <main class="page-content">
 
-    <!-- ── PAGE HEADER ────────────────────────────────────────────── -->
+    <style>
+      /* Pushes the page below the fixed header */
+      .page-content { padding-top: var(--total-nav); }
+
+      /* Small spaced capitals used throughout this page:
+         "Get in Touch", "Send a Message", "Not Sure Where to Start?" */
+      .section-label {
+        font-family: var(--font-sans);
+        font-weight: 200;
+        font-size: 0.72rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--text);
+        display: block;
+        margin-bottom: 1.2rem;
+      }
+    </style>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         PAGE HEADER
+         ═══════════════════════════════════════════════════════════════ -->
+    <style>
+      .page-header {
+        padding: 5rem 8vw 4rem;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .page-header h1 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+        line-height: 1.15;
+        margin-bottom: 1.2rem;
+      }
+
+      .page-header p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: clamp(0.9rem, 1.2vw, 1rem);
+        letter-spacing: 0.06em;
+        color: var(--text);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.9;
+      }
+
+      /* Phones */
+      @media (max-width: 600px) {
+        .page-header { padding: 3rem 1.5rem 2.5rem; }
+      }
+    </style>
+
     <div class="page-header">
       <span class="section-label">Get in Touch</span>
       <h1>Let's Create Something Great Together</h1>
       <p>Whether you're looking for studio headshots, a corporate team session, or event photography across Cincinnati and Northern Kentucky, I'd love to hear from you.&nbsp; Fill out the form below or schedule a free phone consultation and I'll respond as quickly as possible.</p>
     </div>
 
-    <!-- ── CONTACT LAYOUT ─────────────────────────────────────────── -->
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACT LAYOUT: info on the left, form on the right
+         ═══════════════════════════════════════════════════════════════ -->
+    <style>
+      .contact-layout {
+        display: flex;
+        align-items: stretch;
+        border-bottom: 1px solid var(--line);
+      }
+
+      /* Left column: info panel */
+      .contact-info {
+        flex: 0 0 38%;
+        background: var(--panel);
+        border-right: 1px solid var(--line);
+        padding: 5rem 5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+      }
+
+      /* "Prefer to talk first?" box */
+      .consult-block {
+        border: 1px solid var(--line-strong);
+        padding: 2rem;
+        background: var(--bg);
+      }
+
+      .consult-block h3 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.4rem, 2vw, 1.7rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+      }
+
+      .consult-block p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Small headings: "Phone & Text", "Email", "Studio Location" */
+      .contact-info-block h3 {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.72rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+      }
+
+      .contact-info-block p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+      }
+
+      /* The "On-site sessions available..." line */
+      .contact-info-block p.contact-note {
+        margin-top: 0.8rem;
+        font-size: 0.82rem;
+        font-style: italic;
+      }
+
+      /* Phone, text, and email links */
+      .contact-link {
+        display: block;
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        color: var(--text);
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: opacity 0.2s;
+      }
+      .contact-link:hover { opacity: 0.7; }
+
+      /* Right column: form */
+      .contact-form-wrap {
+        flex: 0 0 62%;
+        background: var(--bg);
+        padding: 5rem 6vw;
+      }
+
+      .contact-form-wrap h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+        margin-bottom: 0.8rem;
+      }
+
+      .contact-form-wrap > p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        color: var(--text);
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+      }
+
+      /* Tablets and phones: info stacks above the form */
+      @media (max-width: 900px) {
+        .contact-layout { flex-direction: column; }
+        .contact-info { flex: none; width: 100%; border-right: none; border-bottom: 1px solid var(--line); padding: 3rem 2rem; }
+        .contact-form-wrap { flex: none; width: 100%; padding: 3rem 2rem; }
+      }
+    </style>
+
     <div class="contact-layout">
 
       <!-- Left: Info -->
@@ -676,14 +303,14 @@
 
         <div class="contact-info-block">
           <h3>Email</h3>
-          <a href="/cdn-cgi/l/email-protection#682c0d0a071a0900200d0106040d063800071c070f1a09180011280f05090104460b0705" class="contact-link"><span class="__cf_email__" data-cfemail="642001060b16050c2c010d0a08010a340c0b100b031605140c1d240309050d084a070b09">[email&#160;protected]</span></a>
+          <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="contact-link">DeborahHeinlenPhotography@gmail.com</a>
         </div>
 
         <div class="contact-info-block">
           <h3>Studio Location</h3>
           <p>Hebron, Kentucky</p>
           <p>Just minutes from I-275 and the Cincinnati / Northern Kentucky Airport</p>
-          <p style="margin-top: 0.8rem; font-size: 0.78rem; color: var(--text-light);">On-site sessions available throughout Cincinnati and Northern Kentucky.</p>
+          <p class="contact-note">On-site sessions available throughout Cincinnati and Northern Kentucky.</p>
         </div>
 
       </div>
@@ -694,11 +321,95 @@
         <h2>Tell Me About Your Project</h2>
         <p>I respond to all inquiries as quickly as possible, typically within one business day.</p>
 
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id="sprout_studio_form_script" data-api-key="9c3819929c3c737fc07957decd2825b45696c1f62f715292" data-lead-form-id="1736759" data-base-hostname="sproutstudio.com" src="//sproutstudio.com/sprout_dynamic_lead_form.js"></script>
+                <!-- Sprout Studio contact form -->
+        <script id="sprout_studio_form_script" data-api-key="9c3819929c3c737fc07957decd2825b45696c1f62f715292" data-lead-form-id="1736759" data-base-hostname="sproutstudio.com" src="https://sproutstudio.com/sprout_dynamic_lead_form.js"></script>
       </div>
     </div>
 
-    <!-- ── SERVICES QUICK LINKS ────────────────────────────────────── -->
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SERVICES QUICK LINKS
+         ═══════════════════════════════════════════════════════════════ -->
+    <style>
+      .services-strip {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        padding: 5rem 8vw;
+      }
+
+      .services-strip-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .services-strip-header h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+      }
+
+      .services-quick-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);   /* 3 cards across */
+        gap: 1.5rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      /* Each clickable card */
+      .service-quick-card {
+        border: 1px solid var(--line-strong);
+        padding: 2.5rem 2rem;
+        text-decoration: none;
+        display: block;
+        transition: border-color 0.3s;
+        background: var(--panel);
+      }
+      .service-quick-card:hover { border-color: var(--text); }
+
+      .service-quick-card h3 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        margin-bottom: 0.8rem;
+      }
+
+      .service-quick-card p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+      }
+
+      /* "Learn More →" */
+      .service-quick-card span {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text);
+      }
+
+      /* Tablets: 2 across */
+      @media (max-width: 900px) {
+        .services-quick-grid { grid-template-columns: 1fr 1fr; }
+      }
+
+      /* Phones: 1 across */
+      @media (max-width: 600px) {
+        .services-strip { padding: 4rem 1.5rem; }
+        .services-quick-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+
     <section class="services-strip">
       <div class="services-strip-header">
         <span class="section-label">Not Sure Where to Start?</span>
@@ -710,7 +421,7 @@
           <p>Individual sessions for professionals, executives, entrepreneurs, and job seekers.&nbsp; Relaxed, guided, and starting at $250.</p>
           <span>Learn More &rarr;</span>
         </a>
-        <a href="/corporate-headshots/" class="service-quick-card">
+        <a href="/team-headshots/" class="service-quick-card">
           <h3>Corporate Team Headshots</h3>
           <p>On-site team sessions for companies of any size.&nbsp; Consistent, polished images for 5 to 500+ employees.</p>
           <span>Learn More &rarr;</span>
@@ -732,9 +443,9 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/images/logo-black.webp" alt="Deborah Heinlen Photography logo" />
+        <img src="/images/logo-white.webp" loading="lazy" alt="Deborah Heinlen Photography logo" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="/images/PPA_Member_Color.webp" alt="Professional Photographers of America logo" class="footer-badge" />
+        <img src="/images/logo-PPA_Member_Color.webp" loading="lazy" alt="Professional Photographers of America logo" class="footer-badge" />
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -772,16 +483,34 @@
     </div>
   </footer>
 
-<script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <script>
     // ── MOBILE MENU ────────────────────────────────────────────────
-    const mobileBtn = document.getEleme
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
+
     mobileBtn.addEventListener('click', () => {
-        const isOpen = mobileNav.classList.toggle('open');
-        mobileBtn.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+      const isOpen = mobileNav.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-</script>
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ── IMAGE PROTECTION -- DO NOT REMOVE ─────────────────────────
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'IMG') { e.preventDefault(); }
+    });
+  </script>
+
 </body>
 </html>
