@@ -450,6 +450,23 @@
         margin-bottom: 2rem;
       }
 
+      /* "Read more" link to the blog post, under the paragraph */
+      .experience-link {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-decoration: none;
+        border-bottom: 1px solid var(--line-strong);
+        padding-bottom: 0.2rem;
+        align-self: flex-start;
+        margin: -0.8rem 0 2.2rem;
+        transition: border-color 0.2s;
+      }
+      .experience-link:hover { border-color: var(--text); }
+
       /* Tablets and phones: photo stacks above text, fade moves to the bottom edge */
       @media (max-width: 900px) {
         .experience-section { flex-direction: column; }
@@ -479,6 +496,7 @@
           <li>Professional retouching on every image</li>
         </ul>
         <p>Every client leaves with images they're excited to share on LinkedIn, resumes, company websites, and professional publications.&nbsp; That transformation from "I hate having my picture taken" to "Wow, that's really me?" is exactly what I'm here for.</p>
+        <a href="/blog/the-headshot-experience/" class="experience-link">Read more about what to expect &rarr;</a>
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Complimentary Phone Consult</a>
       </div>
     </section>
