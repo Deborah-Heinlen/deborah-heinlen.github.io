@@ -608,3 +608,5 @@ img {
   -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none;
 }
 a, button { pointer-events: auto; }
+
+   .section-label { display: none; }
