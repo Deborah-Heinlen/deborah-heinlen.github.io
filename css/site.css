@@ -187,6 +187,21 @@ html, body {
   letter-spacing: 0.02em;
 }
 
+/* =====================================================================
+   SECTION LABEL
+   Small spaced capitals above a heading, on any page:
+     <span class="section-label">The Work</span>
+   ===================================================================== */
+.section-label {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 1.5rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: block;
+  margin-bottom: 1.2rem;
+}
 
 /* =====================================================================
    4. HEADER

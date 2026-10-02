@@ -1,340 +1,43 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 <head>
+
+  <!-- DEBORAH HEINLEN PHOTOGRAPHY TEAM HEADSHOTS PAGE -->
+
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team Headshots Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography</title>
-  <meta name="description" content="Professional team headshot photography for Cincinnati and Northern Kentucky businesses.  I bring the studio to your office -- lights, backdrops, coaching, and full coordination included.  Consistent, polished results for 5 to 500+ employees." />
-  <link rel="canonical" href="https://deborahheinlenphotography.com/team-headshots" />
+  <meta name="description" content="Professional team headshot photography for Cincinnati and Northern Kentucky businesses.  I bring the studio to your office, with lights, backdrops, coaching, and full coordination included.  Consistent, polished results for 5 to 500+ employees." />
+  <link rel="canonical" href="https://deborahheinlenphotography.com/team-headshots/" />
   <meta property="og:title" content="Team Headshots Cincinnati &amp; Northern Kentucky | Deborah Heinlen Photography" />
   <meta property="og:description" content="On-site team headshot photography for businesses across Cincinnati and Northern Kentucky.  Turnkey coordination, expert coaching, and consistent results for your entire team." />
   <meta property="og:image" content="https://deborahheinlenphotography.com/images/banner_2026.webp" />
   <meta property="og:url" content="https://deborahheinlenphotography.com/team-headshots/" />
   <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/uug2krd.css" />
-  <style>
-      
-      /*_________________________________
-        TEAM HEADSHOTS
-        _______________________________*/
-      
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  <!-- SHARED SITE STYLES: colors, header, nav, buttons, footer, section labels -->
+  <link rel="stylesheet" href="/css/site.css" />
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        QUICK REFERENCE -- WHERE TO FIND COMMON CHANGES
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       ALL COLORS ........................ find :root below
-       Grid image sizes .................. search: GRID CELLS
-       Grid/text split ................... search: GRID SPLIT
-       Font sizes ........................ each has a note above font-size
-       Section padding/spacing ........... each has a note above padding
+
+       ALL COLORS ........................ /css/site.css, CONTROL PANEL at the top
+       Header, nav, footer, buttons ...... /css/site.css
+       Section labels (small capitals) ... /css/site.css
+       Each section's look ............... the <style> block right above that section
        Hero image size ................... search: HERO IMAGE SIZE
-       Approach image size ............... search: APPROACH IMAGE SIZE
+       Grid/text split ................... search: GRID SPLIT
+       Grid image sizes .................. search: GRID CELLS
+       Coordinator image size ............ search: APPROACH IMAGE SIZE
        Adding/removing grid images ....... search: CONSISTENT IMAGES ARRAY
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       COLOR SYSTEM
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    :root {
-      --slate-blue:  #252330;
-      --silver:      #B8BCC4;
-      --mid-gray:    #9095A0;
-      --cream:       #f5f0e8;
-      --text-dark:   #2e2419;
-      --text-mid:    #6b5c4a;
-      --text-light:  #9e8e7a;
-      --black:       #000000;
-      --white:       #ffffff;
-      --body-text:   #B8BCC4;
-      --body-muted:  #A8ACB4;
-      --body-faint:  #9095A0;
-      --footer-text:  #9095A0;
-      --footer-faint: #B8BCC4;
-      --border-bright:  #4a4858;
-      --border-mid:     #353344;
-      --border-subtle:  #2c2a38;
-      --border-faint:   #232130;
-      --border-hover:   #5a5870;
-      --btn-secondary-border:       #555555;
-      --btn-secondary-hover-border: #999999;
-      --header-bg:     #F0F0F3;
-      --header-border: #D8D9DE;
-      --nav-bg:        #ECEDF0;
-      --nav-border:    #D8D9DE;
-      --nav-hover-bg:  #E4E5EA;
-      --header-h:   90px;
-      --nav-h:      44px;
-      --total-nav:  134px;
-    }
-
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    html, body { background-color: var(--slate-blue); color: var(--white); font-family: 'Jost', sans-serif; font-weight: 300; overflow-x: hidden; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       HEADER
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; background: var(--header-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--header-border); }
-    .header-logo { height: 40px; width: auto; display: block; }
-    .header-title { font-family: "lindsey-signature", sans-serif; font-weight: 400; font-size: 3rem; color: var(--text-dark); text-decoration: none; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-    .header-cta { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; border: 1px solid var(--silver); padding: 0.55rem 1.5rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
-    .header-cta:hover { background: var(--silver); color: var(--mid-gray); }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       NAVIGATION
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .site-nav { position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 199; height: var(--nav-h); display: flex; align-items: center; justify-content: center; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: 1px solid var(--nav-border); }
-    .nav-list { list-style: none; display: flex; align-items: stretch; height: 100%; border-left: 1px solid var(--nav-border); }
-    .nav-item { position: relative; display: flex; align-items: center; border-right: 1px solid var(--nav-border); }
-    .nav-link { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0 1.4rem; height: 100%; display: flex; align-items: center; transition: background 0.2s, color 0.2s; white-space: nowrap; }
-    .nav-link:hover, .nav-link.active { background: var(--nav-hover-bg); color: var(--text-dark); }
-    .nav-link.has-dropdown::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid var(--text-light); margin-left: 0.45rem; transition: transform 0.2s; }
-    .nav-item:hover .nav-link.has-dropdown::after { transform: rotate(180deg); }
-    .dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; background: var(--nav-bg); border: 1px solid var(--nav-border); border-top: none; z-index: 300; list-style: none; padding: 0.4rem 0; }
-    .nav-item:hover .dropdown { display: block; }
-    .dropdown li a { display: block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.75rem 1.4rem; transition: background 0.15s, color 0.15s; }
-    .dropdown li a:hover { background: var(--nav-hover-bg); color: var(--text-dark); }
-    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
-    .mobile-menu-btn span { display: block; width: 22px; height: 1px; background: var(--text-mid); }
-    .mobile-nav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--nav-bg); z-index: 198; overflow-y: auto; padding: 2rem 2rem 4rem; }
-    .mobile-nav.open { display: block; }
-    .mobile-nav a { display: block; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; padding: 0.9rem 0; border-bottom: 1px solid var(--nav-border); transition: color 0.2s; }
-    .mobile-nav a:hover { color: var(--text-dark); }
-    .mobile-section-label { font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 200; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); margin-top: 1.2rem; padding: 0.5rem 0 0.3rem; display: block; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       PAGE WRAPPER & SHARED UTILITIES
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .page-content { padding-top: var(--total-nav); }
-    .section-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver); display: block; margin-bottom: 1.2rem; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       BUTTONS
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .btn-primary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); text-decoration: none; border: 1px solid var(--silver); padding: 0.85rem 2rem; transition: background 0.25s, color 0.25s; white-space: nowrap; }
-    .btn-primary:hover { background: var(--silver); color: var(--slate-blue); }
-    .btn-secondary { display: inline-block; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-muted); text-decoration: none; border: 1px solid var(--btn-secondary-border); padding: 0.85rem 2rem; transition: border-color 0.25s, color 0.25s; }
-    .btn-secondary:hover { border-color: var(--btn-secondary-hover-border); color: var(--white); }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       HERO SECTION
-       HERO IMAGE SIZE: change flex-basis (currently 55%)
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .page-hero { display: flex; align-items: stretch; min-height: 80vh; border-bottom: 1px solid var(--border-faint); }
-    .page-hero-image { flex: 0 0 55%; position: relative; overflow: hidden; }
-    .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; }
-    .page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 65%, var(--slate-blue) 100%); pointer-events: none; }
-    .page-hero-content { flex: 0 0 45%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; position: relative; z-index: 1; }
-    .page-hero-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 3.5vw, 3.6rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 1.4rem; }
-    .page-hero-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(0.88rem, 1.1vw, 1rem); letter-spacing: 0.06em; color: var(--body-text); line-height: 1.8; margin-bottom: 2.2rem; }
-    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       WHO I SERVE SECTION
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .who-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 5rem 8vw; }
-    .who-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 6vw; align-items: start; }
-    .who-heading h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-top: 1rem; }
-    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
-    .who-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 1.5rem 1.8rem; display: flex; align-items: center; gap: 1rem; }
-    .who-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--silver); flex-shrink: 0; }
-    .who-item span { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.1em; color: var(--body-text); }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       BRAND IMPACT SECTION
-       Image grid left, text right.
-       GRID SPLIT: adjust grid-template-columns
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .consistent-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 3rem 3rem 3.5rem; }
-    .consistent-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 55fr 45fr; gap: 3rem; align-items: center; }
-    /* GRID CELLS */
-    .consistent-grid { display: flex; gap: 12px; width: 100%; }
-    .consistent-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-    .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 290px; }
-    .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 200px; }
-    .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 200px; }
-    .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 290px; }
-    .consistent-cell { overflow: hidden; }
-    .consistent-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .consistent-content { text-align: left; display: flex; flex-direction: column; justify-content: center; }
-    .consistent-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.8rem; margin-top: 1rem; }
-    .consistent-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.03em; color: var(--body-muted); margin-bottom: 1.2rem; }
-    .benefit-list { list-style: none; margin: 1.5rem 0 2.5rem; }
-    .benefit-list li { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.04em; color: var(--body-muted); line-height: 1.7; padding: 0.55rem 0; border-bottom: 1px solid var(--border-faint); display: flex; align-items: baseline; gap: 0.8rem; }
-    .benefit-list li::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--silver); flex-shrink: 0; position: relative; top: -3px; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       HOW IT WORKS -- PROCESS STEPS
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .process-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 6rem 8vw; }
-    .process-header { text-align: center; margin-bottom: 4rem; }
-    .process-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
-    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 1100px; margin: 0 auto 3.5rem; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
-    .process-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 2.5rem 2rem; transition: border-color 0.3s; }
-    .process-item:hover { border-color: var(--border-hover); }
-    .process-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.8rem; color: var(--border-bright); line-height: 1; margin-bottom: 1.2rem; display: block; }
-    .process-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 0.8rem; }
-    .process-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-faint); }
-    .process-cta { text-align: center; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       COORDINATOR RELIEF SECTION
-       Text left, image right
-       APPROACH IMAGE SIZE: change flex-basis (currently 55%)
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .approach-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); display: flex; align-items: stretch; flex-direction: row-reverse; }
-    .approach-image { flex: 0 0 55%; position: relative; overflow: hidden; min-height: 520px; }
-    .approach-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.85); display: block; }
-    .approach-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, transparent 60%, var(--slate-blue) 100%); pointer-events: none; }
-    .approach-content { flex: 0 0 45%; display: flex; flex-direction: column; justify-content: center; padding: 5rem 6vw; }
-    .approach-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.8rem; margin-top: 1rem; }
-    .approach-content p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.03em; color: var(--body-muted); margin-bottom: 1.2rem; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       WHAT'S INCLUDED SECTION
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .included-section { background: var(--slate-blue); border-bottom: 1px solid var(--border-faint); padding: 6rem 8vw; }
-    .included-header { text-align: center; margin-bottom: 4rem; }
-    .included-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
-    .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto 3.5rem; }
-    .included-item { border: 1px solid var(--border-subtle); padding: 2.5rem 2rem; transition: border-color 0.3s; }
-    .included-item:hover { border-color: var(--border-hover); }
-    .included-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.8rem; color: var(--border-bright); line-height: 1; margin-bottom: 1.2rem; display: block; }
-    .included-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 0.8rem; }
-    .included-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.88rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-faint); }
-    .included-cta { text-align: center; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       LOGISTICS STRIP
-       Full-width 4-stat bar
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .logistics-strip { background: var(--slate-blue); border-top: 1px solid var(--border-bright); border-bottom: 1px solid var(--border-bright); padding: 3rem 8vw; display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
-    .logistics-item { text-align: center; padding: 1rem 4vw; border-right: 1px solid var(--border-mid); }
-    .logistics-item:last-child { border-right: none; }
-    .logistics-value { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.4rem; color: var(--silver); letter-spacing: 0.04em; display: block; line-height: 1; margin-bottom: 0.4rem; }
-    .logistics-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--body-faint); }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       FAQ SECTION
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .faq-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; }
-    .faq-header { text-align: center; margin-bottom: 4rem; }
-    .faq-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; margin-top: 1rem; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
-    .faq-item { border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 2.5rem; }
-    .faq-item h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--white); letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 1rem; }
-    .faq-item p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.9rem; letter-spacing: 0.03em; line-height: 1.85; color: var(--body-muted); }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       TESTIMONIAL SECTION
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .testimonial-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 6rem 8vw; text-align: center; }
-    .stars { display: flex; justify-content: center; gap: 0.3rem; margin-bottom: 2.5rem; }
-    .stars span { color: var(--silver); font-size: 1rem; }
-    .testimonial-section blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--white); line-height: 1.55; max-width: 760px; margin: 0 auto 1.5rem; letter-spacing: 0.02em; }
-    .testimonial-section cite { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); font-style: normal; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       FINAL CTA SECTION
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .cta-section { background: var(--slate-blue); border-top: 1px solid var(--border-faint); padding: 7rem 8vw; text-align: center; }
-    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 1.2rem; }
-    .cta-section p { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.9; letter-spacing: 0.04em; color: var(--body-faint); max-width: 580px; margin: 0 auto 3rem; }
-    .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       FOOTER
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .site-footer { background: var(--slate-blue); border-top: 1px solid var(--border-bright); padding: 4rem 3rem 3rem; }
-    .footer-inner { max-width: 1200px; margin: 0 auto 3rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; }
-    .footer-brand img { height: 120px; width: auto; display: block; margin-bottom: 1.2rem; }
-    .footer-brand p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.8; color: var(--footer-text); }
-    .footer-col h4 { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--silver); margin-bottom: 1.2rem; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.6rem; }
-    .footer-col ul li a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.12em; color: var(--footer-text); text-decoration: none; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--silver); }
-    .footer-contact-item { display: block; font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--footer-text); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
-    .footer-contact-item:hover { color: var(--silver); }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: space-between; }
-    .footer-bottom p { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); }
-    .footer-bottom-links { display: flex; gap: 1.5rem; }
-    .footer-bottom-links a { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--footer-faint); text-decoration: none; transition: color 0.2s; }
-    .footer-bottom-links a:hover { color: var(--silver); }
-    .footer-badge { height: 38px; width: auto; opacity: 0.5; margin-top: 1.2rem; display: block; }
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       RESPONSIVE -- TABLET (max 900px)
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    @media (max-width: 900px) {
-      .site-nav { display: none; }
-      .mobile-menu-btn { display: flex; }
-      .header-title { display: none; }
-      .page-hero { flex-direction: column; }
-      .page-hero-image { flex: none; width: 100%; min-height: 350px; }
-      .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
-      .page-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
-      .who-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .who-grid { grid-template-columns: 1fr; }
-      .consistent-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 200px; }
-      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 160px; }
-      .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 160px; }
-      .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 200px; }
-      .approach-section { flex-direction: column; }
-      .approach-image { flex: none; width: 100%; min-height: 300px; }
-      .approach-image::after { background: linear-gradient(to bottom, transparent 60%, var(--slate-blue) 100%); }
-      .approach-content { flex: none; width: 100%; padding: 3rem 2rem; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-      .included-grid { grid-template-columns: 1fr 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .logistics-strip { gap: 0; }
-      .logistics-item { flex: 0 0 50%; border-right: none; border-bottom: 1px solid var(--border-mid); }
-      .logistics-item:nth-child(odd) { border-right: 1px solid var(--border-mid); }
-    }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       RESPONSIVE -- MOBILE (max 600px)
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    @media (max-width: 600px) {
-      .site-header { padding: 0 1.25rem; }
-      .page-hero-content { padding: 3rem 1.5rem; }
-      .process-grid { grid-template-columns: 1fr; }
-      .included-grid { grid-template-columns: 1fr; }
-      .faq-item { padding: 1.8rem 1.5rem; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-      .cta-buttons { flex-direction: column; align-items: center; }
-      .logistics-item { flex: 0 0 100%; border-right: none; }
-      .logistics-item:nth-child(odd) { border-right: none; }
-    }
-
-    /* IMAGE PROTECTION -- DO NOT REMOVE */
-    img { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; pointer-events: none; }
-    a, button { pointer-events: auto; }
-  </style>
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM0WHZ0KF4"></script>
@@ -347,6 +50,9 @@
 </head>
 <body>
 
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HEADER
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <header class="site-header">
     <a href="/"><img src="/images/logo-black.webp" alt="Deborah Heinlen Photography logo" class="header-logo" /></a>
     <a href="/" class="header-title">Deborah Heinlen Photography</a>
@@ -356,6 +62,10 @@
     <a href="https://deborahheinlen1.client.photos/bookings" class="header-cta" target="_blank" rel="noopener">Book a Session</a>
   </header>
 
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       DESKTOP NAVIGATION
+       NOTE: Keep this in sync with the mobile nav below.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="site-nav" aria-label="Main navigation">
     <ul class="nav-list">
       <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -380,6 +90,10 @@
     </ul>
   </nav>
 
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MOBILE NAVIGATION PANEL
+       NOTE: Keep this in sync with the desktop nav above.
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <nav class="mobile-nav" id="mobile-nav">
     <a href="/">Home</a>
     <span class="mobile-section-label">Services</span>
@@ -394,22 +108,107 @@
     <a href="/contact-deborah-heinlen/">Contact</a>
   </nav>
 
+
   <main class="page-content">
+
+    <style>
+      /* Pushes the page below the fixed header and nav */
+      .page-content { padding-top: calc(var(--header-h) + var(--nav-h)); }
+    </style>
+
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          HERO
+         Photo on the left, text on the right.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .page-hero {
+        display: flex;
+        align-items: stretch;
+        min-height: 80vh;
+        border-bottom: 1px solid var(--line-faint);
+      }
+
+      /* HERO IMAGE SIZE: change the 55% to make the photo wider or narrower */
+      .page-hero-image {
+        flex: 0 0 55%;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        filter: saturate(0.85);
+        display: block;
+      }
+      /* Soft fade on the right edge of the photo */
+      .page-hero-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, transparent 65%, var(--bg) 100%);
+        pointer-events: none;
+      }
+
+      .page-hero-content {
+        flex: 0 0 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 6vw;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Headline: change the last clamp value to make it larger or smaller */
+      .page-hero-content h1 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        line-height: 1.1;
+        margin-bottom: 1.4rem;
+      }
+
+      .page-hero-content p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
+        letter-spacing: 0.06em;
+        color: var(--text);
+        line-height: 1.8;
+        margin-bottom: 2.2rem;
+      }
+
+      .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+      /* Tablets and phones: photo stacks above text, fade moves to the bottom edge */
+      @media (max-width: 900px) {
+        .page-hero { flex-direction: column; }
+        .page-hero-image { flex: none; width: 100%; min-height: 350px; }
+        .page-hero-image::after { background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%); }
+        .page-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
+      }
+
+      @media (max-width: 600px) {
+        .page-hero-content { padding: 3rem 1.5rem; }
+      }
+    </style>
+
     <section class="page-hero">
       <div class="page-hero-image">
-        <img src="/images/me-at-cartridge-brewing.webp" alt="Deborah Heinlen Photography setting up a team headshot session on-site at a Cincinnati business -- professional lighting and backdrop for corporate team photography" />
+        <img src="/images/me-at-cartridge-brewing.webp" alt="Deborah Heinlen Photography setting up a team headshot session on-site at a Cincinnati business, with professional lighting and backdrop for corporate team photography" />
       </div>
       <div class="page-hero-content">
         <span class="section-label">Teams &amp; Companies</span>
         <h1>Team Headshot Photography for Cincinnati &amp; Northern Kentucky Businesses</h1>
-        <p>Your team has built its reputation one client, one case, one relationship at a time.&nbsp; I bring a full professional studio to your office -- lights, backdrops, coaching, and complete coordination -- so your employees walk away with polished, consistent headshots that say exactly that, and you walk away with one less thing to manage.</p>
+        <p>Your team has built its reputation one client, one case, one relationship at a time.&nbsp; I bring a full professional studio to your office, with lights, backdrops, coaching, and complete coordination, so your employees walk away with polished, consistent headshots that say exactly that, and you walk away with one less thing to manage.</p>
         <div class="hero-buttons">
           <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Consultation</a>
-          <a href="/contact-deborah-heinlen/" class="btn-secondary">Get a Team Quote</a>
+          <a href="/contact-deborah-heinlen/" class="btn-primary">Get a Team Quote</a>
         </div>
       </div>
     </section>
@@ -417,7 +216,62 @@
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          LOGISTICS STRIP
+         Four quick facts in a row.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .logistics-strip {
+        background: var(--bg);
+        border-top: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--line-strong);
+        padding: 3rem 8vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .logistics-item {
+        text-align: center;
+        padding: 1rem 4vw;
+        border-right: 1px solid var(--line);
+      }
+      .logistics-item:last-child { border-right: none; }
+
+      /* The big numbers: 10+, 5–7, etc. */
+      .logistics-value {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: 2.4rem;
+        color: var(--text);
+        letter-spacing: 0.04em;
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+
+      /* The small labels under them */
+      .logistics-label {
+        font-family: var(--font-sans);
+        font-weight: 200;
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text);
+      }
+
+      /* Tablets: 2 across */
+      @media (max-width: 900px) {
+        .logistics-item { flex: 0 0 50%; border-right: none; border-bottom: 1px solid var(--line); }
+        .logistics-item:nth-child(odd) { border-right: 1px solid var(--line); }
+      }
+
+      /* Phones: 1 across */
+      @media (max-width: 600px) {
+        .logistics-item { flex: 0 0 100%; border-right: none; }
+        .logistics-item:nth-child(odd) { border-right: none; }
+      }
+    </style>
+
     <div class="logistics-strip">
       <div class="logistics-item">
         <span class="logistics-value">10+</span>
@@ -440,7 +294,78 @@
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          WHO I WORK WITH
+         Heading on the left, grid of business types on the right.
+         To add a business type: copy one who-item line and change the words.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .who-section {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line-faint);
+        padding: 5rem 8vw;
+      }
+
+      .who-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 6vw;
+        align-items: start;
+      }
+
+      .who-heading h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+      }
+
+      .who-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .who-item {
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 1.5rem 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      /* The small dot before each business type */
+      .who-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--text);
+        flex-shrink: 0;
+      }
+
+      .who-item span {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        color: var(--text);
+      }
+
+      /* Tablets and phones: heading on top, one column of business types */
+      @media (max-width: 900px) {
+        .who-inner { grid-template-columns: 1fr; gap: 2rem; }
+        .who-grid { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 600px) {
+        .who-section { padding: 3rem 1.5rem; }
+      }
+    </style>
+
     <section class="who-section">
       <div class="who-inner">
         <div class="who-heading">
@@ -462,10 +387,109 @@
 
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         BRAND IMPACT SECTION
-         Image grid left, text right.
-         Images controlled by consistentImages array in <script> below.
+         WHY IT MATTERS (BRAND IMPACT)
+         Image grid on the left, text on the right.
+         Images are controlled by the consistentImages array in the <script> block
+         at the bottom of the page.  Search: CONSISTENT IMAGES ARRAY
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .consistent-section {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line-faint);
+        padding: 3rem 3rem 3.5rem;
+      }
+
+      /* GRID SPLIT -- image side vs text side.  Currently 55 and 45. */
+      .consistent-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 55fr 45fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      /* GRID CELLS
+         3 columns, 2 images per column.
+         TALL cell height:  change the 290px values
+         SHORT cell height: change the 200px values */
+      .consistent-grid { display: flex; gap: 12px; width: 100%; }
+      .consistent-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 290px; }
+      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 200px; }
+      .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 200px; }
+      .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 290px; }
+      .consistent-cell { overflow: hidden; }
+      .consistent-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+      .consistent-content {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .consistent-content h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+        margin-bottom: 1.8rem;
+      }
+
+      .consistent-content p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.95rem;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+      }
+
+      /* Lists with a short line before each item.
+         Used here and in the "For the Coordinator" section. */
+      .benefit-list { list-style: none; margin: 1.5rem 0 2.5rem; }
+      .benefit-list li {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        color: var(--text);
+        line-height: 1.7;
+        padding: 0.55rem 0;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: baseline;
+        gap: 0.8rem;
+      }
+      .benefit-list li::before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 1px;
+        background: var(--text);
+        flex-shrink: 0;
+        position: relative;
+        top: -3px;
+      }
+
+      /* Tablets and phones: text on top of a smaller 2-column grid */
+      @media (max-width: 900px) {
+        .consistent-inner { grid-template-columns: 1fr; gap: 2rem; }
+        .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 200px; }
+        .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 160px; }
+        .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 160px; }
+        .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 200px; }
+      }
+
+      @media (max-width: 600px) {
+        .consistent-section { padding: 3rem 1.5rem; }
+      }
+    </style>
+
     <section class="consistent-section">
       <div class="consistent-inner">
         <div class="consistent-grid" id="consistent-grid"></div>
@@ -473,13 +497,13 @@
           <span class="section-label">Why It Matters</span>
           <h2>Your Team's Image Is Your Brand</h2>
           <p>Before a client shakes a single hand, they've already formed an opinion.&nbsp; They've visited your website.&nbsp; They've looked up your team on LinkedIn.&nbsp; Outdated, inconsistent, or low-quality headshots send a signal you didn't intend to send.</p>
-          <p>A cohesive set of professional team headshots tells a different story -- one of polish, credibility, and attention to detail.&nbsp; It strengthens your brand across every touchpoint where your people show up.</p>
+          <p>A cohesive set of professional team headshots tells a different story, one of polish, credibility, and attention to detail.&nbsp; It strengthens your brand across every touchpoint where your people show up.</p>
           <ul class="benefit-list">
             <li>Present a unified, professional image across your website and LinkedIn</li>
             <li>Build immediate trust with prospective clients and partners</li>
             <li>Support recruitment with imagery that reflects your company culture</li>
             <li>Strengthen employer branding and internal communications</li>
-            <li>Stay current -- outdated headshots undermine even the strongest brands</li>
+            <li>Stay current, since outdated headshots undermine even the strongest brands</li>
             <li>Give your team images they're proud to use and share</li>
           </ul>
           <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Consultation</a>
@@ -489,8 +513,86 @@
 
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         HOW IT WORKS
+         HOW IT WORKS (PROCESS STEPS)
+         Six numbered boxes, 3 across.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .process-section {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line-faint);
+        padding: 6rem 8vw;
+      }
+
+      .process-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .process-header h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1100px;
+        margin: 0 auto 3.5rem;
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .process-item {
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 2.5rem 2rem;
+      }
+
+      /* The big step numbers: 01, 02, etc. */
+      .process-number {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: 2.8rem;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 1.2rem;
+        display: block;
+      }
+
+      .process-item h3 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+      }
+
+      .process-item p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.03em;
+        line-height: 1.85;
+        color: var(--text);
+      }
+
+      .process-cta { text-align: center; }
+
+      /* Tablets: 2 across.  Phones: 1 across. */
+      @media (max-width: 900px) {
+        .process-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 600px) {
+        .process-section { padding: 3rem 1.5rem; }
+        .process-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+
     <section class="process-section">
       <div class="process-header">
         <span class="section-label">The Process</span>
@@ -501,19 +603,19 @@
         <div class="process-item">
           <span class="process-number">01</span>
           <h3>The Discovery Call</h3>
-          <p>We start with a phone or Zoom call to understand your needs -- team size, scheduling constraints, location, and goals.&nbsp; This isn't just about taking pictures.&nbsp; It's about understanding what your headshots need to do for your business and building a plan around that.</p>
+          <p>We start with a phone or Zoom call to understand your needs: team size, scheduling constraints, location, and goals.&nbsp; This isn't just about taking pictures.&nbsp; It's about understanding what your headshots need to do for your business and building a plan around that.</p>
         </div>
 
         <div class="process-item">
           <span class="process-number">02</span>
           <h3>Planning &amp; Preparation</h3>
-          <p>I handle the coordination work so you don't have to.&nbsp; I can send personalized prep emails directly to your employees, build a time schedule for the day, or provide all prep information to you to share -- whichever works best for your team.</p>
+          <p>I handle the coordination work so you don't have to.&nbsp; I can send personalized prep emails directly to your employees, build a time schedule for the day, or provide all prep information to you to share, whichever works best for your team.</p>
         </div>
 
         <div class="process-item">
           <span class="process-number">03</span>
           <h3>Studio Setup at Your Location</h3>
-          <p>I bring a complete professional studio to your office -- professional-grade lighting, backdrops, and all equipment.&nbsp; All I need is a 10&times;10 space.&nbsp; Setup takes under an hour and I arrive early so your team's day isn't disrupted.</p>
+          <p>I bring a complete professional studio to your office: professional-grade lighting, backdrops, and all equipment.&nbsp; All I need is a 10&times;10 space.&nbsp; Setup takes under an hour and I arrive early so your team's day isn't disrupted.</p>
         </div>
 
         <div class="process-item">
@@ -525,7 +627,7 @@
         <div class="process-item">
           <span class="process-number">05</span>
           <h3>Image Review &amp; Selection</h3>
-          <p>After the session I curate the best images for each person.&nbsp; You choose how selection works -- employees can pick their own favorite, you can select for them, or I can handle the entire process.&nbsp; Whatever keeps it simple for your team.</p>
+          <p>After the session I curate the best images for each person.&nbsp; You choose how selection works.&nbsp; Employees can pick their own favorite, you can select for them, or I can handle the entire process.&nbsp; Whatever keeps it simple for your team.</p>
         </div>
 
         <div class="process-item">
@@ -542,23 +644,95 @@
 
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         COORDINATOR RELIEF SECTION
+         FOR THE COORDINATOR
+         Text on the left, photo on the right.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .approach-section {
+        background: var(--bg);
+        border-top: 1px solid var(--line-faint);
+        display: flex;
+        align-items: stretch;
+        /* Photo RIGHT, text LEFT.  To flip: change row-reverse to row */
+        flex-direction: row-reverse;
+      }
+
+      /* APPROACH IMAGE SIZE: change the 55% to make the photo wider or narrower */
+      .approach-image {
+        flex: 0 0 55%;
+        position: relative;
+        overflow: hidden;
+        min-height: 520px;
+      }
+      .approach-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        filter: saturate(0.85);
+        display: block;
+      }
+      /* Soft fade on the left edge of the photo */
+      .approach-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to left, transparent 60%, var(--bg) 100%);
+        pointer-events: none;
+      }
+
+      .approach-content {
+        flex: 0 0 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 6vw;
+      }
+
+      .approach-content h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+        margin-bottom: 1.8rem;
+      }
+
+      .approach-content p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.95rem;
+        line-height: 1.9;
+        letter-spacing: 0.03em;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+      }
+
+      /* Tablets and phones: photo stacks above text */
+      @media (max-width: 900px) {
+        .approach-section { flex-direction: column; }
+        .approach-image { flex: none; width: 100%; min-height: 300px; }
+        .approach-image::after { background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%); }
+        .approach-content { flex: none; width: 100%; padding: 3rem 2rem; }
+      }
+    </style>
+
     <section class="approach-section">
       <div class="approach-image">
-        <img src="/images/me-with-DeMayne.webp" alt="Deborah Heinlen Photography directing a team headshot session on-site at a Cincinnati business -- professional corporate team photographer coaching an employee" />
+        <img src="/images/me-with-DeMayne.webp" loading="lazy" alt="Deborah Heinlen Photography directing a team headshot session on-site at a Cincinnati business, coaching an employee" />
       </div>
       <div class="approach-content">
         <span class="section-label">For the Coordinator</span>
         <h2>You Hand It Off.&nbsp; I Handle Everything.</h2>
         <p>Organizing a team photo day is one more thing on an already full plate.&nbsp; My goal is to make it as close to effortless as possible for the person responsible for making it happen.</p>
-        <p>From pre-session employee communications to day-of scheduling to image selection and final delivery -- every step can be as hands-off for you as you need it to be.&nbsp; I work efficiently and respectfully within your team's workflow, stay flexible when schedules shift, and coordinate directly with whoever needs to be involved.</p>
-        <ul class="benefit-list" style="margin-bottom: 2.5rem;">
+        <p>From pre-session employee communications to day-of scheduling to image selection and final delivery, every step can be as hands-off for you as you need it to be.&nbsp; I work efficiently and respectfully within your team's workflow, stay flexible when schedules shift, and coordinate directly with whoever needs to be involved.</p>
+        <ul class="benefit-list">
           <li>Pre-session prep emails sent directly to employees on your behalf</li>
           <li>Scheduling built around your team's availability</li>
           <li>Image selection managed however works best for you</li>
           <li>Can match your existing headshot style for new hires</li>
-          <li>Minimal disruption -- 5 to 10 minutes per person</li>
+          <li>Minimal disruption, just 5 to 10 minutes per person</li>
           <li>Single point of contact from first call through final delivery</li>
         </ul>
         <a href="/contact-deborah-heinlen/" class="btn-primary">Get a Team Quote</a>
@@ -568,7 +742,85 @@
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          WHAT'S INCLUDED
+         Six numbered boxes, 3 across.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .included-section {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line-faint);
+        padding: 6rem 8vw;
+      }
+
+      .included-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .included-header h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+      }
+
+      .included-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto 3.5rem;
+      }
+
+      .included-item {
+        border: 1px solid var(--line);
+        padding: 2.5rem 2rem;
+        transition: border-color 0.3s;
+      }
+      .included-item:hover { border-color: var(--line-strong); }
+
+      /* The big numbers: 01, 02, etc. */
+      .included-number {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: 2.8rem;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 1.2rem;
+        display: block;
+      }
+
+      .included-item h3 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+      }
+
+      .included-item p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.03em;
+        line-height: 1.85;
+        color: var(--text);
+      }
+
+      .included-cta { text-align: center; }
+
+      /* Tablets: 2 across.  Phones: 1 across. */
+      @media (max-width: 900px) {
+        .included-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 600px) {
+        .included-section { padding: 3rem 1.5rem; }
+        .included-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+
     <section class="included-section">
       <div class="included-header">
         <span class="section-label">Every Session Includes</span>
@@ -579,13 +831,13 @@
         <div class="included-item">
           <span class="included-number">01</span>
           <h3>Full Studio-Quality Lighting On-Site</h3>
-          <p>Professional studio-quality lighting comes to your location -- the same standard used by the world's top headshot photographers.&nbsp; Consistent, flattering results for every person on your team, without anyone leaving the office.</p>
+          <p>Professional studio-quality lighting comes to your location, the same standard used by the world's top headshot photographers.&nbsp; Consistent, flattering results for every person on your team, without anyone leaving the office.</p>
         </div>
 
         <div class="included-item">
           <span class="included-number">02</span>
           <h3>Individual Coaching for Every Employee</h3>
-          <p>Every person receives personalized expression and posture guidance.&nbsp; No stiff poses, no forced smiles.&nbsp; Natural, confident results -- even for team members who are camera shy.</p>
+          <p>Every person receives personalized expression and posture guidance.&nbsp; No stiff poses, no forced smiles.&nbsp; Natural, confident results, even for team members who are camera shy.</p>
         </div>
 
         <div class="included-item">
@@ -603,7 +855,7 @@
         <div class="included-item">
           <span class="included-number">05</span>
           <h3>Private Online Gallery</h3>
-          <p>Edited images delivered within 5&ndash;7 business days in a secure private gallery.&nbsp; Individual employees can download their own image directly -- no coordination required on your end.</p>
+          <p>Edited images delivered within 5&ndash;7 business days in a secure private gallery.&nbsp; Individual employees can download their own image directly, with no coordination required on your end.</p>
         </div>
 
         <div class="included-item">
@@ -621,7 +873,74 @@
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          FAQ
+         To add a question: copy one faq-item block and paste it.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .faq-section {
+        background: var(--bg);
+        border-top: 1px solid var(--line-faint);
+        padding: 6rem 8vw;
+      }
+
+      .faq-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .faq-header h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+        margin: 0 auto;
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .faq-item {
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 2.5rem;
+      }
+
+      /* The question */
+      .faq-item h3 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+      }
+
+      /* The answer */
+      .faq-item p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.92rem;
+        letter-spacing: 0.03em;
+        line-height: 1.85;
+        color: var(--text);
+      }
+
+      /* Tablets and phones: one column */
+      @media (max-width: 900px) {
+        .faq-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 600px) {
+        .faq-section { padding: 3rem 1.5rem; }
+        .faq-item { padding: 1.8rem 1.5rem; }
+      }
+    </style>
+
     <section class="faq-section">
       <div class="faq-header">
         <span class="section-label">Common Questions</span>
@@ -631,7 +950,7 @@
 
         <div class="faq-item">
           <h3>How much space do you need?</h3>
-          <p>A minimum of 10&times;10 feet is ideal -- a conference room, break room, or open office area works perfectly.&nbsp; I arrive early to set up so your team's schedule isn't affected.</p>
+          <p>A minimum of 10&times;10 feet is ideal.&nbsp; A conference room, break room, or open office area works perfectly.&nbsp; I arrive early to set up so your team's schedule isn't affected.</p>
         </div>
 
         <div class="faq-item">
@@ -661,7 +980,7 @@
 
         <div class="faq-item">
           <h3>What should our team wear?</h3>
-          <p>Solid colors and simple patterns photograph best.&nbsp; I send prep guidance to employees in advance -- including wardrobe tips -- so everyone arrives ready and confident.</p>
+          <p>Solid colors and simple patterns photograph best.&nbsp; I send prep guidance to employees in advance, including wardrobe tips, so everyone arrives ready and confident.</p>
         </div>
 
         <div class="faq-item">
@@ -676,11 +995,51 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          TESTIMONIAL
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .testimonial-section {
+        background: var(--bg);
+        border-top: 1px solid var(--line-faint);
+        padding: 6rem 8vw;
+        text-align: center;
+      }
+
+      .stars {
+        display: flex;
+        justify-content: center;
+        gap: 0.3rem;
+        margin-bottom: 2.5rem;
+      }
+      .stars span { color: var(--text); font-size: 1rem; }
+
+      .testimonial-section blockquote {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+        color: var(--text);
+        line-height: 1.55;
+        max-width: 760px;
+        margin: 0 auto 1.5rem;
+        letter-spacing: 0.02em;
+      }
+
+      /* Name under the quote */
+      .testimonial-section cite {
+        font-family: var(--font-sans);
+        font-weight: 200;
+        font-size: 0.75rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text);
+        font-style: normal;
+      }
+    </style>
+
     <section class="testimonial-section">
       <div class="stars">
         <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
       </div>
-      <blockquote>"Our latest law firm photoshoot was an absolute sensation!&nbsp; I can't recommend Deborah Heinlen Photography enough!&nbsp; If you're in the Tri-state area, Kentucky / Indiana / Ohio -- you MUST schedule a photo shoot with her!"</blockquote>
+      <blockquote>"Our latest law firm photoshoot was an absolute sensation!&nbsp; I can't recommend Deborah Heinlen Photography enough!&nbsp; If you're in the Tri-state area, Kentucky / Indiana / Ohio, you MUST schedule a photo shoot with her!"</blockquote>
       <cite>&mdash; Larry Forman, Attorney</cite>
     </section>
 
@@ -688,23 +1047,69 @@
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          FINAL CTA
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .cta-section {
+        background: var(--bg);
+        border-top: 1px solid var(--line-faint);
+        padding: 7rem 8vw;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+      }
+
+      .cta-section p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.95rem;
+        line-height: 1.9;
+        letter-spacing: 0.04em;
+        color: var(--text);
+        max-width: 580px;
+        margin: 0 auto 3rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+
+      /* Phones: buttons stack */
+      @media (max-width: 600px) {
+        .cta-buttons { flex-direction: column; align-items: center; }
+      }
+    </style>
+
     <section class="cta-section">
       <h2>Let's Talk About Your Team</h2>
-      <p>Every team session starts with a conversation.&nbsp; Tell me about your team size, your timeline, and what you need -- and I'll put together a plan that works for your business.&nbsp; No pressure, no surprises.</p>
+      <p>Every team session starts with a conversation.&nbsp; Tell me about your team size, your timeline, and what you need, and I'll put together a plan that works for your business.&nbsp; No pressure, no surprises.</p>
       <div class="cta-buttons">
         <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Consultation</a>
-        <a href="/contact-deborah-heinlen/" class="btn-secondary">Get a Team Quote</a>
+        <a href="/contact-deborah-heinlen/" class="btn-primary">Get a Team Quote</a>
       </div>
     </section>
 
   </main>
 
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="/images/logo-white.webp" alt="Deborah Heinlen Photography logo" />
+        <img src="/images/logo-white.webp" loading="lazy" alt="Deborah Heinlen Photography logo" />
         <p>Professional headshots and corporate event photography serving Cincinnati and Northern Kentucky.&nbsp; Located in Hebron, KY.</p>
-        <img src="/images/logo-PPA_Member_Color.webp" alt="Professional Photographers of America logo" class="footer-badge" />
+        <img src="/images/logo-PPA_Member_Color.webp" loading="lazy" alt="Professional Photographers of America logo" class="footer-badge" />
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -729,7 +1134,7 @@
         <a href="sms:8599188559" class="footer-contact-item">Text (859) 918-8559</a>
         <a href="mailto:DeborahHeinlenPhotography@gmail.com" class="footer-contact-item">DeborahHeinlenPhotography@gmail.com</a>
         <br />
-        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top:1rem;display:inline-block;">Book a Session</a>
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Book a Session</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -748,40 +1153,52 @@
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        CONSISTENT IMAGES ARRAY
        These 6 images appear in the "Your Team's Image Is Your Brand" grid.
-       Same format as corporate-headshots.html -- edit positions and sources here.
+       Desktop shows all 6.  Phones and small tablets (under 768px) show the first 4.
+
+       TO ADD, REMOVE, OR REORDER: edit the lines below.
+       TO ADJUST THE CROP: change the position value.
+                           Lower second number = face sits higher in the cell.
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     var consistentImages = [
-      { src: "/images/hs-Tyler.webp",  alt: "Team headshot by Deborah Heinlen Photography, Cincinnati -- young professional man in gray suit", position: "50% 10%" },
-      { src: "/images/hs-Greg.webp",   alt: "Team headshot by Deborah Heinlen Photography, Cincinnati -- senior professional man with white beard and dark shirt", position: "50% 20%" },
-      { src: "/images/hs-Briana.webp", alt: "Team headshot by Deborah Heinlen Photography, Cincinnati -- smiling woman with long brown hair in black top", position: "50% 8%"  },
-      { src: "/images/hs-Sam.webp",    alt: "Team headshot by Deborah Heinlen Photography, Cincinnati -- smiling man in blue suit", position: "50% 18%" },
-      { src: "/images/hs-Wayne.webp",  alt: "Team headshot by Deborah Heinlen Photography, Cincinnati -- distinguished man with white beard in dark shirt", position: "50% 12%" },
-      { src: "/images/hs-Mark.webp",   alt: "Team headshot by Deborah Heinlen Photography, Cincinnati -- professional man in gray blazer and silver tie", position: "50% 22%" }
+      { src: "/images/hs-Tyler.webp",  alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, young professional man in gray suit", position: "50% 10%" },
+      { src: "/images/hs-Greg.webp",   alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, senior professional man with white beard and dark shirt", position: "50% 20%" },
+      { src: "/images/hs-Briana.webp", alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, smiling woman with long brown hair in black top", position: "50% 8%"  },
+      { src: "/images/hs-Sam.webp",    alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, smiling man in blue suit", position: "50% 18%" },
+      { src: "/images/hs-Wayne.webp",  alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, distinguished man with white beard in dark shirt", position: "50% 12%" },
+      { src: "/images/hs-Mark.webp",   alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, professional man in gray blazer and silver tie", position: "50% 22%" }
     ];
 
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       BUILD CONSISTENT GRID
+       BUILD THE IMAGE GRID
+       Places 2 images in each column.
+       Do not edit this function.  Make changes in the array above.
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    function buildConsistentGrid() {
-      var grid = document.getElementById('consistent-grid');
+    function buildGrid(gridId, imageList, desktopCols, colClass, cellClass) {
+      var grid = document.getElementById(gridId);
       if (!grid) return;
+
       var isMobile = window.innerWidth < 768;
-      var numCols  = isMobile ? 2 : 3;
-      var images   = isMobile ? consistentImages.slice(0, 4) : consistentImages.slice(0, 6);
+      var numCols  = isMobile ? 2 : desktopCols;
+      var images   = imageList.slice(0, numCols * 2);
+
       for (var c = 0; c < numCols; c++) {
         var col = document.createElement('div');
-        col.className = 'consistent-col';
+        col.className = colClass;
+
         for (var r = 0; r < 2; r++) {
           var idx = c * 2 + r;
           if (idx >= images.length) break;
+
           var cell = document.createElement('div');
-          cell.className = 'consistent-cell';
+          cell.className = cellClass;
+
           var img = document.createElement('img');
-          img.src  = images[idx].src;
-          img.alt  = images[idx].alt;
-          img.style.objectPosition = images[idx].position;
+          img.src = images[idx].src;
+          img.alt = images[idx].alt;
+          if (images[idx].position) { img.style.objectPosition = images[idx].position; }
           img.setAttribute('loading', 'lazy');
+
           cell.appendChild(img);
           col.appendChild(cell);
         }
@@ -789,20 +1206,32 @@
       }
     }
 
+    buildGrid('consistent-grid', consistentImages, 3, 'consistent-col', 'consistent-cell');
+
+
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        MOBILE MENU
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     var mobileBtn = document.getElementById('mobile-menu-btn');
     var mobileNav = document.getElementById('mobile-nav');
+
     mobileBtn.addEventListener('click', function() {
       var isOpen = mobileNav.classList.toggle('open');
       mobileBtn.setAttribute('aria-expanded', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    buildConsistentGrid();
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
 
-    // IMAGE PROTECTION -- DO NOT REMOVE
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       IMAGE PROTECTION -- DO NOT REMOVE
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     document.addEventListener('dragstart', function(e) {
       if (e.target.tagName === 'IMG') { e.preventDefault(); }
