@@ -45,13 +45,17 @@
   filter: saturate(0.85);
   display: block;
 }
-/* Soft fade on the left edge of the photo */
+/* Soft fade on the edge of the photo that meets the text.
+   Works whether the photo is placed first (left) or second (right) in the HTML. */
 .post-hero-image::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to left, transparent 65%, var(--bg) 100%);
   pointer-events: none;
+}
+.post-hero-image:first-child::after {
+  background: linear-gradient(to right, transparent 65%, var(--bg) 100%);
 }
 
 /* Post title: change the last clamp value to make it larger or smaller */
@@ -115,11 +119,17 @@
    ARTICLE BODY
    Inside <article class="post-body">:
      <h2>            section heading
+     <h3>            small spaced-capitals subheading
+     <h4>            small plain subheading
      <p>             paragraph
+     <strong>        bold words inside a paragraph
+     <ul> / <ol>     bulleted or numbered list
      <blockquote><p> pulled quote with a line beside it
      <a>             underlined link
      <div class="post-rule"></div>     short centered divider line
      <div class="client-grid"> 3 photos </div>   row of photos
+     <figure class="post-image"><img ... /><figcaption>Caption</figcaption></figure>
+                     one large photo with an optional caption
    ===================================================================== */
 .post-body {
   max-width: 780px;
@@ -147,15 +157,28 @@
   margin: 3rem 0 1.2rem;
 }
 
+/* Small spaced-capitals subheading */
 .post-body h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 300;
-  font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--text);
-  letter-spacing: 0.03em;
-  line-height: 1.25;
-  margin: 2.2rem 0 1rem;
+  margin: 2.5rem 0 1rem;
 }
+
+/* Small plain subheading */
+.post-body h4 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 1.5rem 0 0.6rem;
+}
+
+.post-body strong { font-weight: 400; color: var(--text); }
 
 /* Bulleted and numbered lists inside a post */
 .post-body ul,
@@ -201,6 +224,28 @@
   height: 1px;
   background: var(--line-strong);
   margin: 3rem auto;
+}
+
+/* One large photo inside a post, with an optional caption */
+.post-image { width: 100%; margin: 3rem 0; }
+.post-image img {
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: saturate(0.88);
+  display: block;
+}
+.post-image figcaption {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-align: center;
+  margin-top: 0.8rem;
 }
 
 /* Row of client photos inside a post */
@@ -302,7 +347,18 @@
   padding: 5rem 8vw 6rem;
 }
 
-.related-section .section-label { margin-bottom: 3rem; }
+/* "MORE FROM THE BLOG" (older posts use related-label, newer use section-label) */
+.related-section .section-label,
+.related-label {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: block;
+  margin-bottom: 3rem;
+}
 
 .related-grid {
   display: grid;
@@ -391,10 +447,11 @@
    TABLETS AND PHONES
    ===================================================================== */
 @media (max-width: 900px) {
-  /* Photo moves above the title */
-  .post-hero { flex-direction: column-reverse; }
-  .post-hero-image { flex: none; width: 100%; min-height: 350px; }
-  .post-hero-image::after { background: linear-gradient(to top, transparent 60%, var(--bg) 100%); }
+  /* Photo moves above the title, whichever side it was on */
+  .post-hero { flex-direction: column; }
+  .post-hero-image { order: -1; flex: none; width: 100%; min-height: 350px; }
+  .post-hero-image::after,
+  .post-hero-image:first-child::after { background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%); }
   .post-hero-content { flex: none; width: 100%; padding: 3rem 2rem; }
 
   .related-grid { grid-template-columns: 1fr 1fr; }
