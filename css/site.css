@@ -570,12 +570,12 @@ html, body {
 .footer-badge {
   height: 38px;
   width: auto;
-  opacity: 0.5;
+  opacity: 1;
   margin-top: 1.2rem;
   display: block;
   transition: opacity 0.2s;
 }
-.footer-badge:hover { opacity: 0.85; }
+
 
 
 /* =====================================================================
