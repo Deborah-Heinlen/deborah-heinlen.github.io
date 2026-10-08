@@ -742,6 +742,121 @@
 
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+         SESSION OPTIONS
+         Three cards: half-day, full-day, add-ons.  Same look as the events page.
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <style>
+      .coverage-section {
+        background: var(--bg);
+        border-bottom: 1px solid var(--line-faint);
+        padding: 6rem 8vw;
+      }
+
+      .coverage-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .coverage-header h2 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        color: var(--text);
+        letter-spacing: 0.04em;
+      }
+
+      .coverage-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto 3.5rem;
+      }
+
+      .coverage-card {
+        border: 1px solid var(--line);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        transition: border-color 0.3s;
+      }
+      .coverage-card:hover { border-color: var(--line-strong); }
+
+      /* The symbols at the top of each card: ½, ☼, + */
+      .coverage-icon {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: 2.4rem;
+        color: var(--text);
+        display: block;
+        margin-bottom: 1.2rem;
+        line-height: 1;
+      }
+
+      .coverage-card h3 {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+        color: var(--text);
+        letter-spacing: 0.03em;
+        margin-bottom: 0.8rem;
+      }
+
+      .coverage-card p {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        line-height: 1.85;
+        color: var(--text);
+      }
+
+      .coverage-price {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-size: 2.2rem;
+        color: var(--text);
+        letter-spacing: 0.02em;
+        line-height: 1;
+        display: block;
+        margin-bottom: 1.2rem;
+      }
+
+      .coverage-price-text {
+        font-size: 1.35rem;
+        letter-spacing: 0.06em;
+        padding: 0.45rem 0;
+        margin-bottom: 1.2rem;
+      }
+
+      .coverage-cta { text-align: center; }
+
+      /* Tablets: 2 across.  Phones: 1 across. */
+      @media (max-width: 900px) {
+        .coverage-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 600px) {
+        .coverage-section { padding: 3rem 1.5rem; }
+        .coverage-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+
+    <section class="coverage-section">
+      <div class="coverage-header">
+        <span class="section-label">Session Options</span>
+        <h2>Flexible Sessions for Teams of Any Size</h2>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-card"><span class="coverage-icon">&#189;</span><h3>Half-Day Session</h3><span class="coverage-price">$1,500</span><p>A 4 hour on-site session for up to 30 people.&nbsp; Includes setup, posing and coaching, consistent lighting, on-site image review, and one finished, edited image per person.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">&#9788;</span><h3>Full-Day Session</h3><span class="coverage-price">$2,500</span><p>An 8 hour on-site session for 31 to 60 people.&nbsp; Includes setup, posing and coaching, consistent lighting, on-site image review, and one finished, edited image per person.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">+</span><h3>Team Add-Ons</h3><span class="coverage-price coverage-price-text">Personalized Quote</span><p>LinkedIn-optimized crops, logo placement on images, and a team collage are available.&nbsp; Contact me for a personalized quote.</p></div>
+      </div>
+      <div class="coverage-cta">
+        <a href="https://deborahheinlen1.client.photos/bookings" class="btn-primary" target="_blank" rel="noopener">Schedule a Consultation</a>
+      </div>
+    </section>
+
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          WHAT'S INCLUDED
          Six numbered boxes, 3 across.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
@@ -961,7 +1076,7 @@
 
         <div class="faq-item">
           <h3>How many people can you photograph in a day?</h3>
-          <p>Approximately 10 people per hour under typical conditions.&nbsp; For a full day session I can photograph 60 to 80 people comfortably while maintaining quality for every individual.</p>
+          <p>Approximately 10 people per hour under typical conditions.&nbsp; A half day covers up to 30 people in a 4 hour session, and a full day covers 31 to 60 people in an 8 hour session, with quality maintained for every individual.</p>
         </div>
 
         <div class="faq-item">
