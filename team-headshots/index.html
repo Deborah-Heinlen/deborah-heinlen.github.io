@@ -34,9 +34,8 @@
        Each section's look ............... the <style> block right above that section
        Hero image size ................... search: HERO IMAGE SIZE
        Grid/text split ................... search: GRID SPLIT
-       Grid image sizes .................. search: GRID CELLS
        Coordinator image size ............ search: APPROACH IMAGE SIZE
-       Adding/removing grid images ....... search: CONSISTENT IMAGES ARRAY
+       Team collage image ................ search: COLLAGE IMAGE
        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
 <!-- Google tag (gtag.js) -->
@@ -388,9 +387,8 @@
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          WHY IT MATTERS (BRAND IMPACT)
-         Image grid on the left, text on the right.
-         Images are controlled by the consistentImages array in the <script> block
-         at the bottom of the page.  Search: CONSISTENT IMAGES ARRAY
+         Team collage image on the left, text on the right.
+         To change the image, edit the src in the consistent-collage div below.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <style>
       .consistent-section {
@@ -409,18 +407,8 @@
         align-items: center;
       }
 
-      /* GRID CELLS
-         3 columns, 2 images per column.
-         TALL cell height:  change the 290px values
-         SHORT cell height: change the 200px values */
-      .consistent-grid { display: flex; gap: 12px; width: 100%; }
-      .consistent-col { flex: 1; display: flex; flex-direction: column; gap: 12px; }
-      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 290px; }
-      .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 200px; }
-      .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 200px; }
-      .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 290px; }
-      .consistent-cell { overflow: hidden; }
-      .consistent-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      /* COLLAGE IMAGE: fills the left side of the section */
+      .consistent-collage img { width: 100%; height: auto; display: block; }
 
       .consistent-content {
         text-align: left;
@@ -479,10 +467,6 @@
       /* Tablets and phones: text on top of a smaller 2-column grid */
       @media (max-width: 900px) {
         .consistent-inner { grid-template-columns: 1fr; gap: 2rem; }
-        .consistent-col:nth-child(odd)  .consistent-cell:nth-child(1) { height: 200px; }
-        .consistent-col:nth-child(odd)  .consistent-cell:nth-child(2) { height: 160px; }
-        .consistent-col:nth-child(even) .consistent-cell:nth-child(1) { height: 160px; }
-        .consistent-col:nth-child(even) .consistent-cell:nth-child(2) { height: 200px; }
       }
 
       @media (max-width: 600px) {
@@ -492,7 +476,9 @@
 
     <section class="consistent-section">
       <div class="consistent-inner">
-        <div class="consistent-grid" id="consistent-grid"></div>
+        <div class="consistent-collage">
+          <img src="/images/corporate-collage-baird-1600.webp" width="1600" height="1078" loading="lazy" alt="Collage of 27 team members photographed by Deborah Heinlen Photography, each shown with their team logo" />
+        </div>
         <div class="consistent-content">
           <span class="section-label">Why It Matters</span>
           <h2>Your Team's Image Is Your Brand</h2>
@@ -742,7 +728,7 @@
 
     <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
          SESSION OPTIONS
-         Three cards: half-day, full-day, add-ons.  Same look as the events page.
+         Three cards: half-day, full-day, teams of 41+.  Same look as the events page.
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
     <style>
       .coverage-section {
@@ -845,9 +831,9 @@
         <h2>Flexible Sessions for Teams of Any Size</h2>
       </div>
       <div class="coverage-grid">
-        <div class="coverage-card"><span class="coverage-icon">&#189;</span><h3>Half-Day Session</h3><span class="coverage-price">$1,500</span><p>A 4 hour on-site session for up to 30 people.&nbsp; Includes setup, posing and coaching, consistent lighting, on-site image review, and one finished, edited image per person.</p></div>
-        <div class="coverage-card"><span class="coverage-icon">&#9788;</span><h3>Full-Day Session</h3><span class="coverage-price">$2,500</span><p>An 8 hour on-site session for 31 to 60 people.&nbsp; Includes setup, posing and coaching, consistent lighting, on-site image review, and one finished, edited image per person.</p></div>
-        <div class="coverage-card"><span class="coverage-icon">+</span><h3>Team Add-Ons</h3><span class="coverage-price coverage-price-text">Personalized Quote</span><p>LinkedIn-optimized crops, logo placement on images, and a team collage are available.&nbsp; Contact me for a personalized quote.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">&#189;</span><h3>Half-Day Session</h3><span class="coverage-price">$2,000</span><p>A 4 hour on-site session for up to 20 people.&nbsp; Includes setup, posing and coaching, consistent lighting, on-site image review, and one finished, edited image per person.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">&#9788;</span><h3>Full-Day Session</h3><span class="coverage-price">$3,500</span><p>An 8 hour on-site session for 21 to 40 people.&nbsp; Includes setup, posing and coaching, consistent lighting, on-site image review, and one finished, edited image per person.</p></div>
+        <div class="coverage-card"><span class="coverage-icon">+</span><h3>Teams of 41+</h3><span class="coverage-price coverage-price-text">Personalized Quote</span><p>For larger teams, I build a custom plan around your headcount and schedule.&nbsp; LinkedIn-optimized crops, logo placement on images, and a team collage are also available.&nbsp; Contact me for a personalized quote.</p></div>
       </div>
       <div class="coverage-cta">
         <a href="/contact-deborah-heinlen/" class="btn-primary">Get a Team Quote</a>
@@ -1075,7 +1061,7 @@
 
         <div class="faq-item">
           <h3>How many people can you photograph in a day?</h3>
-          <p>Approximately 10 people per hour under typical conditions.&nbsp; A half day covers up to 30 people in a 4 hour session, and a full day covers 31 to 60 people in an 8 hour session, with quality maintained for every individual.</p>
+          <p>Approximately 5 to 10 people per hour under typical conditions.&nbsp; A half day covers up to 20 people in a 4 hour session, and a full day covers 21 to 40 people in an 8 hour session, with quality maintained for every individual.&nbsp; Teams of 41 or more are quoted individually.</p>
         </div>
 
         <div class="faq-item">
@@ -1263,64 +1249,6 @@
 
 
   <script>
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       CONSISTENT IMAGES ARRAY
-       These 6 images appear in the "Your Team's Image Is Your Brand" grid.
-       Desktop shows all 6.  Phones and small tablets (under 768px) show the first 4.
-
-       TO ADD, REMOVE, OR REORDER: edit the lines below.
-       TO ADJUST THE CROP: change the position value.
-                           Lower second number = face sits higher in the cell.
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    var consistentImages = [
-      { src: "/images/hs-Tyler.webp",  alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, young professional man in gray suit", position: "50% 10%" },
-      { src: "/images/hs-Greg.webp",   alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, senior professional man with white beard and dark shirt", position: "50% 20%" },
-      { src: "/images/hs-Briana.webp", alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, smiling woman with long brown hair in black top", position: "50% 8%"  },
-      { src: "/images/hs-Sam.webp",    alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, smiling man in blue suit", position: "50% 18%" },
-      { src: "/images/hs-Wayne.webp",  alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, distinguished man with white beard in dark shirt", position: "50% 12%" },
-      { src: "/images/hs-Mark.webp",   alt: "Team headshot by Deborah Heinlen Photography, Cincinnati, professional man in gray blazer and silver tie", position: "50% 22%" }
-    ];
-
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       BUILD THE IMAGE GRID
-       Places 2 images in each column.
-       Do not edit this function.  Make changes in the array above.
-       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    function buildGrid(gridId, imageList, desktopCols, colClass, cellClass) {
-      var grid = document.getElementById(gridId);
-      if (!grid) return;
-
-      var isMobile = window.innerWidth < 768;
-      var numCols  = isMobile ? 2 : desktopCols;
-      var images   = imageList.slice(0, numCols * 2);
-
-      for (var c = 0; c < numCols; c++) {
-        var col = document.createElement('div');
-        col.className = colClass;
-
-        for (var r = 0; r < 2; r++) {
-          var idx = c * 2 + r;
-          if (idx >= images.length) break;
-
-          var cell = document.createElement('div');
-          cell.className = cellClass;
-
-          var img = document.createElement('img');
-          img.src = images[idx].src;
-          img.alt = images[idx].alt;
-          if (images[idx].position) { img.style.objectPosition = images[idx].position; }
-          img.setAttribute('loading', 'lazy');
-
-          cell.appendChild(img);
-          col.appendChild(cell);
-        }
-        grid.appendChild(col);
-      }
-    }
-
-    buildGrid('consistent-grid', consistentImages, 3, 'consistent-col', 'consistent-cell');
 
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
